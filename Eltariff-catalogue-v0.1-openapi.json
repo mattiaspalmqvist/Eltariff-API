@@ -1,0 +1,146 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ElTariffKatalog",
+    "version": "v0.1"
+  },
+  "servers": [
+    {
+      "url": "http://eltariff.deplide.org",
+      "description": "Sandbox catalogue"
+    },
+    {
+      "url": "http://localhost:8080",
+      "description": "Local developer instance"
+    }
+  ],
+  "paths": {
+    "/tariffcatalogue/register": {
+      "post": {
+        "description": "Register API info for a range of MPIDs. The format of the intro is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json",
+        "tags": [
+          "supplier-service"
+        ],
+        "operationId": "submitSupplierAPIInfo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierEntry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+
+    "/tariffcatalogue/lookup": {
+      "post": {
+        "description": "Look up API connection info for any number of MPIDs",
+        "tags": [
+          "supplier-service"
+        ],
+        "operationId": "getSupplierAPIInfo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MeteringPointID"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/SupplierEntry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tariffcatalogue/lookup/{mpid}": {
+      "get": {
+        "description": "Lookup API connection info for a single MPID. Please be aware that the response can contain more than one API connection entry.",
+        "tags": [
+          "supplier-service"
+        ],
+        "operationId": "getSuppliersAPIInfo",
+        "parameters": [
+          {
+            "name": "mpid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/MeteringPointID"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplierEntry"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SupplierEntry": {
+        "type": "object",
+        "properties": {
+          "meteringPointIdFrom": {
+            "$ref": "#/components/schemas/MeteringPointID"
+          },
+          "meteringPointIdTo": {
+            "$ref": "#/components/schemas/MeteringPointID"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "companyOrgNo": {
+            "type": "string"
+          },
+          "apiUrl": {
+            "type": "string"
+          },
+          "userDocUrlOrEmail": {
+            "type": "string"
+          }
+        }
+      },
+      "MeteringPointID": {
+        "type": "string",
+        "pattern": "^[0-9]{18}$"
+      }
+    }
+  }
+}
