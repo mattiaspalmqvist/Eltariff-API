@@ -1,0 +1,7 @@
+title Eltariff request
+TariffConsumer->Catalogue:Get API endpoint for MPID
+Catalogue-->TariffConsumer:API Connection info
+TariffConsumer->GridOperator:Get tariffID for MPID
+GridOperator-->TariffConsumer:TariffId
+TariffConsumer->GridOperator:Get tariff model for tariffID
+GridOperator-->TariffConsumer: Tariff
