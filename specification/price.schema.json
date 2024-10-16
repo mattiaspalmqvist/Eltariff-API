@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "definitions": {
+
+    "PricePeriod": {
+      "description": "A consecutive time period where all points in time have the same price for each component.",
+      "type": "object",
+      "properties": {
+        "timeInterval": {
+          "$ref": "common.schema.json#/definitions/TimeInterval"
+        },
+        "fixedPriceId": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "energyPriceId": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "powerPriceId": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "PriceDefinition": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "component": {
+          "type": "string",
+          "pattern": "fixed|energy|power",
+          "examples": [ "fixed", "energy", "power" ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [ "16 A", "14 kW", "Low winter", "High winter", "Summer" ]
+        },
+        "description": {
+          "description": "Text to describe the price definition.",
+          "type": "string"
+        },
+        "validPeriod": {
+          "description": "The time period during this price definition is valid.",
+          "$ref": "common.schema.json#/definitions/TimeInterval"
+        },
+        "priceExVat": {
+          "type": "number",
+          "examples": [ 171.32, 154 ]
+        },
+        "priceIncVat": {
+          "type": "number",
+          "examples": [ 171.32, 154 ]
+        },
+        "currency": {
+          "$ref": "common.schema.json#/definitions/Currency",
+          "example": "SEK"
+        },
+        "unit": {
+          "$ref": "common.schema.json#/definitions/Unit",
+          "example": "Month"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

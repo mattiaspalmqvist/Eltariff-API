@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "definitions": {
+
+    "Tariff": {
+      "description": "The grid tariff object with the tariff type object and the tariff price object.",
+      "type": "object",
+      "properties": {
+        "tariffType": {
+          "description": "Information about the tariff type.",
+          "$ref": "tarifftype.schema.json#/definitions/TariffType"
+        },
+        "pricePeriods": {
+          "type": "array",
+          "items": {
+            "$ref": "price.schema.json#/definitions/PricePeriod"
+          }
+        },
+        "priceDefinitions": {
+          "description": "Price definitions to be referenced by the components of a price period.",
+          "type": "array",
+          "items": {
+            "$ref": "price.schema.json#/definitions/PriceDefinition"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

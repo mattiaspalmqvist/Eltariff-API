@@ -1,0 +1,230 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Grid Tariff API - Sweden",
+    "description": "Provides grid tariffs from Swedish DSOs.",
+    "version": "0.1.0",
+    "contact": {
+      "name": "Grid Tariff API - Sweden",
+      "url": "https://dev.azure.com/goteborgenergidev/GoteborgEnergi-API/_git/API-GridTariff"
+    }
+  },
+
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+
+  "paths": {
+    "/api/TariffTypes/All": {
+      "get": {
+        "tags": [
+          "TariffType"
+        ],
+        "operationId": "GetTariffTypes",
+        "summary": "Returns a collection of all available tariff types.",
+        "responses": {
+          "200": {
+            "description": "All available tariff types.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffTypesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+
+    "/api/TariffTypes/ForMeteringPoints": {
+      "post": {
+        "tags": [
+          "TariffType"
+        ],
+        "operationId": "GetTariffTypesAndMpidMap",
+        "summary": "Returns a collection of all available tariff types and mapping between provided metering point ids and tariff key. If no MPIDs are provided, no mapping is returned.",
+        "requestBody": {
+          "description": "MeteringPointIds to match tariff keys for.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TariffTypesWithMpidRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "All available tariffs.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffTypesWithMpidResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+
+    "/api/Tariffs": {
+      "post": {
+        "tags": [
+          "Tariff"
+        ],
+        "operationId": "GetTariffs",
+        "summary": "Returns tariff data for a given tariff type for a given timeperiod.",
+        "requestBody": {
+          "description": "Tariff Key and time period to get tariff for.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TariffsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The GridTariff for the provided key/product and time period.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TariffsResponse"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No data for given request"
+          },
+          "304": {
+            "description": "Not modified"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+
+  "components": {
+    "schemas": {
+
+      "TariffTypesResponse": {
+        "type": "object",
+        "properties": {
+          "tariffTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "tarifftype.schema.json#/definitions/TariffType"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+
+      "TariffTypesWithMpidRequest": {
+        "type": "object",
+        "properties": {
+          "meteringPointIds": {
+            "type": "array",
+            "description": "List of MPIDs you are the registered owner of as a private person or your company has e legal reason to request in a customer/provider relationship. Example 707057500000000001",
+            "items": {
+              "$ref": "common.schema.json#/definitions/MeteringPointId"
+            },
+            "nullable": false
+          }
+        },
+        "additionalProperties": false
+      },
+
+      "TariffTypesWithMpidResponse": {
+        "type": "object",
+        "properties": {
+          "tariffTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "tarifftype.schema.json#/definitions/TariffType"
+            },
+            "nullable": true
+          },
+          "mpidKeyPairs": {
+            "type": "array",
+            "items": {
+              "$ref": "common.schema.json#/definitions/MpidKeyPair"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+
+      "TariffsRequest": {
+        "type": "object",
+        "description": "Query to get a tariff for a given tariff key and time interval.",
+        "properties": {
+          "tariffKey": {
+            "$ref": "common.schema.json#/definitions/TariffKey"
+          },
+          "duration": {
+            "description": "A duration in time that starts at 00:00 (midnight) of the day when the request is made.",
+            "$ref": "common.schema.json#/definitions/Duration"
+          }
+        },
+        "additionalProperties": false
+      },
+
+      "TariffsResponse": {
+        "type": "object",
+        "properties": {
+          "tariff": {
+            "$ref": "tariff.schema.json#/definitions/Tariff"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
