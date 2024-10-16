@@ -13,107 +13,120 @@
         },
         "name": {
           "description": "Descriptive short name of the grid tariff.",
-          "type": "string",
-          "nullable": true
+          "type": "string"
         },
         "description": {
           "description": "Detailed description of the grid tariff.",
-          "type": "string",
-          "nullable": true
+          "type": "string"
         },
         "product": {
           "description": "Name of the grid company product, for grid company internal use.",
-          "type": "string",
-          "nullable": true
+          "type": "string"
         },
         "companyName": {
           "description": "Name of the grid company. Ex. Elvia AS",
-          "type": "string",
-          "nullable": true
+          "type": "string"
         },
         "companyOrgNo": {
           "description": "Organization number of the grid company. Ex. 980489698",
           "type": "string"
         },
-        "isConsumptionTariff": {
-          "description": "Indicates if this is a tariff for consumption or production. True = consumption, False = production.",
-          "type": "boolean"
+        "direction": {
+          "description": "Indicates if this is a tariff for consumption or production. Valid values are \"consumption\" and \"production\".",
+          "type": "string",
+          "pattern": "consumption|production"
         },
         "lastUpdated": {
           "description": "The time of when the prices were last updated on the server side. No need to get prices if you already fetched the latest ones? Ex. 2021-11-05T00:00:00+01:00",
           "type": "string",
           "format": "date-time"
         },
-        "fixedPriceConfiguration": {
-          "$ref": "#/definitions/FixedPriceConfiguration"
+        "billingFrequency": {
+          "description": "A time period that describes how often the customer is billed. E.g. \"P1M\" means billing is made at every new month.",
+          "type": "string",
+          "example": "P1M"
         },
-        "powerPriceConfiguration": {
-          "$ref": "#/definitions/PowerPriceConfiguration",
-          "nullable": true
+        "fixedPrice": {
+          "$ref": "#/definitions/FixedPrice"
         },
-        "priceDefinitions": {
-          "description": "Price definitions that can be used to calculate the cost for a consumer.",
+        "energyPrice": {
+          "$ref": "#/definitions/EnergyPrice"
+        },
+        "powerPrice": {
+          "$ref": "#/definitions/PowerPrice"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "FixedPrice": {
+      "description": "Prices and information for the fixed price component of the tariff.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "name": {
+          "$ref": "common.schema.json#/definitions/Name",
+          "example": "Fusesize 25 A"
+        },
+        "description": {
+          "$ref": "common.schema.json#/definitions/Description",
+          "example": "Fixed price for a contract with a fuse size of 25 A."
+        },
+        "validPeriod": {
+          "$ref": "common.schema.json#/definitions/ValidPeriod"
+        },
+        "price": {
+          "$ref": "price.schema.json#/definitions/Price"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "EnergyPrice": {
+      "description": "Prices and information for the energy price component of the tariff.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "name": {
+          "$ref": "common.schema.json#/definitions/Name",
+          "example": "Energy transfer"
+        },
+        "description": {
+          "$ref": "common.schema.json#/definitions/Description",
+          "example": "Energy transfer price for one kWh."
+        },
+        "validPeriod": {
+          "$ref": "common.schema.json#/definitions/ValidPeriod"
+        },
+        "price": {
+          "$ref": "price.schema.json#/definitions/Price"
+        },
+        "unit": {
+          "$ref": "common.schema.json#/definitions/Unit"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "PowerPrice": {
+      "description": "Prices with parameters that defines power peak identification and price calculation for the power component of the tariff.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "seasons": {
           "type": "array",
           "items": {
-            "$ref": "price.schema.json#/definitions/PriceDefinition"
+            "$ref": "season.schema.json#/definitions/PowerPriceSeason"
           }
-        }
-      },
-      "additionalProperties": false
-    },
-
-
-    "FixedPriceConfiguration": {
-      "description": "Parameters to visualize how the fixed price component is calculated. Ex. if months > 1, then the average of the maxhoursPerMonth for x months is the basis for the fixed price etc. Weighting is not supported in this version.",
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "common.schema.json#/definitions/Uuid"
-        },
-        "basis": {
-          "description": "The basis category of the fixed price component.",
-          "type": "string",
-          "examples": [ "max", "fusesize" ]
-        },
-        "level": {
-          "type": "string",
-          "examples": [ "14 kW", "25 A" ]
-        }
-      },
-      "additionalProperties": false
-    },
-
-
-    "PowerPriceConfiguration": {
-      "description": "Parameters to visualize how the fixed price component is calculated. Ex. if months > 1, then the average of the maxhoursPerMonth for x months is the basis for the fixed price etc. Weighting is not supported in this version.",
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "common.schema.json#/definitions/Uuid"
-        },
-        "peakPricingPeriod": {
-          "description": "The peak pricing period is a consecutive time period in which peaks are identified to calculate the power price.\nDuration of the period in [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601#Durations).\nExamples:\n- \"P1D\" for one day\n- \"P1M\" for one month\n- \"P2W\" for two weeks\n- \"P3Y6M4DT12H30M5S\" for a complex duration.",
-          "type": "string",
-          "example": "P1M",
-          "nullable": true
-        },
-        "peakIdentificationPeriod": {
-          "description": "The time period as an ISO 8601 duration for identifying one single peak to be used in calculations. For example only one peak per day is saved => \"P1D\".",
-          "type": "string",
-          "examples": [ "P1D", "P1W" ],
-          "nullable": true
-        },
-        "peakDuration": {
-          "description": "The time length as an ISO 8601 duration for calculating average power to get one peak.",
-          "type": "string",
-          "examples": [ "PT1H", "PT15M" ],
-          "nullable": true
-        },
-        "numberOfPeaks": {
-          "description": "The number of peaks within a peak pricing period for calculating average peak for that period.",
-          "type": "integer",
-          "example": 3,
-          "nullable": true
         }
       },
       "additionalProperties": false

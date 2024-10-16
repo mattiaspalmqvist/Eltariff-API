@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+  
+    "definitions": {
+  
+      "PowerPriceSeason": {
+        "description": "A long time period in which pricing and power peak identification details are defined.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "$ref": "common.schema.json#/definitions/Name",
+            "example": "Winter day peak double price"
+          },
+          "description": {
+            "$ref": "common.schema.json#/definitions/Description",
+            "example": "One peak per day is used for cost calculation. Peak from low congestion period is used if it is twice the size of the peak from high congestion period."
+          },
+          "validPeriod": {
+            "$ref": "common.schema.json#/definitions/ValidPeriod"
+          },
+          "peakIdentificationSettings": {
+            "$ref": "power.schema.json#/definitions/PeakIdentificationSettings"
+          },
+          "costFunction": {
+            "type": "string",
+            "description": "A pseudo code function that describes how to calculate the cost for a power peak and which peak to use. Usage examples at https://someexamples.",
+            "examples": [
+              "peak(base) * price(base)",
+              "peak(high) * price(high) + peak(low) * price(low)",
+              "max(peak(high) * 2, peak(low)) * price(base)"
+            ]
+          },
+          "recurringPricePeriods": {
+            "type": "array",
+            "items": {
+              "$ref": "price.schema.json#/definitions/RecurringPricePeriod"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }

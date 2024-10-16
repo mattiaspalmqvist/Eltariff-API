@@ -66,6 +66,55 @@
         }
       },
       "additionalProperties": false
+    },
+
+
+    "Price": {
+      "description": "Price, VAT and currency.",
+      "type": "object",
+      "properties": {
+        "priceExVat": {
+          "type": "number",
+          "examples": [ 171.32, 154 ]
+        },
+        "priceIncVat": {
+          "type": "number",
+          "examples": [ 171.32, 154 ]
+        },
+        "currency": {
+          "$ref": "common.schema.json#/definitions/Currency",
+          "example": "SEK"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "RecurringPricePeriod": {
+      "description": "A short period of time that recurs several times during a season.",
+      "type": "object",
+      "properties": {
+        "costFunctionReference": {
+          "description": "Reference to be used to identify this recurring price period in the cost function.",
+          "type": "string",
+          "examples": [ "base", "high", "low" ]
+        },
+        "price": {
+          "$ref": "price.schema.json#/definitions/Price"
+        },
+        "frequencey": {
+          "type": "string",
+          "example": "P1D"
+        },
+        "activePeriods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [ "PT0H-PT6H", "P7H-P19H", "PT20H-PT23H" ]
+          }
+        }
+      },
+      "additionalProperties": false
     }
   }
 }
