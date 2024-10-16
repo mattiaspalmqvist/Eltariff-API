@@ -4,7 +4,7 @@
   "info": {
     "title": "Grid Tariff API - Sweden",
     "description": "Provides grid tariffs from Swedish DSOs.",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "contact": {
       "name": "Grid Tariff API - Sweden",
       "url": "https://dev.azure.com/goteborgenergidev/GoteborgEnergi-API/_git/API-GridTariff"
