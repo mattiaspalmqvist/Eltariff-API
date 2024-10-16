@@ -25,6 +25,7 @@
 
 
     "PriceDefinition": {
+      "description": "A price definition that can be used to calculate the cost for a consumer.",
       "type": "object",
       "properties": {
         "id": {

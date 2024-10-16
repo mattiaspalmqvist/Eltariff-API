@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "definitions": {
+
+    "TariffPrices": {
+      "description": "The grid tariff object with the tariff type object and the tariff price object.",
+      "type": "object",
+      "properties": {
+        "tariffId": {
+          "description": "Unique id for the tariff for which the prices are defined.",
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "pricePeriods": {
+          "type": "array",
+          "items": {
+            "$ref": "price.schema.json#/definitions/PricePeriod"
+          }
+        },
+        "priceDefinitions": {
+          "description": "Price definitions that can be used to calculate the cost for a consumer and related from a price period object.",
+          "type": "array",
+          "items": {
+            "$ref": "price.schema.json#/definitions/PriceDefinition"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -19,22 +19,14 @@
     },
 
 
-    "TariffKey": {
-      "description": "A key for the grid tariff that is unique within the grid company.",
-      "type": "string",
-      "examples": [ "winter_low_night_day_high", "summer_low_all_day" ],
-      "additionalProperties": false
-    },
-
-
-    "MpidKeyPair": {
+    "MpidTariffPair": {
       "type": "object",
       "properties": {
         "meteringPointId": {
           "$ref": "#/definitions/MeteringPointId"
         },
-        "tariffKey": {
-          "$ref": "#/definitions/TariffKey"
+        "tariffId": {
+          "$ref": "#/definitions/Uuid"
         }
       },
       "additionalProperties": false
