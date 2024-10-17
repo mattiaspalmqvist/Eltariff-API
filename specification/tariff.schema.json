@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "definitions": {
+
+
+    "Tariff": {
+      "description": "Information about the tariff that are static and does not change during at least a month.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "name": {
+          "description": "Descriptive short name of the grid tariff.",
+          "type": "string"
+        },
+        "description": {
+          "description": "Detailed description of the grid tariff.",
+          "type": "string"
+        },
+        "product": {
+          "description": "Name of the grid company product, for grid company internal use.",
+          "type": "string"
+        },
+        "companyName": {
+          "description": "Name of the grid company. Ex. Elvia AS",
+          "type": "string"
+        },
+        "companyOrgNo": {
+          "description": "Organization number of the grid company. Ex. 980489698",
+          "type": "string"
+        },
+        "direction": {
+          "description": "Indicates if this is a tariff for consumption or production. Valid values are \"consumption\" and \"production\".",
+          "type": "string",
+          "pattern": "consumption|production"
+        },
+        "lastUpdated": {
+          "description": "The time of when the prices were last updated on the server side. No need to get prices if you already fetched the latest ones? Ex. 2021-11-05T00:00:00+01:00",
+          "type": "string",
+          "format": "date-time"
+        },
+        "billingFrequency": {
+          "description": "A time period that describes how often the customer is billed. E.g. \"P1M\" means billing is made at every new month.",
+          "type": "string",
+          "example": "P1M"
+        },
+        "fixedPrice": {
+          "$ref": "#/definitions/FixedPrice"
+        },
+        "energyPrice": {
+          "$ref": "#/definitions/EnergyPrice"
+        },
+        "powerPrice": {
+          "$ref": "#/definitions/PowerPrice"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "FixedPrice": {
+      "description": "Prices and information for the fixed price component of the tariff.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "name": {
+          "$ref": "common.schema.json#/definitions/Name",
+          "example": "Fusesize 25 A"
+        },
+        "description": {
+          "$ref": "common.schema.json#/definitions/Description",
+          "example": "Fixed price for a contract with a fuse size of 25 A."
+        },
+        "validPeriod": {
+          "$ref": "common.schema.json#/definitions/ValidPeriod"
+        },
+        "price": {
+          "$ref": "price.schema.json#/definitions/Price"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "EnergyPrice": {
+      "description": "Prices and information for the energy price component of the tariff.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "name": {
+          "$ref": "common.schema.json#/definitions/Name",
+          "example": "Energy transfer"
+        },
+        "description": {
+          "$ref": "common.schema.json#/definitions/Description",
+          "example": "Energy transfer price for one kWh."
+        },
+        "validPeriod": {
+          "$ref": "common.schema.json#/definitions/ValidPeriod"
+        },
+        "price": {
+          "$ref": "price.schema.json#/definitions/Price"
+        },
+        "unit": {
+          "$ref": "common.schema.json#/definitions/Unit"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "PowerPrice": {
+      "description": "Prices with parameters that defines power peak identification and price calculation for the power component of the tariff.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "seasons": {
+          "type": "array",
+          "items": {
+            "$ref": "season.schema.json#/definitions/PowerPriceSeason"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "definitions": {
+
+    "PricePeriod": {
+      "description": "A consecutive time period where all points in time have the same price for each component.",
+      "type": "object",
+      "properties": {
+        "timeInterval": {
+          "$ref": "common.schema.json#/definitions/TimeInterval"
+        },
+        "fixedPriceId": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "energyPriceId": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "powerPriceId": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "PriceDefinition": {
+      "description": "A price definition that can be used to calculate the cost for a consumer.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "component": {
+          "type": "string",
+          "pattern": "fixed|energy|power",
+          "examples": [ "fixed", "energy", "power" ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [ "16 A", "14 kW", "Low winter", "High winter", "Summer" ]
+        },
+        "description": {
+          "description": "Text to describe the price definition.",
+          "type": "string"
+        },
+        "validPeriod": {
+          "description": "The time period during this price definition is valid.",
+          "$ref": "common.schema.json#/definitions/TimeInterval"
+        },
+        "priceExVat": {
+          "type": "number",
+          "examples": [ 171.32, 154 ]
+        },
+        "priceIncVat": {
+          "type": "number",
+          "examples": [ 171.32, 154 ]
+        },
+        "currency": {
+          "$ref": "common.schema.json#/definitions/Currency",
+          "example": "SEK"
+        },
+        "unit": {
+          "$ref": "common.schema.json#/definitions/Unit",
+          "example": "Month"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "Price": {
+      "description": "Price, VAT and currency.",
+      "type": "object",
+      "properties": {
+        "priceExVat": {
+          "type": "number",
+          "examples": [ 171.32, 154 ]
+        },
+        "priceIncVat": {
+          "type": "number",
+          "examples": [ 171.32, 154 ]
+        },
+        "currency": {
+          "$ref": "common.schema.json#/definitions/Currency",
+          "example": "SEK"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "RecurringPricePeriod": {
+      "description": "A short period of time that recurs several times during a season.",
+      "type": "object",
+      "properties": {
+        "costFunctionReference": {
+          "description": "Reference to be used to identify this recurring price period in the cost function.",
+          "type": "string",
+          "examples": [ "base", "high", "low" ]
+        },
+        "price": {
+          "$ref": "price.schema.json#/definitions/Price"
+        },
+        "frequencey": {
+          "type": "string",
+          "example": "P1D"
+        },
+        "activePeriods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "examples": [ "PT0H-PT6H", "P7H-P19H", "PT20H-PT23H" ]
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

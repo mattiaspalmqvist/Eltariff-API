@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "definitions": {
+    "Uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Globally unique identifier",
+      "example": "216783ff-5dda-4c38-b491-d6f0fcee9a9b",
+      "additionalProperties": false
+    },
+
+
+    "Name": {
+      "type": "string",
+      "description": "A short human readable name.",
+      "example": "Fusesize 25A",
+      "additionalProperties": false
+    },
+
+
+    "Description": {
+      "description": "A longer explanatory text.",
+      "type": "string",
+      "example": "Fixed price for a contract with a fuse size of 25 A.",
+      "additionalProperties": false
+    },
+
+
+    "MeteringPointId": {
+      "type": "string",
+      "description": "Identifier for a physical metering point (MPID)",
+      "example": "707057500000000001",
+      "additionalProperties": false
+    },
+
+
+    "MpidTariffPair": {
+      "type": "object",
+      "properties": {
+        "meteringPointId": {
+          "$ref": "#/definitions/MeteringPointId"
+        },
+        "tariffId": {
+          "$ref": "#/definitions/Uuid"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "ValidPeriod": {
+      "type": "object",
+      "description": "A date interval to define a validity period for an object.",
+      "properties": {
+        "fromIncluding": {
+          "description": "Valid from and including this date.",
+          "type": "string",
+          "format": "date"
+        },
+        "toIncluding": {
+          "description": "Valid to and including this date.",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "TimeInterval": {
+      "type": "object",
+      "description": "A time interval where startTime is included and the interval is up until endTime but not included.",
+      "properties": {
+        "startTime": {
+          "description": "The start time of this resolution period.",
+          "type": "string",
+          "format": "date-time",
+          "example": "2024-09-17T00:00:00+01:00"
+        },
+        "endTime": {
+          "description": "The time when this resolution period is expired.",
+          "type": "string",
+          "format": "date-time",
+          "example": "204-09-17T01:00:00+01:00"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "Duration": {
+      "description": "A time duration in the format [ISO 8601 duration format](https://en.wikipedia.org/wiki/ISO_8601#Durations).\nExamples:\n- \"P1D\" for one day\n- \"P1M\" for one month\n- \"P2W\" for two weeks\n- \"P3Y6M4DT12H30M5S\" for a complex duration.",
+      "type": "string",
+      "examples": [ "PT0S", "PT15M", "PT1H", "P1D", "P1W", "P1M", "P1DT12H" ],
+      "additionalProperties": false
+    },
+
+
+    "Currency": {
+      "description": "The currency for all related prices.",
+      "type": "string",
+      "example": "SEK",
+      "additionalProperties": false
+    },
+
+
+    "Unit": {
+      "description": "The unit of a measurement or price calculation.",
+      "type": "string",
+      "example": "kWh",
+      "additionalProperties": false
+    }
+  }
+}

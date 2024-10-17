@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+
+  "definitions": {
+
+    "PeakIdentificationSettings": {
+      "description": "Settings that defines how to identify a power peak during a billing period.",
+      "type": "object",
+      "properties": {
+        "peakIdentificationPeriod": {
+          "description": "The time period as an ISO 8601 duration for identifying one single peak to be used in calculations. For example only one peak per day is saved => \"P1D\".",
+          "type": "string",
+          "examples": [ "P1D", "P1W" ]
+        },
+        "peakDuration": {
+          "description": "The time length as an ISO 8601 duration for calculating average power to get one peak.",
+          "type": "string",
+          "examples": [ "PT1H", "PT15M" ]
+        },
+        "numberOfPeaksForAverageCalculation": {
+          "description": "The number of peaks within a peak pricing period for calculating average peak for that period.",
+          "type": "integer",
+          "example": 3
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
