@@ -1,0 +1,151 @@
+{
+  "tariffs": [
+    {
+      "id": "b209aa3b-5943-4ebd-85e9-652d52a87c9d",
+      "name": "Effektopp månad 3 toppar snitt",
+      "description": "Tidsdifferentierad tariff med genomsnitt av 3 högsta topparna per månad.",
+      "product": "Tidsdifferentierad 3 toppar <63A",
+      "companyName": "Göteborg Energi Nät AB",
+      "companyOrgNo": "1234",
+      "direction": "consumption",
+      "timeZone": "Europe/Stockholm",
+      "lastUpdated": "2024-10-17T15:59:35.650961+00:00",
+      "billingFrequency": "P1M",
+      "fixedPrice": {
+        "id": "0e3639dc-2706-4e69-b6af-c8c06bb00a5f",
+        "name": "Maxpower 14 kW",
+        "description": "Fixed price component for a max power contract at 14 kW.",
+        "validPeriod": {
+          "fromIncluding": "2024-01-01",
+          "toExcluding": "2024-12-31"
+        },
+        "price": {
+          "priceExVat": 200,
+          "priceIncVat": 250,
+          "currency": "SEK"
+        }
+      },
+      "energyPrice": {
+        "id": "7dfcc616-d7f0-4af9-a03e-59fcd09b23a4",
+        "name": "Energy transfer",
+        "description": "Price of energy transfer per kWh.",
+        "costFunction": "sum(price(c))",
+        "unit": "kWh",
+        "components": [
+          {
+            "name": "Follow spot price",
+            "description": "Dynamic price component following spot price",
+            "type": "spot",
+            "costFunctionReference": "spot",
+            "spotPriceSettings": {
+              "multiplier": 0.000561,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2024-12-31"
+            },
+            "recurringPeriods": null
+          },
+          {
+            "name": "Fixed price",
+            "description": "Fixed price component",
+            "type": "fixed",
+            "costFunctionReference": "fixed",
+            "price": {
+              "priceExVat": 0.2,
+              "priceIncVat": 0.25,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2024-12-31"
+            },
+            "recurringPeriods": null
+          },
+          {
+            "name": "Energy tax",
+            "description": "Energy tax per kWh.",
+            "type": "fixed",
+            "costFunctionReference": "tax",
+            "price": {
+              "priceExVat": 0.428,
+              "priceIncVat": 0.535,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2024-12-31"
+            },
+            "recurringPeriods": null
+          }
+        ]
+      },
+      "powerPrice": {
+        "id": "188efabd-efc6-4a51-95e5-0cd59dc1d5c1",
+        "costFunction": "sum(peak(c)*price(c))",
+        "unit": "kW",
+        "components": [
+          {
+            "name": "Helår",
+            "description": "Samma pris alla timmar hela året.",
+            "costFunctionReference": "main",
+            "price": {
+              "priceExVat": 100,
+              "priceIncVat": 125,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2024-12-31"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "peakFunctionReference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  "P1D"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Summer",
+            "description": "One low power price during summer.",
+            "costFunctionReference": "summer",
+            "price": {
+              "priceExVat": 0,
+              "priceIncVat": 0,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2025-04-01",
+              "toExcluding": "2024-09-30"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(day)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "peakFunctionReference": "day",
+                "frequency": "P1D",
+                "activePeriods": [
+                  "P1D"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
