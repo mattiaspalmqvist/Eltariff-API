@@ -29,7 +29,7 @@
         "id": "7dfcc616-d7f0-4af9-a03e-59fcd09b23a4",
         "name": "Energy transfer",
         "description": "Price of energy transfer per kWh.",
-        "costFunction": "sum(price(c))",
+        "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
