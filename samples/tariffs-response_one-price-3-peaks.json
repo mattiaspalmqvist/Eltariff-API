@@ -36,7 +36,7 @@
             "name": "Follow spot price",
             "description": "Dynamic price component following spot price",
             "type": "spot",
-            "costFunctionReference": "spot",
+            "reference": "spot",
             "spotPriceSettings": {
               "multiplier": 0.000561,
               "currency": "SEK"
@@ -51,7 +51,7 @@
             "name": "Fixed price",
             "description": "Fixed price component",
             "type": "fixed",
-            "costFunctionReference": "fixed",
+            "reference": "fixed",
             "price": {
               "priceExVat": 0.2,
               "priceIncVat": 0.25,
@@ -67,7 +67,7 @@
             "name": "Energy tax",
             "description": "Energy tax per kWh.",
             "type": "fixed",
-            "costFunctionReference": "tax",
+            "reference": "tax",
             "price": {
               "priceExVat": 0.428,
               "priceIncVat": 0.535,
@@ -89,7 +89,7 @@
           {
             "name": "Helår",
             "description": "Samma pris alla timmar hela året.",
-            "costFunctionReference": "main",
+            "reference": "main",
             "price": {
               "priceExVat": 100,
               "priceIncVat": 125,
@@ -107,7 +107,7 @@
             },
             "recurringPeriods": [
               {
-                "peakFunctionReference": "main",
+                "reference": "main",
                 "frequency": "P1D",
                 "activePeriods": [
                   "P1D"
@@ -118,7 +118,7 @@
           {
             "name": "Summer",
             "description": "One low power price during summer.",
-            "costFunctionReference": "summer",
+            "reference": "summer",
             "price": {
               "priceExVat": 0,
               "priceIncVat": 0,
@@ -129,14 +129,14 @@
               "toExcluding": "2024-09-30"
             },
             "peakIdentificationSettings": {
-              "peakFunction": "peak(day)",
+              "peakFunction": "peak(main)",
               "peakIdentificationPeriod": "P1D",
               "peakDuration": "PT1H",
               "numberOfPeaksForAverageCalculation": 3
             },
             "recurringPeriods": [
               {
-                "peakFunctionReference": "day",
+                "reference": "main",
                 "frequency": "P1D",
                 "activePeriods": [
                   "P1D"

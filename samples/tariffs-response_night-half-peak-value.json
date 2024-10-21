@@ -36,7 +36,7 @@
             "name": "Fixed price",
             "description": "Fixed price component",
             "type": "fixed",
-            "costFunctionReference": "fixed",
+            "reference": "fixed",
             "price": {
               "priceExVat": 0.2,
               "priceIncVat": 0.25,
@@ -52,7 +52,7 @@
             "name": "Energy tax",
             "description": "Energy tax per kWh.",
             "type": "fixed",
-            "costFunctionReference": "tax",
+            "reference": "tax",
             "price": {
               "priceExVat": 0.428,
               "priceIncVat": 0.535,
@@ -73,7 +73,7 @@
           {
             "name": "Winter night peak half power value",
             "description": "One peak per day is used for cost calculation. Peak from low load period is used if it is twice the size of the peak from high load period.",
-            "costFunctionReference": "winter",
+            "reference": "winter",
             "price": {
               "priceExVat": 100,
               "priceIncVat": 125,
@@ -91,14 +91,14 @@
             },
             "recurringPeriods": [
               {
-                "peakFunctionReference": "high",
+                "reference": "high",
                 "frequency": "P1D",
                 "activePeriods": [
                   "PT6H-PT21H"
                 ]
               },
               {
-                "peakFunctionReference": "low",
+                "reference": "low",
                 "frequency": "P1D",
                 "activePeriods": [
                   "PT0H-PT5H",
@@ -110,7 +110,7 @@
           {
             "name": "Summer",
             "description": "One low power price during summer.",
-            "costFunctionReference": "summer",
+            "reference": "summer",
             "price": {
               "priceExVat": 0,
               "priceIncVat": 0,
@@ -128,7 +128,7 @@
             },
             "recurringPeriods": [
               {
-                "peakFunctionReference": "main",
+                "reference": "main",
                 "frequency": "P1D",
                 "activePeriods": [
                   "P1D"
