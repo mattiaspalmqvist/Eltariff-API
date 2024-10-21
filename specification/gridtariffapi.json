@@ -1,10 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "openapi": "3.0.2",
+
   "info": {
     "title": "Grid Tariff API",
     "description": "Provides grid tariffs from Swedish DSOs.",
-    "version": "0.2.0",
+    "version": "2.0.0",
     "contact": {
       "name": "Grid Tariff API",
       "url": "https://github.com/RI-SE/Eltariff-API"
@@ -29,18 +30,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
@@ -74,18 +63,6 @@
                 }
               }
             }
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
@@ -119,24 +96,6 @@
                 }
               }
             }
-          },
-          "204": {
-            "description": "No data for given request"
-          },
-          "304": {
-            "description": "Not modified"
-          },
-          "400": {
-            "description": "Bad request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
@@ -204,7 +163,7 @@
           },
           "duration": {
             "description": "A duration in time that starts at 00:00 (midnight) of the day when the request is made.",
-            "$ref": "common.schema.json#/definitions/Duration"
+            "$ref": "time.schema.json#/definitions/Duration"
           }
         },
         "additionalProperties": false

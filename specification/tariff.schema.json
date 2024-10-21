@@ -3,7 +3,6 @@
 
   "definitions": {
 
-
     "Tariff": {
       "description": "Information about the tariff that are static and does not change during at least a month.",
       "type": "object",
@@ -24,17 +23,23 @@
           "type": "string"
         },
         "companyName": {
-          "description": "Name of the grid company. Ex. Elvia AS",
+          "description": "Name of the grid company.",
           "type": "string"
         },
         "companyOrgNo": {
-          "description": "Organization number of the grid company. Ex. 980489698",
+          "description": "Organization number of the grid company.",
           "type": "string"
         },
         "direction": {
           "description": "Indicates if this is a tariff for consumption or production. Valid values are \"consumption\" and \"production\".",
           "type": "string",
-          "pattern": "consumption|production"
+          "pattern": "consumption|production",
+          "default": "consumption"
+        },
+        "timeZone": {
+          "type": "string",
+          "description": "Time zone for all time values in this tariff. From the IANA Time Zone Database (e.g., 'Europe/Stockholm').",
+          "example": "Europe/Stockholm"
         },
         "lastUpdated": {
           "description": "The time of when the prices were last updated on the server side. No need to get prices if you already fetched the latest ones? Ex. 2021-11-05T00:00:00+01:00",
@@ -47,13 +52,13 @@
           "example": "P1M"
         },
         "fixedPrice": {
-          "$ref": "#/definitions/FixedPrice"
+          "$ref": "tariff.schema.json#/definitions/FixedPrice"
         },
         "energyPrice": {
-          "$ref": "#/definitions/EnergyPrice"
+          "$ref": "tariff.schema.json#/definitions/EnergyPrice"
         },
         "powerPrice": {
-          "$ref": "#/definitions/PowerPrice"
+          "$ref": "tariff.schema.json#/definitions/PowerPrice"
         }
       },
       "additionalProperties": false
@@ -76,7 +81,7 @@
           "example": "Fixed price for a contract with a fuse size of 25 A."
         },
         "validPeriod": {
-          "$ref": "common.schema.json#/definitions/ValidPeriod"
+          "$ref": "time.schema.json#/definitions/DateInterval"
         },
         "price": {
           "$ref": "price.schema.json#/definitions/Price"
@@ -101,14 +106,17 @@
           "$ref": "common.schema.json#/definitions/Description",
           "example": "Energy transfer price for one kWh."
         },
-        "validPeriod": {
-          "$ref": "common.schema.json#/definitions/ValidPeriod"
-        },
-        "price": {
-          "$ref": "price.schema.json#/definitions/Price"
+        "costFunction": {
+          "$ref": "price.schema.json#/definitions/CostFunction"
         },
         "unit": {
           "$ref": "common.schema.json#/definitions/Unit"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "$ref": "energy.schema.json#/definitions/EnergyPriceComponent"
+          }
         }
       },
       "additionalProperties": false
@@ -122,10 +130,16 @@
         "id": {
           "$ref": "common.schema.json#/definitions/Uuid"
         },
-        "seasons": {
+        "costFunction": {
+          "$ref": "price.schema.json#/definitions/CostFunction"
+        },
+        "unit": {
+          "$ref": "common.schema.json#/definitions/Unit"
+        },
+        "components": {
           "type": "array",
           "items": {
-            "$ref": "season.schema.json#/definitions/PowerPriceSeason"
+            "$ref": "power.schema.json#/definitions/PowerPriceComponent"
           }
         }
       },

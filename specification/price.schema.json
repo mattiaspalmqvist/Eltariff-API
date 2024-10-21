@@ -8,7 +8,7 @@
       "type": "object",
       "properties": {
         "timeInterval": {
-          "$ref": "common.schema.json#/definitions/TimeInterval"
+          "$ref": "time.schema.json#/definitions/DateTimeInterval"
         },
         "fixedPriceId": {
           "$ref": "common.schema.json#/definitions/Uuid"
@@ -46,7 +46,7 @@
         },
         "validPeriod": {
           "description": "The time period during this price definition is valid.",
-          "$ref": "common.schema.json#/definitions/TimeInterval"
+          "$ref": "time.schema.json#/definitions/DateTimeInterval"
         },
         "priceExVat": {
           "type": "number",
@@ -90,30 +90,13 @@
     },
 
 
-    "RecurringPricePeriod": {
-      "description": "A short period of time that recurs several times during a season.",
-      "type": "object",
-      "properties": {
-        "costFunctionReference": {
-          "description": "Reference to be used to identify this recurring price period in the cost function.",
-          "type": "string",
-          "examples": [ "base", "high", "low" ]
-        },
-        "price": {
-          "$ref": "price.schema.json#/definitions/Price"
-        },
-        "frequencey": {
-          "type": "string",
-          "example": "P1D"
-        },
-        "activePeriods": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "examples": [ "PT0H-PT6H", "P7H-P19H", "PT20H-PT23H" ]
-          }
-        }
-      },
+    "CostFunction": {
+      "description": "A pseudo code function that describes how to calculate the cost for a set of price components. Usage examples at https://someexamples.",
+      "type": "string",
+      "examples": [
+        "sum(energy(c)*price(c))",
+        "sum(peak(c)*price(c))"
+      ],
       "additionalProperties": false
     }
   }
