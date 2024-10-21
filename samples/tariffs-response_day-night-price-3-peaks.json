@@ -1,7 +1,7 @@
 {
   "tariffs": [
     {
-      "id": "d76c0647-f3ec-4e39-96cf-07b81dbdbe06",
+      "id": "d4f14ff6-da06-45b2-b6c8-269cad77f1b8",
       "name": "Höglastpris dag lågpris natt vinter",
       "description": "Tidsdifferentierad tariff med genomsnitt av 3 högsta topparna per månad. Varje dygn är indelat i en höglast- och en låglastperiod vintertid. Lågt pris hela sommaren.",
       "product": "Tidsdifferentierad 3 toppar <63A Valbar A",
@@ -9,15 +9,15 @@
       "companyOrgNo": "1234",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-21T06:10:16.4903443+00:00",
+      "lastUpdated": "2024-10-17T15:59:35.6518713+00:00",
       "billingFrequency": "P1M",
       "fixedPrice": {
-        "id": "0a1063ea-8324-4792-9c59-a51e8b614051",
+        "id": "9b37d4db-06d0-4e07-9c57-a656bc89e19b",
         "name": "Maxpower 14 kW",
         "description": "Fixed price component for a max power contract at 14 kW.",
         "validPeriod": {
           "fromIncluding": "2024-01-01",
-          "toExcluding": "2025-01-01"
+          "toExcluding": "2024-12-31"
         },
         "price": {
           "priceExVat": 200,
@@ -26,45 +26,58 @@
         }
       },
       "energyPrice": {
-        "id": "889f4435-d1eb-43fe-b7d6-8298493f69c8",
-        "name": "Follow spot price",
-        "description": "Dynamic energy price component following spot price.",
+        "id": "7dfcc616-d7f0-4af9-a03e-59fcd09b23a4",
+        "name": "Energy transfer",
+        "description": "Price of energy transfer per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
-            "name": "Follow spot price",
-            "description": "Dynamic price component following spot price",
-            "type": "spot",
-            "reference": "spot",
-            "price": null,
-            "spotPriceSettings": {
-              "multiplier": 0.000561,
-              "currency": "SEK",
-              "additionalProperties": {}
-            },
-            "validPeriod": {
-              "fromIncluding": "2024-01-01",
-              "toExcluding": "2025-01-01"
-            },
-            "recurringPeriods": null
-          },
-          {
-            "name": "Fixed price",
-            "description": "Fixed price component",
+            "name": "High day price",
+            "description": "High price during daytime.",
             "type": "fixed",
-            "reference": "fixed",
+            "reference": "high",
             "price": {
-              "priceExVat": 0.2,
-              "priceIncVat": 0.25,
+              "priceExVat": 0.4,
+              "priceIncVat": 0.5,
               "currency": "SEK"
             },
-            "spotPriceSettings": null,
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toExcluding": "2025-01-01"
+              "toExcluding": "2024-12-31"
             },
-            "recurringPeriods": null
+            "recurringPeriods": [
+              {
+                "frequency": "P1D",
+                "activePeriods": [
+                  "PT7H-PT19H"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Low night price",
+            "description": "Low price during nighttime.",
+            "type": "fixed",
+            "reference": "low",
+            "price": {
+              "priceExVat": 0.1,
+              "priceIncVat": 0.125,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2024-12-31"
+            },
+            "recurringPeriods": [
+              {
+                "frequency": "P1D",
+                "activePeriods": [
+                  "PT0H-PT6H",
+                  "PT20H-PT23H"
+                ]
+              }
+            ]
           },
           {
             "name": "Energy tax",
@@ -76,24 +89,22 @@
               "priceIncVat": 0.535,
               "currency": "SEK"
             },
-            "spotPriceSettings": null,
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toExcluding": "2025-01-01"
+              "toExcluding": "2024-12-31"
             },
             "recurringPeriods": null
           }
         ]
       },
       "powerPrice": {
-        "id": "716343ba-5879-4bd9-9e50-c8ad9a567558",
-        "costFunction": "sum(peak(c)*price(c))",
+        "id": "747c3294-4d7e-46f8-b32e-6bb37c59f7f0",
+        "costFunction": "sum(peak(n)*price(n))",
         "unit": "kW",
         "components": [
           {
             "name": "Winter high day price",
             "description": "High power price at daytime during winter.",
-            "type": null,
             "reference": "high",
             "price": {
               "priceExVat": 200,
@@ -102,7 +113,7 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toExcluding": "2025-04-01"
+              "toExcluding": "2025-03-31"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(main)",
@@ -115,10 +126,7 @@
                 "reference": "main",
                 "frequency": "P1D",
                 "activePeriods": [
-                  {
-                    "fromIncluding": "07:00:00",
-                    "toExcluding": "20:00:00"
-                  }
+                  "PT7H-PT19H"
                 ]
               }
             ]
@@ -126,7 +134,6 @@
           {
             "name": "Winter low night price",
             "description": "Low power price at nighttime during winter.",
-            "type": null,
             "reference": "low",
             "price": {
               "priceExVat": 0,
@@ -135,7 +142,7 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toExcluding": "2025-04-01"
+              "toExcluding": "2025-03-31"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(main)",
@@ -143,19 +150,13 @@
               "peakDuration": "PT1H",
               "numberOfPeaksForAverageCalculation": 3
             },
-            "recurringPeriods": [
+            "recurringPricePeriods": [
               {
-                "reference": null,
+                "reference": "main",
                 "frequency": "P1D",
                 "activePeriods": [
-                  {
-                    "fromIncluding": "00:00:00",
-                    "toExcluding": "07:00:00"
-                  },
-                  {
-                    "fromIncluding": "20:00:00",
-                    "toExcluding": "00:00:00"
-                  }
+                  "PT0H-PT6H",
+                  "PT20H-PT23H"
                 ]
               }
             ]
@@ -163,7 +164,6 @@
           {
             "name": "Summer",
             "description": "One low power price during summer.",
-            "type": null,
             "reference": "summer",
             "price": {
               "priceExVat": 0,
@@ -172,7 +172,7 @@
             },
             "validPeriod": {
               "fromIncluding": "2025-04-01",
-              "toExcluding": "2025-10-01"
+              "toExcluding": "2024-09-30"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(main)",
@@ -182,13 +182,10 @@
             },
             "recurringPeriods": [
               {
-                "reference": null,
+                "reference": "main",
                 "frequency": "P1D",
                 "activePeriods": [
-                  {
-                    "fromIncluding": "00:00:00",
-                    "toExcluding": "00:00:00"
-                  }
+                  "P1D"
                 ]
               }
             ]
