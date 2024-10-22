@@ -1,7 +1,7 @@
 {
   "tariffs": [
     {
-      "id": "79adffa8-379d-432a-8f56-0a89a2aeeb41",
+      "id": "7c411df7-6154-4b79-a449-029986c219eb",
       "name": "Effektopp månad 3 toppar snitt",
       "description": "Tidsdifferentierad tariff med genomsnitt av 3 högsta topparna per månad.",
       "product": "Tidsdifferentierad 3 toppar <63A",
@@ -9,10 +9,10 @@
       "companyOrgNo": "1234",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-22T11:45:47.0558973+00:00",
+      "lastUpdated": "2024-10-22T15:32:01.8710247+00:00",
       "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "1ae42185-961b-4065-9aa4-94a3793e73b4",
+        "id": "bb118fab-3991-4030-b816-087894002add",
         "name": "Maxpower 14 kW",
         "description": "Fixed price component for a max power contract at 14 kW.",
         "validPeriod": {
@@ -27,13 +27,14 @@
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "f0d57aa3-d767-4993-88e8-99a90006099f",
+        "id": "387dbf5b-05df-4a5f-8a14-a49addb5e9ce",
         "name": "Fixed per kWh",
         "description": "Price of energy transfer per kWh is fixed.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "285f3e18-f173-4476-a774-d149f955cdca",
             "name": "Fixed price",
             "description": "Fixed price component",
             "type": "fixed",
@@ -51,6 +52,7 @@
             "recurringPeriods": null
           },
           {
+            "id": "6a82cd3c-c17f-4a84-bdd7-813d17b692c6",
             "name": "Energy tax",
             "description": "Energy tax per kWh.",
             "type": "fixed",
@@ -70,13 +72,14 @@
         ]
       },
       "powerPrice": {
-        "id": "0d4ce190-686d-4afb-9692-696ac382bf43",
+        "id": "86e6b68a-829e-4bd2-9faa-cbde223bb38b",
         "name": "Daily peak",
         "description": "Same power peak price all year.",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "13f72e56-2ab3-4c83-823b-b5ce5e7c9a99",
             "name": "Helår",
             "description": "Samma pris alla timmar hela året.",
             "type": "peak",
@@ -113,7 +116,7 @@
       }
     },
     {
-      "id": "930b5fd3-0c6d-429b-8951-43759291451b",
+      "id": "e72056bf-5518-4825-aab8-ff105b360083",
       "name": "Höglastpris dag lågpris natt vinter",
       "description": "Tidsdifferentierad tariff med genomsnitt av 3 högsta topparna per månad. Varje dygn är indelat i en höglast- och en låglastperiod vintertid. Lågt pris hela sommaren.",
       "product": "Tidsdifferentierad 3 toppar <63A Valbar A",
@@ -121,10 +124,10 @@
       "companyOrgNo": "1234",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-22T11:45:47.0656975+00:00",
+      "lastUpdated": "2024-10-22T15:32:01.8714762+00:00",
       "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "1ae42185-961b-4065-9aa4-94a3793e73b4",
+        "id": "bb118fab-3991-4030-b816-087894002add",
         "name": "Maxpower 14 kW",
         "description": "Fixed price component for a max power contract at 14 kW.",
         "validPeriod": {
@@ -139,13 +142,14 @@
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "3242b2aa-8998-422b-aa2c-fd0c12b9d7db",
+        "id": "96c176ea-128b-4a5e-8843-f5419a220e8f",
         "name": "Follow spot price",
         "description": "Dynamic energy price component following spot price.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "045a4bd4-d75d-4e5e-9889-84de13ca8261",
             "name": "Follow spot price",
             "description": "Dynamic price component following spot price",
             "type": "spot",
@@ -163,6 +167,7 @@
             "recurringPeriods": null
           },
           {
+            "id": "285f3e18-f173-4476-a774-d149f955cdca",
             "name": "Fixed price",
             "description": "Fixed price component",
             "type": "fixed",
@@ -180,6 +185,7 @@
             "recurringPeriods": null
           },
           {
+            "id": "6a82cd3c-c17f-4a84-bdd7-813d17b692c6",
             "name": "Energy tax",
             "description": "Energy tax per kWh.",
             "type": "fixed",
@@ -199,13 +205,14 @@
         ]
       },
       "powerPrice": {
-        "id": "7c1d02fd-0b40-40ac-aefd-c2ca77c478f1",
+        "id": "94010f83-fd90-4255-a7d4-cca6dae5005b",
         "name": "Alternating price day night",
         "description": "Alternating price between day and night during winter season.",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "2ab02db1-9bae-4e56-930e-7aebb1783974",
             "name": "Winter high day price",
             "description": "High power price at daytime during winter.",
             "type": "peak",
@@ -239,6 +246,7 @@
             ]
           },
           {
+            "id": "bf0427d4-5d89-4463-9a4d-b2def84d9063",
             "name": "Winter low night price",
             "description": "Low power price at nighttime during winter.",
             "type": "peak",
@@ -276,6 +284,7 @@
             ]
           },
           {
+            "id": "cbe13bac-38f6-401f-97c7-47c252511f9e",
             "name": "Summer",
             "description": "One low power price during summer.",
             "type": "peak",
@@ -312,7 +321,7 @@
       }
     },
     {
-      "id": "74af3dfa-81f5-4c73-b85c-ba790ae9ae8f",
+      "id": "e9f52b1f-4ebf-4887-ba18-3cb039a58c4c",
       "name": "Dygn hög och låg prisperiod",
       "description": "Tidsdifferentierad tariff med genomsnitt av 3 högsta topparna per månad. Varje dygn är indelat i en höglast- och en låglastperiod. Topp under låglast är underlag för fakturering om den är dubbelt så hög som för höglast.",
       "product": "Tidsdifferentierad 3 toppar <63A Valbar A",
@@ -320,10 +329,10 @@
       "companyOrgNo": "1234",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-22T11:45:47.0659514+00:00",
+      "lastUpdated": "2024-10-22T15:32:01.8715452+00:00",
       "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "1ae42185-961b-4065-9aa4-94a3793e73b4",
+        "id": "bb118fab-3991-4030-b816-087894002add",
         "name": "Maxpower 14 kW",
         "description": "Fixed price component for a max power contract at 14 kW.",
         "validPeriod": {
@@ -338,13 +347,14 @@
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "e26749e6-c909-4aa4-bb18-d7d1fc768d75",
+        "id": "7f656346-f6f1-4362-bf0a-6fe5e90a1edd",
         "name": "Different day and night price",
         "description": "High price during daytime and low price during nighttime.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1a6c7f06-8948-41ce-afb1-1d50c9fbef19",
             "name": "High day price",
             "description": "High price during daytime.",
             "type": "fixed",
@@ -373,6 +383,7 @@
             ]
           },
           {
+            "id": "c44d7069-d933-4467-9219-b43ece608ecc",
             "name": "Low night price",
             "description": "Low price during nighttime.",
             "type": "fixed",
@@ -405,6 +416,7 @@
             ]
           },
           {
+            "id": "6a82cd3c-c17f-4a84-bdd7-813d17b692c6",
             "name": "Energy tax",
             "description": "Energy tax per kWh.",
             "type": "fixed",
@@ -424,13 +436,14 @@
         ]
       },
       "powerPrice": {
-        "id": "883e8b9e-414a-4497-b263-bb0153f17af0",
+        "id": "1eb9172d-6f6b-48b9-9cdb-e532bbd51ce9",
         "name": "Half night peak value",
         "description": "Half the value of the power peak is used at night time.",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "a124ea0f-03b3-46bc-bc30-c92892e31a44",
             "name": "Winter night peak half power value",
             "description": "One peak per day is used for cost calculation. Peak from low load period is used if it is twice the size of the peak from high load period.",
             "type": "peak",
@@ -478,6 +491,7 @@
             ]
           },
           {
+            "id": "cbe13bac-38f6-401f-97c7-47c252511f9e",
             "name": "Summer",
             "description": "One low power price during summer.",
             "type": "peak",
@@ -514,7 +528,7 @@
       }
     },
     {
-      "id": "d6c06065-175d-4d3e-bc34-2244eeb5261f",
+      "id": "814a181a-2c9a-40ad-a90b-d63b6201383d",
       "name": "Dynamiskt timpris",
       "description": "Timpristariff med ett pris för medeleffekt för varje unik timme.",
       "product": "Timpristariff <63A Valbar B",
@@ -522,10 +536,10 @@
       "companyOrgNo": "1234",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-22T11:45:47.0660866+00:00",
+      "lastUpdated": "2024-10-22T15:32:01.8716001+00:00",
       "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "1fce16bc-5531-4f66-9ac1-f09e88e37f3c",
+        "id": "1598cb24-4764-4979-9489-989593d11db3",
         "name": "Fusesize 16 A",
         "description": "Fixed price component for a fuse size contract at 16 A.",
         "validPeriod": {
@@ -540,13 +554,14 @@
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "f0d57aa3-d767-4993-88e8-99a90006099f",
+        "id": "387dbf5b-05df-4a5f-8a14-a49addb5e9ce",
         "name": "Fixed per kWh",
         "description": "Price of energy transfer per kWh is fixed.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "285f3e18-f173-4476-a774-d149f955cdca",
             "name": "Fixed price",
             "description": "Fixed price component",
             "type": "fixed",
@@ -564,6 +579,7 @@
             "recurringPeriods": null
           },
           {
+            "id": "6a82cd3c-c17f-4a84-bdd7-813d17b692c6",
             "name": "Energy tax",
             "description": "Energy tax per kWh.",
             "type": "fixed",
@@ -583,13 +599,14 @@
         ]
       },
       "powerPrice": {
-        "id": "c17de403-846d-4d60-89e6-68616391598b",
+        "id": "8625a3d3-1f9e-4d9a-88bf-51ce04b135c1",
         "name": "Dynamic hour price",
         "description": "Dynamic hour price during winter season.",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "1157484b-20c3-4b28-9a6f-bb91b8465a99",
             "name": "Dynamic hour price winter",
             "description": "During winter season every single hour has it's own price level. Every day the price levels are updated. The average power during one hour is mulitplied with the hour price to calculate the cost.",
             "type": "dynamic",
@@ -608,6 +625,7 @@
             "recurringPeriods": null
           },
           {
+            "id": "cbe13bac-38f6-401f-97c7-47c252511f9e",
             "name": "Summer",
             "description": "One low power price during summer.",
             "type": "peak",

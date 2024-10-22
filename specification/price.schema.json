@@ -4,65 +4,15 @@
   "definitions": {
 
     "PricePeriod": {
-      "description": "A consecutive time period where all points in time have the same price for each component.",
+      "description": "A consecutive time period with one price.",
       "type": "object",
       "properties": {
-        "timeInterval": {
-          "$ref": "time.schema.json#/definitions/DateTimeInterval"
-        },
-        "fixedPriceId": {
-          "$ref": "common.schema.json#/definitions/Uuid"
-        },
-        "energyPriceId": {
-          "$ref": "common.schema.json#/definitions/Uuid"
-        },
-        "powerPriceId": {
-          "$ref": "common.schema.json#/definitions/Uuid"
-        }
-      },
-      "additionalProperties": false
-    },
-
-
-    "PriceDefinition": {
-      "description": "A price definition that can be used to calculate the cost for a consumer.",
-      "type": "object",
-      "properties": {
-        "id": {
-          "$ref": "common.schema.json#/definitions/Uuid"
-        },
-        "component": {
-          "type": "string",
-          "pattern": "fixed|energy|power",
-          "examples": [ "fixed", "energy", "power" ]
-        },
-        "name": {
-          "type": "string",
-          "examples": [ "16 A", "14 kW", "Low winter", "High winter", "Summer" ]
-        },
-        "description": {
-          "description": "Text to describe the price definition.",
-          "type": "string"
-        },
         "validPeriod": {
-          "description": "The time period during this price definition is valid.",
+          "description": "The time period during this price is valid.",
           "$ref": "time.schema.json#/definitions/DateTimeInterval"
         },
-        "priceExVat": {
-          "type": "number",
-          "examples": [ 171.32, 154 ]
-        },
-        "priceIncVat": {
-          "type": "number",
-          "examples": [ 171.32, 154 ]
-        },
-        "currency": {
-          "$ref": "common.schema.json#/definitions/Currency",
-          "example": "SEK"
-        },
-        "unit": {
-          "$ref": "common.schema.json#/definitions/Unit",
-          "example": "kWh"
+        "price": {
+          "$ref": "price.schema.json#/definitions/Price"
         }
       },
       "additionalProperties": false
@@ -84,6 +34,25 @@
         "currency": {
           "$ref": "common.schema.json#/definitions/Currency",
           "example": "SEK"
+        }
+      },
+      "additionalProperties": false
+    },
+
+
+    "ComponentPrices": {
+      "description": "Time differentiated prices for a price component.",
+      "type": "object",
+      "properties": {
+        "componentId": {
+          "description": "Unique id for the price component for which the prices belong to.",
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
+        "prices": {
+          "type": "array",
+          "items": {
+            "$ref": "price.schema.json#/definitions/PricePeriod"
+          }
         }
       },
       "additionalProperties": false

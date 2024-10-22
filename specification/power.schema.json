@@ -7,6 +7,9 @@
       "description": "A time period in which pricing and power peak identification details are defined. Price components can be overlapping in time to define the full price for one time period.",
       "type": "object",
       "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
         "name": {
           "$ref": "common.schema.json#/definitions/Name",
           "example": "Winter day high price"

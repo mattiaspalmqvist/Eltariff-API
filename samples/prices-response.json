@@ -1,0 +1,535 @@
+{
+  "componentPrices": {
+    "componentId": "8625a3d3-1f9e-4d9a-88bf-51ce04b135c1",
+    "prices": [
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T00:00:00+02:00",
+          "toExcluding": "2024-10-22T01:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.37024391727957195,
+          "priceIncVat": 0.46280489659946494,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T01:00:00+02:00",
+          "toExcluding": "2024-10-22T02:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.7556881978419575,
+          "priceIncVat": 0.9446102473024469,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T02:00:00+02:00",
+          "toExcluding": "2024-10-22T03:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.7888987449689233,
+          "priceIncVat": 0.9861234312111542,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T03:00:00+02:00",
+          "toExcluding": "2024-10-22T04:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.6560807017854547,
+          "priceIncVat": 0.8201008772318185,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T04:00:00+02:00",
+          "toExcluding": "2024-10-22T05:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.025607789565465944,
+          "priceIncVat": 0.03200973695683243,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T05:00:00+02:00",
+          "toExcluding": "2024-10-22T06:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.008051739366190747,
+          "priceIncVat": 0.010064674207738433,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T06:00:00+02:00",
+          "toExcluding": "2024-10-22T07:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.31377978329508804,
+          "priceIncVat": 0.3922247291188601,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T07:00:00+02:00",
+          "toExcluding": "2024-10-22T08:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.23294330185783785,
+          "priceIncVat": 0.29117912732229734,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T08:00:00+02:00",
+          "toExcluding": "2024-10-22T09:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.6936206260351809,
+          "priceIncVat": 0.8670257825439762,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T09:00:00+02:00",
+          "toExcluding": "2024-10-22T10:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.9755618855559609,
+          "priceIncVat": 1.2194523569449511,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T10:00:00+02:00",
+          "toExcluding": "2024-10-22T11:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.9635030425265831,
+          "priceIncVat": 1.204378803158229,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T11:00:00+02:00",
+          "toExcluding": "2024-10-22T12:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.7683176308362917,
+          "priceIncVat": 0.9603970385453646,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T12:00:00+02:00",
+          "toExcluding": "2024-10-22T13:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.5461517132718862,
+          "priceIncVat": 0.6826896415898577,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T13:00:00+02:00",
+          "toExcluding": "2024-10-22T14:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.011602714249137613,
+          "priceIncVat": 0.014503392811422017,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T14:00:00+02:00",
+          "toExcluding": "2024-10-22T15:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.5793235205801465,
+          "priceIncVat": 0.7241544007251831,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T15:00:00+02:00",
+          "toExcluding": "2024-10-22T16:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.8033791780342385,
+          "priceIncVat": 1.0042239725427982,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T16:00:00+02:00",
+          "toExcluding": "2024-10-22T17:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.2922125584813302,
+          "priceIncVat": 0.36526569810166276,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T17:00:00+02:00",
+          "toExcluding": "2024-10-22T18:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.08177891612057309,
+          "priceIncVat": 0.10222364515071636,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T18:00:00+02:00",
+          "toExcluding": "2024-10-22T19:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.38151028935443576,
+          "priceIncVat": 0.4768878616930447,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T19:00:00+02:00",
+          "toExcluding": "2024-10-22T20:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.47735380122286997,
+          "priceIncVat": 0.5966922515285875,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T20:00:00+02:00",
+          "toExcluding": "2024-10-22T21:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.17162430113452287,
+          "priceIncVat": 0.2145303764181536,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T21:00:00+02:00",
+          "toExcluding": "2024-10-22T22:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.9021197811582932,
+          "priceIncVat": 1.1276497264478664,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T22:00:00+02:00",
+          "toExcluding": "2024-10-22T23:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.12490189351795444,
+          "priceIncVat": 0.15612736689744305,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-22T23:00:00+02:00",
+          "toExcluding": "2024-10-23T00:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.132762379778669,
+          "priceIncVat": 0.16595297472333626,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T00:00:00+02:00",
+          "toExcluding": "2024-10-23T01:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.224820895095458,
+          "priceIncVat": 0.2810261188693225,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T01:00:00+02:00",
+          "toExcluding": "2024-10-23T02:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.46351678939819285,
+          "priceIncVat": 0.5793959867477411,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T02:00:00+02:00",
+          "toExcluding": "2024-10-23T03:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.9667783737137583,
+          "priceIncVat": 1.2084729671421979,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T03:00:00+02:00",
+          "toExcluding": "2024-10-23T04:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.16059091747962684,
+          "priceIncVat": 0.20073864684953355,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T04:00:00+02:00",
+          "toExcluding": "2024-10-23T05:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.926145590762542,
+          "priceIncVat": 1.1576819884531775,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T05:00:00+02:00",
+          "toExcluding": "2024-10-23T06:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.22988912740773393,
+          "priceIncVat": 0.2873614092596674,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T06:00:00+02:00",
+          "toExcluding": "2024-10-23T07:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.015621040008388709,
+          "priceIncVat": 0.019526300010485886,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T07:00:00+02:00",
+          "toExcluding": "2024-10-23T08:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.5021971815788284,
+          "priceIncVat": 0.6277464769735355,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T08:00:00+02:00",
+          "toExcluding": "2024-10-23T09:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.8068809934039569,
+          "priceIncVat": 1.0086012417549461,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T09:00:00+02:00",
+          "toExcluding": "2024-10-23T10:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.32675375822619945,
+          "priceIncVat": 0.4084421977827493,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T10:00:00+02:00",
+          "toExcluding": "2024-10-23T11:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.07388359648513265,
+          "priceIncVat": 0.09235449560641582,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T11:00:00+02:00",
+          "toExcluding": "2024-10-23T12:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.3636276763338282,
+          "priceIncVat": 0.45453459541728525,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T12:00:00+02:00",
+          "toExcluding": "2024-10-23T13:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.45782089104076584,
+          "priceIncVat": 0.5722761138009573,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T13:00:00+02:00",
+          "toExcluding": "2024-10-23T14:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.19518770918818606,
+          "priceIncVat": 0.24398463648523258,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T14:00:00+02:00",
+          "toExcluding": "2024-10-23T15:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.0546516599097463,
+          "priceIncVat": 0.06831457488718287,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T15:00:00+02:00",
+          "toExcluding": "2024-10-23T16:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.6184280079212281,
+          "priceIncVat": 0.7730350099015351,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T16:00:00+02:00",
+          "toExcluding": "2024-10-23T17:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.38934514691509603,
+          "priceIncVat": 0.48668143364387006,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T17:00:00+02:00",
+          "toExcluding": "2024-10-23T18:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.3888124072375595,
+          "priceIncVat": 0.48601550904694935,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T18:00:00+02:00",
+          "toExcluding": "2024-10-23T19:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.6056579974182503,
+          "priceIncVat": 0.7570724967728129,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T19:00:00+02:00",
+          "toExcluding": "2024-10-23T20:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.5038373169136865,
+          "priceIncVat": 0.6297966461421081,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T20:00:00+02:00",
+          "toExcluding": "2024-10-23T21:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.9670347881682563,
+          "priceIncVat": 1.2087934852103204,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T21:00:00+02:00",
+          "toExcluding": "2024-10-23T22:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.9890807050561446,
+          "priceIncVat": 1.236350881320181,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T22:00:00+02:00",
+          "toExcluding": "2024-10-23T23:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.5985276716726905,
+          "priceIncVat": 0.7481595895908631,
+          "currency": "SEK"
+        }
+      },
+      {
+        "validPeriod": {
+          "fromIncluding": "2024-10-23T23:00:00+02:00",
+          "toExcluding": "2024-10-24T00:00:00+02:00"
+        },
+        "price": {
+          "priceExVat": 0.7107152453093755,
+          "priceIncVat": 0.8883940566367193,
+          "currency": "SEK"
+        }
+      }
+    ]
+  }
+}
