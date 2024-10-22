@@ -60,7 +60,7 @@
     "Unit": {
       "description": "The unit of a measurement or price calculation.",
       "type": "string",
-      "example": "kWh",
+      "examples": [ "kWh", "kW" ],
       "additionalProperties": false
     }
   }

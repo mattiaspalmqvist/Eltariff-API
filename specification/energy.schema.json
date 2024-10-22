@@ -18,12 +18,14 @@
         "type": {
           "type": "string",
           "pattern": "fixed|spot",
-          "examples": [ "fixed", "spot" ]
+          "examples": [ "fixed", "spot" ],
+          "default": "fixed"
         },
         "reference": {
           "description": "Reference to be used to identify this recurring price period in the cost function.",
           "type": "string",
-          "examples": [ "main", "high", "low", "fixed", "spot" ]
+          "examples": [ "main", "high", "low", "fixed", "spot", "tax" ],
+          "default": "main"
         },
         "price": {
           "$ref": "price.schema.json#/definitions/Price",

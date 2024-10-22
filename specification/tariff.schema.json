@@ -46,10 +46,11 @@
           "type": "string",
           "format": "date-time"
         },
-        "billingFrequency": {
+        "billingPeriod": {
           "description": "A time period that describes how often the customer is billed. E.g. \"P1M\" means billing is made at every new month.",
-          "type": "string",
-          "example": "P1M"
+          "$ref": "time.schema.json#/definitions/Duration",
+          "example": "P1M",
+          "default": "P1M"
         },
         "fixedPrice": {
           "$ref": "tariff.schema.json#/definitions/FixedPrice"
@@ -85,6 +86,12 @@
         },
         "price": {
           "$ref": "price.schema.json#/definitions/Price"
+        },
+        "pricedPeriod": {
+          "description": "The time period that is priced in the price property.",
+          "$ref": "time.schema.json#/definitions/Duration",
+          "examples": [ "P1M", "P1Y" ],
+          "default": "P1M"
         }
       },
       "additionalProperties": false
@@ -107,10 +114,13 @@
           "example": "Energy transfer price for one kWh."
         },
         "costFunction": {
-          "$ref": "price.schema.json#/definitions/CostFunction"
+          "$ref": "price.schema.json#/definitions/CostFunction",
+          "default": "sum(energy(c)*price(c))"
         },
         "unit": {
-          "$ref": "common.schema.json#/definitions/Unit"
+          "$ref": "common.schema.json#/definitions/Unit",
+          "example": "kWh",
+          "default": "kWh"
         },
         "components": {
           "type": "array",
@@ -130,11 +140,22 @@
         "id": {
           "$ref": "common.schema.json#/definitions/Uuid"
         },
+        "name": {
+          "$ref": "common.schema.json#/definitions/Name",
+          "example": "Energy transfer"
+        },
+        "description": {
+          "$ref": "common.schema.json#/definitions/Description",
+          "example": "Energy transfer price for one kWh."
+        },
         "costFunction": {
-          "$ref": "price.schema.json#/definitions/CostFunction"
+          "$ref": "price.schema.json#/definitions/CostFunction",
+          "default": "sum(peak(c)*price(c))"
         },
         "unit": {
-          "$ref": "common.schema.json#/definitions/Unit"
+          "$ref": "common.schema.json#/definitions/Unit",
+          "example": "kW",
+          "default": "kW"
         },
         "components": {
           "type": "array",

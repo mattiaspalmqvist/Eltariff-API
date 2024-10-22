@@ -62,7 +62,7 @@
         },
         "unit": {
           "$ref": "common.schema.json#/definitions/Unit",
-          "example": "Month"
+          "example": "kWh"
         }
       },
       "additionalProperties": false
