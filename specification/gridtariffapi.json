@@ -74,9 +74,9 @@
           "Price"
         ],
         "operationId": "GetPrices",
-        "summary": "Returns prices for a tariff for a given timeperiod.",
+        "summary": "Returns prices for a price component for a given timeperiod.",
         "requestBody": {
-          "description": "Tariff id and time period to get prices for.",
+          "description": "Price component id and time period to get prices for.",
           "required": true,
           "content": {
             "application/json": {
@@ -88,7 +88,7 @@
         },
         "responses": {
           "200": {
-            "description": "The prices for the provided tariff id and time period.",
+            "description": "The prices for the provided component id and time period.",
             "content": {
               "application/json": {
                 "schema": {
@@ -158,7 +158,7 @@
         "type": "object",
         "description": "Query to get a list of tariff prices for a given tariff id and time interval.",
         "properties": {
-          "tariffId": {
+          "componentId": {
             "$ref": "common.schema.json#/definitions/Uuid"
           },
           "duration": {
@@ -172,8 +172,8 @@
       "PricesResponse": {
         "type": "object",
         "properties": {
-          "tariffPrices": {
-            "$ref": "tariffprices.schema.json#/definitions/TariffPrices"
+          "componentPrices": {
+            "$ref": "price.schema.json#/definitions/ComponentPrices"
           }
         },
         "additionalProperties": false

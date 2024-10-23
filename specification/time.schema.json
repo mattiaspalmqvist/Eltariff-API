@@ -82,11 +82,13 @@
         "reference": {
           "description": "Reference to be used to identify this recurring period in a function.",
           "type": "string",
-          "examples": [ "main", "high", "low" ]
+          "examples": [ "main", "high", "low" ],
+          "default": "main"
         },
         "frequency": {
-          "type": "string",
-          "example": "P1D"
+          "$ref": "time.schema.json#/definitions/Duration",
+          "example": "P1D",
+          "default": "P1D"
         },
         "activePeriods": {
           "type": "array",

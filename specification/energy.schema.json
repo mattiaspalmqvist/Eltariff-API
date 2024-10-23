@@ -7,6 +7,9 @@
       "description": "A time period in which price details are defined. Price components can be overlapping in time to define the full price for one time period.",
       "type": "object",
       "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
         "name": {
           "$ref": "common.schema.json#/definitions/Name",
           "example": "Winter day high price"
@@ -18,12 +21,14 @@
         "type": {
           "type": "string",
           "pattern": "fixed|spot",
-          "examples": [ "fixed", "spot" ]
+          "examples": [ "fixed", "spot" ],
+          "default": "fixed"
         },
         "reference": {
           "description": "Reference to be used to identify this recurring price period in the cost function.",
           "type": "string",
-          "examples": [ "main", "high", "low", "fixed", "spot" ]
+          "examples": [ "main", "high", "low", "fixed", "spot", "tax" ],
+          "default": "main"
         },
         "price": {
           "$ref": "price.schema.json#/definitions/Price",

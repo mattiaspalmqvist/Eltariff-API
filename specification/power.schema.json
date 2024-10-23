@@ -7,6 +7,9 @@
       "description": "A time period in which pricing and power peak identification details are defined. Price components can be overlapping in time to define the full price for one time period.",
       "type": "object",
       "properties": {
+        "id": {
+          "$ref": "common.schema.json#/definitions/Uuid"
+        },
         "name": {
           "$ref": "common.schema.json#/definitions/Name",
           "example": "Winter day high price"
@@ -18,12 +21,14 @@
         "type": {
           "type": "string",
           "pattern": "peak|dynamic",
-          "examples": [ "peak", "dynamic" ]
+          "examples": [ "peak", "dynamic" ],
+          "default": "peak"
         },
         "reference": {
           "description": "Reference to be used to identify this recurring price period in the cost function.",
           "type": "string",
-          "examples": [ "main", "high", "low" ]
+          "examples": [ "main", "high", "low" ],
+          "default": "main"
         },
         "price": {
           "$ref": "price.schema.json#/definitions/Price"
@@ -54,13 +59,15 @@
         },
         "peakIdentificationPeriod": {
           "description": "The time period as an ISO 8601 duration for identifying one single peak to be used in calculations. For example only one peak per day is saved => \"P1D\".",
-          "type": "string",
-          "examples": [ "P1D", "P1W" ]
+          "$ref": "time.schema.json#/definitions/Duration",
+          "examples": [ "P1D", "P1W" ],
+          "default": "P1D"
         },
         "peakDuration": {
           "description": "The time length as an ISO 8601 duration for calculating average power to get one peak.",
-          "type": "string",
-          "examples": [ "PT1H", "PT15M" ]
+          "$ref": "time.schema.json#/definitions/Duration",
+          "examples": [ "PT1H", "PT15M" ],
+          "default": "PT1H"
         },
         "numberOfPeaksForAverageCalculation": {
           "description": "The number of peaks within a peak pricing period for calculating average peak for that period.",
@@ -75,11 +82,11 @@
     "PeakFunction": {
       "description": "A pseudo code function that describes how to identify a power peak for one power price component. Usage examples at https://someexamples.",
       "type": "string",
-      "default": "peak(main)",
       "examples": [
         "peak(main)",
         "max(peak(high),peak(low)/2)"
       ],
+      "default": "peak(main)",
       "additionalProperties": false
     }
   }
