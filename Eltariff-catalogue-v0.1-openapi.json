@@ -6,7 +6,7 @@
   },
   "servers": [
     {
-      "url": "http://eltariff.deplide.org",
+      "url": "https://eltariff.deplide.org",
       "description": "Sandbox catalogue"
     },
     {
