@@ -1,3 +1,8 @@
+# Eltariff-API
+_Specifikation för ett API för Elnätstariffer i Sverige. Specifikationen tar har sitt ursprung i Norge, varför mycket av dokumentationen just nu är på norska. Efterhand som specifikationen mognar och växer kommer även dokumentationen anpassas efter den svenska varianten._
+
+
+
 # ELBITS Nettariff API <br> Spesifikasjon
 
 ## Dokumentversjoner
