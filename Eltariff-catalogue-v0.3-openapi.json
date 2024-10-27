@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "ElTariffKatalog",
-    "version": "v0.1"
+    "version": "v0.3"
   },
   "servers": [
     {
@@ -16,17 +16,39 @@
   ],
   "paths": {
     "/tariffcatalogue/register": {
-      "post": {
-        "description": "Register API info for a range of MPIDs. The format of the intro is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json",
+      "description": "Update API info for a range of MPIDs. The format of the intro is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json with the addition of an ID field",
+      "put": {
         "tags": [
-          "supplier-service"
+          "register-service"
         ],
-        "operationId": "submitSupplierAPIInfo",
+        "operationId": "updateSupplierAPIInfo",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SupplierEntry"
+                "type": "string"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "Register API info for a range of MPIDs. The format of the intro is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json with the addition of an ID field",
+        "tags": [
+          "register-service"
+        ],
+        "operationId": "createSupplierAPIInfo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
               }
             }
           },
@@ -39,21 +61,20 @@
         }
       }
     },
-
     "/tariffcatalogue/lookup": {
       "post": {
         "description": "Look up API connection info for any number of MPIDs",
         "tags": [
           "supplier-service"
         ],
-        "operationId": "getSupplierAPIInfo",
+        "operationId": "getSuppliers",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/MeteringPointID"
+                  "type": "string"
                 }
               }
             }
@@ -83,14 +104,14 @@
         "tags": [
           "supplier-service"
         ],
-        "operationId": "getSuppliersAPIInfo",
+        "operationId": "getSuppliers_1",
         "parameters": [
           {
             "name": "mpid",
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/MeteringPointID"
+              "type": "string"
             }
           }
         ],
@@ -110,6 +131,30 @@
           }
         }
       }
+    },
+    "/tariffcatalogue/register/{supplierEntryId}": {
+      "delete": {
+        "description": "Delete API info for a range of MPIDs. supplierEntryId is a UUID corresponding to the 'id' field in a previously registered entry",
+        "tags": [
+          "register-service"
+        ],
+        "operationId": "deleteSupplierAPIInfo",
+        "parameters": [
+          {
+            "name": "supplierEntryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -117,6 +162,10 @@
       "SupplierEntry": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
           "meteringPointIdFrom": {
             "$ref": "#/components/schemas/MeteringPointID"
           },
