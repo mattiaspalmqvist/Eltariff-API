@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "ElTariffKatalog",
-    "version": "v0.3"
+    "version": "v0.4"
   },
   "servers": [
     {
@@ -26,7 +26,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/SupplierEntry"
               }
             }
           },
@@ -48,7 +48,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "string"
+                "$ref": "#/components/schemas/SupplierEntry"
               }
             }
           },
