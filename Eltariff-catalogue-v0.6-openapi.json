@@ -1,0 +1,244 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ElTariffKatalog",
+    "version": "v0.6"
+  },
+  "servers": [
+    {
+      "url": "https://eltariff.deplide.org",
+      "description": "Sandbox catalogue"
+    },
+    {
+      "url": "http://localhost:8080",
+      "description": "Local developer instance"
+    }
+  ],
+  "paths": {
+    "/tariffcatalogue/register": {
+      "description": "Update API info for a range of MPIDs. The format of the intro is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json with the addition of an ID field",
+      "post": {
+        "description": "Register API info for a range of MPIDs. The format of the intro is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json with the addition of an ID field",
+        "tags": [
+          "register-service"
+        ],
+        "operationId": "createSupplierAPIInfo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierEntry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST: Submitted invalid JSON"
+          },
+          "409": {
+            "description": "CONFLICT: 'Supplier entry mpid range overlaps with existing entry' or 'SupplierEntry already exists (with same id)'"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "register-service"
+        ],
+        "operationId": "updateSupplierAPIInfo",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SupplierEntry"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "BAD REQUEST: Submitted invalid JSON"
+          },
+          "404": {
+            "description": "NOT FOUND: 'No entry matching the supplied entry's id exists'"
+          },
+          "409": {
+            "description": "CONFLICT: 'Supplier entry mpid range overlaps with existing entry'"
+          }
+        }
+        }
+    },
+    "/tariffcatalogue/register/{supplierEntryId}": {
+      "delete": {
+        "description": "Delete API info for a range of MPIDs. supplierEntryId is a UUID corresponding to the 'id' field in a previously registered entry",
+        "tags": [
+          "register-service"
+        ],
+        "operationId": "deleteSupplierAPIInfo",
+        "parameters": [
+          {
+            "name": "supplierEntryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "NOT FOUND: 'No entry matching the supplied id exists'"
+          }
+        }
+      }
+    },
+    "/tariffcatalogue/lookup": {
+      "post": {
+        "description": "Look up API connection info for any number of MPIDs",
+        "tags": [
+          "supplier-service"
+        ],
+        "operationId": "getSuppliers",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK. Map of MPID: SupplierEntry",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "supplierEntries": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SupplierEntry"
+                      }
+                    },
+                    "entryMapping": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/EntryMapping"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT FOUND"
+          }
+        }
+      }
+    },
+    "/tariffcatalogue/lookup/{mpid}": {
+      "get": {
+        "description": "Lookup API connection info for a single MPID.",
+        "tags": [
+          "supplier-service"
+        ],
+        "operationId": "getSupplier",
+        "parameters": [
+          {
+            "name": "mpid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SupplierEntry"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "NOT FOUND"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SupplierEntry": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "meteringPointIdFrom": {
+            "description": "Inclusive start of the range of mpids covered by this supplier entry",
+            "$ref": "#/components/schemas/MeteringPointID"
+          },
+          "meteringPointIdTo": {
+            "description": "Inclusive end of the range of mpids covered by this supplier entry",
+            "$ref": "#/components/schemas/MeteringPointID"
+          },
+          "companyName": {
+            "type": "string"
+          },
+          "companyOrgNo": {
+            "type": "string"
+          },
+          "apiUrl": {
+            "type": "string"
+          },
+          "userDocUrlOrEmail": {
+            "type": "string"
+          }
+        }
+      },
+      "EntryMapping": {
+        "type": "object",
+        "properties": {
+          "meteringPointId": {
+            "$ref": "#/components/schemas/MeteringPointID"
+          },
+          "entryId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        }
+      },
+      "MeteringPointID": {
+        "type": "string",
+        "pattern": "^[0-9]{18}$"
+      }
+    }
+  }
+}
