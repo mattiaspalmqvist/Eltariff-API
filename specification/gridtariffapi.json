@@ -1,6 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema",
-  "openapi": "3.0.2",
+  "openapi": "3.1.0",
 
   "info": {
     "title": "Grid Tariff API",
@@ -9,8 +8,24 @@
     "contact": {
       "name": "Grid Tariff API",
       "url": "https://github.com/RI-SE/Eltariff-API"
+    },
+    "license": {
+      "name": "Licence",
+      "url": "https://github.com/RI-SE/Eltariff-API/blob/main/LICENSE"
     }
   },
+
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
 
   "paths": {
     "/api/Tariffs/All": {
@@ -30,6 +45,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -63,6 +90,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -96,6 +135,18 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
           }
         }
       }
@@ -103,8 +154,15 @@
   },
 
   "components": {
-    "schemas": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
 
+    "schemas": {
       "TariffsResponse": {
         "type": "object",
         "properties": {
@@ -112,8 +170,7 @@
             "type": "array",
             "items": {
               "$ref": "tariff.schema.json#/definitions/Tariff"
-            },
-            "nullable": true
+            }
           }
         },
         "additionalProperties": false
@@ -127,8 +184,7 @@
             "description": "List of MPIDs you are the registered owner of as a private person or your company has e legal reason to request in a customer/provider relationship.",
             "items": {
               "$ref": "common.schema.json#/definitions/MeteringPointId"
-            },
-            "nullable": false
+            }
           }
         },
         "additionalProperties": false
@@ -141,8 +197,7 @@
             "type": "array",
             "items": {
               "$ref": "tariff.schema.json#/definitions/Tariff"
-            },
-            "nullable": true
+            }
           },
           "mpidTariffPairs": {
             "type": "array",
@@ -177,6 +232,106 @@
           }
         },
         "additionalProperties": false
+      },
+
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "description": "HTTP status code of the error."
+          },
+          "title": {
+            "type": "string",
+            "description": "A short, human-readable summary of the problem."
+          },
+          "detail": {
+            "type": "string",
+            "description": "A detailed message explaining the error."
+          },
+          "instance": {
+            "type": "string",
+            "description": "URI reference identifying the specific occurrence of the problem."
+          },
+          "type": {
+            "type": "string",
+            "description": "A URI reference that identifies the problem type."
+          }
+        },
+        "required": ["status", "title", "detail"],
+        "additionalProperties": false
+      }
+
+    },
+
+    "responses": {
+      "BadRequest": {
+        "description": "Bad Request",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            },
+            "example": {
+              "status": 400,
+              "title": "Bad Request",
+              "detail": "The request object is invalid.",
+              "instance": "/api/endpoint"
+            }
+          }
+        }
+      },
+
+      "Unauthorized": {
+        "description": "Unauthorized",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            },
+            "example": {
+              "status": 401,
+              "title": "Unauthorized",
+              "detail": "You do not have access to make this request.",
+              "instance": "/api/endpoint"
+            }
+          }
+        }
+      },
+
+      "Forbidden": {
+        "description": "Forbidden",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            },
+            "example": {
+              "status": 403,
+              "title": "Forbidden",
+              "detail": "The request you made is not allowed.",
+              "instance": "/api/endpoint"
+            }
+          }
+        }
+      },
+
+      "NotFound": {
+        "description": "Not Found",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            },
+            "example": {
+              "status": 404,
+              "title": "Not Found",
+              "detail": "The requested resource could not be found.",
+              "instance": "/api/endpoint"
+            }
+          }
+        }
       }
     }
   }

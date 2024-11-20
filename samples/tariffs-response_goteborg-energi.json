@@ -1,0 +1,780 @@
+{
+  "tariffs": [
+    {
+      "id": "7b66ed8b-27a6-4441-a4a1-a3d963755a2c",
+      "name": "Effektavgift 3 toppar medel max 63 A",
+      "description": "Elnätsavtal med en effektavgift som baseras på snittet av de tre högsta timmedeleffekterna.",
+      "product": "Maxeffekt 14 kW - Effekttopp 3 toppar medel - Max 63 A",
+      "companyName": "Göteborg Energi Nät AB",
+      "companyOrgNo": "556379-2729",
+      "direction": "consumption",
+      "timeZone": "Europe/Stockholm",
+      "lastUpdated": "2024-01-01T00:00:00+00:00",
+      "billingPeriod": "P1M",
+      "fixedPrice": {
+        "id": "8bb8f141-8069-4fa1-bd4c-3db2b3bda4ef",
+        "name": "Fast avgift bostadshus",
+        "description": "Fast månadsavgift för villa, radhus och kedjehus.",
+        "validPeriod": {
+          "fromIncluding": "2024-01-01",
+          "toExcluding": "2025-01-01"
+        },
+        "price": {
+          "priceExVat": 125,
+          "priceIncVat": 156.25,
+          "currency": "SEK"
+        },
+        "pricedPeriod": "P1M"
+      },
+      "energyPrice": {
+        "id": "8b9e6e35-f01c-47b6-bace-d4de0c55586d",
+        "name": "Energiavgift bostadshus",
+        "description": "Energiavgift för villa, radhus och kedjehus.",
+        "costFunction": "sum(energy(c)*price(c))",
+        "unit": "kWh",
+        "components": [
+          {
+            "id": "151ba56e-b9fa-46cf-b3b6-625222e08b52",
+            "name": "Elöverföringsavgift bostadshus",
+            "description": "Energipriskomponent med ett fast pris för energiöverföring per kWh för villa, radhus och kedjehus.",
+            "type": "fixed",
+            "reference": "fixed",
+            "price": {
+              "priceExVat": 0.204,
+              "priceIncVat": 0.255,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          },
+          {
+            "id": "be6e2cdd-b1ec-4713-afca-e138e3ddbaa8",
+            "name": "Energiskatt",
+            "description": "Energiskatt för varje förbrukad kWh.",
+            "type": "fixed",
+            "reference": "tax",
+            "price": {
+              "priceExVat": 0.428,
+              "priceIncVat": 0.535,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          }
+        ]
+      },
+      "powerPrice": {
+        "id": "b408ae4d-9419-4fc6-827d-60ffc801741a",
+        "name": "Effektavgift bostadshus",
+        "description": "Ett och samma pris för genomsnittlig hela året och hela dygnet.",
+        "costFunction": "sum(peak(c)*price(c))",
+        "unit": "kW",
+        "components": [
+          {
+            "id": "a944fc34-4430-4919-9573-0c203f39cf68",
+            "name": "Effekttopp bostadshus",
+            "description": "Effektpriskomponent baserad på effekttoppsmedel från 3 toppar från olika dygn.",
+            "type": "peak",
+            "reference": "main",
+            "price": {
+              "priceExVat": 35,
+              "priceIncVat": 43.75,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "00:00:00",
+                    "toExcluding": "00:00:00"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "9e744692-8192-44c8-b611-67972e4affa5",
+      "name": "Tidsindelad effektavgift max 63 A (Valbar)",
+      "description": "Elnätsavtal med tidsindelad effektavgift med genomsnitt av 3 högsta topparna per månad inom varje prisnivå.",
+      "product": "Maxeffekt 6 kW - Tidsindelad Valbar A - Max 63 A",
+      "companyName": "Göteborg Energi Nät AB",
+      "companyOrgNo": "556379-2729",
+      "direction": "consumption",
+      "timeZone": "Europe/Stockholm",
+      "lastUpdated": "2024-01-01T00:00:00+00:00",
+      "billingPeriod": "P1M",
+      "fixedPrice": {
+        "id": "f07de68a-b9e5-4b04-bc5c-4ebbe8391252",
+        "name": "Fast avgift max 6 kW",
+        "description": "Fast månadsavgift för avtal med maximalt effektuttag på 6 kW.",
+        "validPeriod": {
+          "fromIncluding": "2024-01-01",
+          "toExcluding": "2025-01-01"
+        },
+        "price": {
+          "priceExVat": 160,
+          "priceIncVat": 200,
+          "currency": "SEK"
+        },
+        "pricedPeriod": "P1M"
+      },
+      "energyPrice": {
+        "id": "4eda0156-8c78-4cdf-9c5d-536660605b98",
+        "name": "Energiavgift tidsindelad tariff",
+        "description": "Energiavgift för villa, radhus och kedjehus som har valbar tidsindelad effektavgift.",
+        "costFunction": "sum(energy(c)*price(c))",
+        "unit": "kWh",
+        "components": [
+          {
+            "id": "be6e2cdd-b1ec-4713-afca-e138e3ddbaa8",
+            "name": "Energiskatt",
+            "description": "Energiskatt för varje förbrukad kWh.",
+            "type": "fixed",
+            "reference": "tax",
+            "price": {
+              "priceExVat": 0.428,
+              "priceIncVat": 0.535,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          },
+          {
+            "id": "23071e91-f5f9-4538-bdd3-8c3bdc1f6012",
+            "name": "Elöverföringsavgift bostadshus",
+            "description": "Energipriskomponent med ett fast pris för energiöverföring per kWh för villa, radhus och kedjehus.",
+            "type": "fixed",
+            "reference": "fixed",
+            "price": {
+              "priceExVat": 0.08,
+              "priceIncVat": 0.1,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          }
+        ]
+      },
+      "powerPrice": {
+        "id": "b3814a22-43fd-4414-a7bb-46314e8b2f2e",
+        "name": "Tidsindelad effekttopp",
+        "description": "Olika prisnivåer dagtid och nattetid under vintersäsongen.",
+        "costFunction": "sum(peak(c)*price(c))",
+        "unit": "kW",
+        "components": [
+          {
+            "id": "36646ea7-aa88-4b38-b095-66ecd5c33d67",
+            "name": "Effekttopp högprisperiod",
+            "description": "Pris för effekttopp dagtid vintersäsong.",
+            "type": "peak",
+            "reference": "high",
+            "price": {
+              "priceExVat": 80,
+              "priceIncVat": 100,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-10-01",
+              "toExcluding": "2025-04-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "07:00:00",
+                    "toExcluding": "20:00:00"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "29d84e47-47e1-4896-a6a6-4a7d5637a383",
+            "name": "Effekttopp lågprisperiod",
+            "description": "Pris för effekttopp nattetid vintersäsong.",
+            "type": "peak",
+            "reference": "low",
+            "price": {
+              "priceExVat": 0,
+              "priceIncVat": 0,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-10-01",
+              "toExcluding": "2025-04-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "00:00:00",
+                    "toExcluding": "07:00:00"
+                  },
+                  {
+                    "fromIncluding": "20:00:00",
+                    "toExcluding": "00:00:00"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "873325a7-07ca-43f1-aea3-97219c6192ac",
+            "name": "Effekttopp sommar",
+            "description": "Ett pris för effekttopp under sommarsäsongen.",
+            "type": "peak",
+            "reference": "summer",
+            "price": {
+              "priceExVat": 0,
+              "priceIncVat": 0,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2025-04-01",
+              "toExcluding": "2025-10-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "00:00:00",
+                    "toExcluding": "00:00:00"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "98170c13-8e93-475b-b010-b0ddfd387382",
+      "name": "Tidsindelad effektavgift max 63 A (Valbar)",
+      "description": "Elnätsavtal med tidsindelad effektavgift med genomsnitt av 3 högsta topparna per månad inom varje prisnivå.",
+      "product": "Maxeffekt 14 kW - Tidsindelad Valbar A - Max 63 A",
+      "companyName": "Göteborg Energi Nät AB",
+      "companyOrgNo": "556379-2729",
+      "direction": "consumption",
+      "timeZone": "Europe/Stockholm",
+      "lastUpdated": "2024-01-01T00:00:00+00:00",
+      "billingPeriod": "P1M",
+      "fixedPrice": {
+        "id": "d35eb375-b04d-42da-88a9-1e2e0ce058f2",
+        "name": "Fast avgift max 14 kW",
+        "description": "Fast månadsavgift för avtal med maximalt effektuttag på 14 kW.",
+        "validPeriod": {
+          "fromIncluding": "2024-01-01",
+          "toExcluding": "2025-01-01"
+        },
+        "price": {
+          "priceExVat": 320,
+          "priceIncVat": 400,
+          "currency": "SEK"
+        },
+        "pricedPeriod": "P1M"
+      },
+      "energyPrice": {
+        "id": "4eda0156-8c78-4cdf-9c5d-536660605b98",
+        "name": "Energiavgift tidsindelad tariff",
+        "description": "Energiavgift för villa, radhus och kedjehus som har valbar tidsindelad effektavgift.",
+        "costFunction": "sum(energy(c)*price(c))",
+        "unit": "kWh",
+        "components": [
+          {
+            "id": "be6e2cdd-b1ec-4713-afca-e138e3ddbaa8",
+            "name": "Energiskatt",
+            "description": "Energiskatt för varje förbrukad kWh.",
+            "type": "fixed",
+            "reference": "tax",
+            "price": {
+              "priceExVat": 0.428,
+              "priceIncVat": 0.535,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          },
+          {
+            "id": "23071e91-f5f9-4538-bdd3-8c3bdc1f6012",
+            "name": "Elöverföringsavgift bostadshus",
+            "description": "Energipriskomponent med ett fast pris för energiöverföring per kWh för villa, radhus och kedjehus.",
+            "type": "fixed",
+            "reference": "fixed",
+            "price": {
+              "priceExVat": 0.08,
+              "priceIncVat": 0.1,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          }
+        ]
+      },
+      "powerPrice": {
+        "id": "b3814a22-43fd-4414-a7bb-46314e8b2f2e",
+        "name": "Tidsindelad effekttopp",
+        "description": "Olika prisnivåer dagtid och nattetid under vintersäsongen.",
+        "costFunction": "sum(peak(c)*price(c))",
+        "unit": "kW",
+        "components": [
+          {
+            "id": "36646ea7-aa88-4b38-b095-66ecd5c33d67",
+            "name": "Effekttopp högprisperiod",
+            "description": "Pris för effekttopp dagtid vintersäsong.",
+            "type": "peak",
+            "reference": "high",
+            "price": {
+              "priceExVat": 80,
+              "priceIncVat": 100,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-10-01",
+              "toExcluding": "2025-04-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "07:00:00",
+                    "toExcluding": "20:00:00"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "29d84e47-47e1-4896-a6a6-4a7d5637a383",
+            "name": "Effekttopp lågprisperiod",
+            "description": "Pris för effekttopp nattetid vintersäsong.",
+            "type": "peak",
+            "reference": "low",
+            "price": {
+              "priceExVat": 0,
+              "priceIncVat": 0,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-10-01",
+              "toExcluding": "2025-04-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "00:00:00",
+                    "toExcluding": "07:00:00"
+                  },
+                  {
+                    "fromIncluding": "20:00:00",
+                    "toExcluding": "00:00:00"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "873325a7-07ca-43f1-aea3-97219c6192ac",
+            "name": "Effekttopp sommar",
+            "description": "Ett pris för effekttopp under sommarsäsongen.",
+            "type": "peak",
+            "reference": "summer",
+            "price": {
+              "priceExVat": 0,
+              "priceIncVat": 0,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2025-04-01",
+              "toExcluding": "2025-10-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "00:00:00",
+                    "toExcluding": "00:00:00"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "323d1807-f646-4e5a-a0e1-3b77639f3e79",
+      "name": "Tidsindelad effektavgift max 63 A (Valbar)",
+      "description": "Elnätsavtal med tidsindelad effektavgift med genomsnitt av 3 högsta topparna per månad inom varje prisnivå.",
+      "product": "Maxeffekt 43 kW - Tidsindelad Valbar A - Max 63 A",
+      "companyName": "Göteborg Energi Nät AB",
+      "companyOrgNo": "556379-2729",
+      "direction": "consumption",
+      "timeZone": "Europe/Stockholm",
+      "lastUpdated": "2024-01-01T00:00:00+00:00",
+      "billingPeriod": "P1M",
+      "fixedPrice": {
+        "id": "1a8027fa-fdf8-462f-9027-a652c612f546",
+        "name": "Fast avgift max 43 kW",
+        "description": "Fast månadsavgift för avtal med maximalt effektuttag på 43 kW.",
+        "validPeriod": {
+          "fromIncluding": "2024-01-01",
+          "toExcluding": "2025-01-01"
+        },
+        "price": {
+          "priceExVat": 640,
+          "priceIncVat": 800,
+          "currency": "SEK"
+        },
+        "pricedPeriod": "P1M"
+      },
+      "energyPrice": {
+        "id": "4eda0156-8c78-4cdf-9c5d-536660605b98",
+        "name": "Energiavgift tidsindelad tariff",
+        "description": "Energiavgift för villa, radhus och kedjehus som har valbar tidsindelad effektavgift.",
+        "costFunction": "sum(energy(c)*price(c))",
+        "unit": "kWh",
+        "components": [
+          {
+            "id": "be6e2cdd-b1ec-4713-afca-e138e3ddbaa8",
+            "name": "Energiskatt",
+            "description": "Energiskatt för varje förbrukad kWh.",
+            "type": "fixed",
+            "reference": "tax",
+            "price": {
+              "priceExVat": 0.428,
+              "priceIncVat": 0.535,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          },
+          {
+            "id": "23071e91-f5f9-4538-bdd3-8c3bdc1f6012",
+            "name": "Elöverföringsavgift bostadshus",
+            "description": "Energipriskomponent med ett fast pris för energiöverföring per kWh för villa, radhus och kedjehus.",
+            "type": "fixed",
+            "reference": "fixed",
+            "price": {
+              "priceExVat": 0.08,
+              "priceIncVat": 0.1,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          }
+        ]
+      },
+      "powerPrice": {
+        "id": "b3814a22-43fd-4414-a7bb-46314e8b2f2e",
+        "name": "Tidsindelad effekttopp",
+        "description": "Olika prisnivåer dagtid och nattetid under vintersäsongen.",
+        "costFunction": "sum(peak(c)*price(c))",
+        "unit": "kW",
+        "components": [
+          {
+            "id": "36646ea7-aa88-4b38-b095-66ecd5c33d67",
+            "name": "Effekttopp högprisperiod",
+            "description": "Pris för effekttopp dagtid vintersäsong.",
+            "type": "peak",
+            "reference": "high",
+            "price": {
+              "priceExVat": 80,
+              "priceIncVat": 100,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-10-01",
+              "toExcluding": "2025-04-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "07:00:00",
+                    "toExcluding": "20:00:00"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "29d84e47-47e1-4896-a6a6-4a7d5637a383",
+            "name": "Effekttopp lågprisperiod",
+            "description": "Pris för effekttopp nattetid vintersäsong.",
+            "type": "peak",
+            "reference": "low",
+            "price": {
+              "priceExVat": 0,
+              "priceIncVat": 0,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2024-10-01",
+              "toExcluding": "2025-04-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "00:00:00",
+                    "toExcluding": "07:00:00"
+                  },
+                  {
+                    "fromIncluding": "20:00:00",
+                    "toExcluding": "00:00:00"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "873325a7-07ca-43f1-aea3-97219c6192ac",
+            "name": "Effekttopp sommar",
+            "description": "Ett pris för effekttopp under sommarsäsongen.",
+            "type": "peak",
+            "reference": "summer",
+            "price": {
+              "priceExVat": 0,
+              "priceIncVat": 0,
+              "currency": "SEK"
+            },
+            "validPeriod": {
+              "fromIncluding": "2025-04-01",
+              "toExcluding": "2025-10-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": "peak(main)",
+              "peakIdentificationPeriod": "P1D",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 3
+            },
+            "recurringPeriods": [
+              {
+                "reference": "main",
+                "frequency": "P1D",
+                "activePeriods": [
+                  {
+                    "fromIncluding": "00:00:00",
+                    "toExcluding": "00:00:00"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "b1f94fd9-cd84-4f5d-9b7f-b1cd63dfbb18",
+      "name": "Dynamisk effektavgift timpris (Valbar)",
+      "description": "Elnätsavtal med en effektavgift som har ett unikt effektpris för varje enskild timme.",
+      "product": "Maxeffekt 14 kW - Dynamisk effektavgift timpris",
+      "companyName": "Göteborg Energi Nät AB",
+      "companyOrgNo": "556379-2729",
+      "direction": "consumption",
+      "timeZone": "Europe/Stockholm",
+      "lastUpdated": "2024-01-01T00:00:00+00:00",
+      "billingPeriod": "P1M",
+      "fixedPrice": {
+        "id": "d35eb375-b04d-42da-88a9-1e2e0ce058f2",
+        "name": "Fast avgift max 14 kW",
+        "description": "Fast månadsavgift för avtal med maximalt effektuttag på 14 kW.",
+        "validPeriod": {
+          "fromIncluding": "2024-01-01",
+          "toExcluding": "2025-01-01"
+        },
+        "price": {
+          "priceExVat": 320,
+          "priceIncVat": 400,
+          "currency": "SEK"
+        },
+        "pricedPeriod": "P1M"
+      },
+      "energyPrice": {
+        "id": "4eda0156-8c78-4cdf-9c5d-536660605b98",
+        "name": "Energiavgift tidsindelad tariff",
+        "description": "Energiavgift för villa, radhus och kedjehus som har valbar tidsindelad effektavgift.",
+        "costFunction": "sum(energy(c)*price(c))",
+        "unit": "kWh",
+        "components": [
+          {
+            "id": "be6e2cdd-b1ec-4713-afca-e138e3ddbaa8",
+            "name": "Energiskatt",
+            "description": "Energiskatt för varje förbrukad kWh.",
+            "type": "fixed",
+            "reference": "tax",
+            "price": {
+              "priceExVat": 0.428,
+              "priceIncVat": 0.535,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          },
+          {
+            "id": "23071e91-f5f9-4538-bdd3-8c3bdc1f6012",
+            "name": "Elöverföringsavgift bostadshus",
+            "description": "Energipriskomponent med ett fast pris för energiöverföring per kWh för villa, radhus och kedjehus.",
+            "type": "fixed",
+            "reference": "fixed",
+            "price": {
+              "priceExVat": 0.08,
+              "priceIncVat": 0.1,
+              "currency": "SEK"
+            },
+            "spotPriceSettings": null,
+            "validPeriod": {
+              "fromIncluding": "2024-01-01",
+              "toExcluding": "2025-01-01"
+            },
+            "recurringPeriods": []
+          }
+        ]
+      },
+      "powerPrice": {
+        "id": "3f07a775-94ab-44e5-a2b1-4fecf77f42d6",
+        "name": "Dynamiskt timpris",
+        "description": "Dynamiskt pris för varje enskild timme.",
+        "costFunction": "sum(peak(c)*price(c))",
+        "unit": "kW",
+        "components": [
+          {
+            "id": "2d63dad0-7968-474d-8868-0c9c5ac473f4",
+            "name": "Dynamiskt timpris vinter",
+            "description": "Varje timme har ett eget effektpris. Genomsnittlig effekt för varje timme multipliceras med effektpriset för den timmen för att få fram kostnaden.",
+            "type": "dynamic",
+            "reference": null,
+            "price": null,
+            "validPeriod": {
+              "fromIncluding": "2024-10-01",
+              "toExcluding": "2025-04-01"
+            },
+            "peakIdentificationSettings": {
+              "peakFunction": null,
+              "peakIdentificationPeriod": "PT1H",
+              "peakDuration": "PT1H",
+              "numberOfPeaksForAverageCalculation": 1
+            },
+            "recurringPeriods": []
+          }
+        ]
+      }
+    }
+  ]
+}
