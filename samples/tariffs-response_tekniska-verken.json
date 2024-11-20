@@ -1,7 +1,7 @@
 {
   "tariffs": [
     {
-      "id": "613d261e-f93e-47ab-9b20-fdc11b201d53",
+      "id": "4891692b-46ec-4074-8a08-e0288b363a0a",
       "name": "Prislista 16A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -9,31 +9,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2509444+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7576919+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "3a578af3-ea81-4b00-84ff-656ec69c2039",
+        "id": "e5bb0f00-daf5-41f8-870a-ac796475cb2c",
         "name": "Abonnemangsavgift 16A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 124,
-          "priceIncVat": 155,
+          "priceExVat": 124.0,
+          "priceIncVat": 155.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "36c9d388-e9f2-41b2-bbd4-24c7ab5a9edb",
+        "id": "7d596318-f50e-4bf4-8fb2-8fb602b12bd5",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "8285a65f-1927-452a-b04e-6104a817c2bb",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -45,8 +46,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -61,6 +63,7 @@
             ]
           },
           {
+            "id": "80b4e1eb-c5c0-40ac-aa12-6c1b493b2f06",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -72,30 +75,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d3cd5154-ba68-48a1-b31a-3fd7f77da154",
+        "id": "81ca09de-c4c2-4c12-8315-60cecdf928c4",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "baaa905c-fb2f-496b-9cbd-80894f2a1ec7",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -117,18 +124,19 @@
             ]
           },
           {
+            "id": "c6accedc-6c7c-429e-85c8-f8fc252fdca0",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -153,7 +161,7 @@
       }
     },
     {
-      "id": "e7abd58e-558c-4ed1-8a44-473594707a0f",
+      "id": "bef52004-42de-4689-8524-e56088ffd825",
       "name": "Prislista 20A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -161,31 +169,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2621975+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7701797+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "5e1d1a65-d2ec-4dd2-bd18-42639416739a",
+        "id": "70d6f6e9-8711-46f8-8935-5201b05ed3ac",
         "name": "Abonnemangsavgift 20A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 168,
-          "priceIncVat": 210,
+          "priceExVat": 168.0,
+          "priceIncVat": 210.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "36c9d388-e9f2-41b2-bbd4-24c7ab5a9edb",
+        "id": "7d596318-f50e-4bf4-8fb2-8fb602b12bd5",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "8285a65f-1927-452a-b04e-6104a817c2bb",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -197,8 +206,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -213,6 +223,7 @@
             ]
           },
           {
+            "id": "80b4e1eb-c5c0-40ac-aa12-6c1b493b2f06",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -224,30 +235,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d3cd5154-ba68-48a1-b31a-3fd7f77da154",
+        "id": "81ca09de-c4c2-4c12-8315-60cecdf928c4",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "baaa905c-fb2f-496b-9cbd-80894f2a1ec7",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -269,18 +284,19 @@
             ]
           },
           {
+            "id": "c6accedc-6c7c-429e-85c8-f8fc252fdca0",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -305,7 +321,7 @@
       }
     },
     {
-      "id": "b863728d-0d03-4a33-8c09-632bc72d98e0",
+      "id": "e8881a00-603d-4bcb-b66e-aef303d69c18",
       "name": "Prislista 25A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -313,31 +329,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2622109+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7702004+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "a3c8fdca-19fd-482b-92e0-504859d9ccdb",
+        "id": "b0db0b23-d66c-498b-9291-00ff8e42ef25",
         "name": "Abonnemangsavgift 25A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 228,
-          "priceIncVat": 285,
+          "priceExVat": 228.0,
+          "priceIncVat": 285.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "36c9d388-e9f2-41b2-bbd4-24c7ab5a9edb",
+        "id": "7d596318-f50e-4bf4-8fb2-8fb602b12bd5",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "8285a65f-1927-452a-b04e-6104a817c2bb",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -349,8 +366,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -365,6 +383,7 @@
             ]
           },
           {
+            "id": "80b4e1eb-c5c0-40ac-aa12-6c1b493b2f06",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -376,30 +395,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d3cd5154-ba68-48a1-b31a-3fd7f77da154",
+        "id": "81ca09de-c4c2-4c12-8315-60cecdf928c4",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "baaa905c-fb2f-496b-9cbd-80894f2a1ec7",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -421,18 +444,19 @@
             ]
           },
           {
+            "id": "c6accedc-6c7c-429e-85c8-f8fc252fdca0",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -457,7 +481,7 @@
       }
     },
     {
-      "id": "93b89d24-fbe4-4058-85e0-619016097844",
+      "id": "a9a6fb00-4d4b-4f12-b919-0ebf8dc3cf42",
       "name": "Prislista 35A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -465,31 +489,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2622142+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.770203+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "b2f00817-0e92-4cef-b2f7-7be6b22f1f83",
+        "id": "6ca76b3e-7e21-4f85-b015-ed512a27cc02",
         "name": "Abonnemangsavgift 35A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 360,
-          "priceIncVat": 450,
+          "priceExVat": 360.0,
+          "priceIncVat": 450.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "36c9d388-e9f2-41b2-bbd4-24c7ab5a9edb",
+        "id": "7d596318-f50e-4bf4-8fb2-8fb602b12bd5",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "8285a65f-1927-452a-b04e-6104a817c2bb",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -501,8 +526,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -517,6 +543,7 @@
             ]
           },
           {
+            "id": "80b4e1eb-c5c0-40ac-aa12-6c1b493b2f06",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -528,30 +555,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d3cd5154-ba68-48a1-b31a-3fd7f77da154",
+        "id": "81ca09de-c4c2-4c12-8315-60cecdf928c4",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "baaa905c-fb2f-496b-9cbd-80894f2a1ec7",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -573,18 +604,19 @@
             ]
           },
           {
+            "id": "c6accedc-6c7c-429e-85c8-f8fc252fdca0",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -609,7 +641,7 @@
       }
     },
     {
-      "id": "baf8194c-538c-413e-9df8-1a685ed4f099",
+      "id": "b62c60c2-ae4b-41ea-afde-a41647053ac9",
       "name": "Prislista 50A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -617,31 +649,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2622163+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7702054+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "78d1edad-795c-4242-ae5c-3a49913912a8",
+        "id": "9423c04e-4d5a-40d4-9ca9-47ce6e59f895",
         "name": "Abonnemangsavgift 50A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 488,
-          "priceIncVat": 610,
+          "priceExVat": 488.0,
+          "priceIncVat": 610.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "36c9d388-e9f2-41b2-bbd4-24c7ab5a9edb",
+        "id": "7d596318-f50e-4bf4-8fb2-8fb602b12bd5",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "8285a65f-1927-452a-b04e-6104a817c2bb",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -653,8 +686,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -669,6 +703,7 @@
             ]
           },
           {
+            "id": "80b4e1eb-c5c0-40ac-aa12-6c1b493b2f06",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -680,30 +715,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d3cd5154-ba68-48a1-b31a-3fd7f77da154",
+        "id": "81ca09de-c4c2-4c12-8315-60cecdf928c4",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "baaa905c-fb2f-496b-9cbd-80894f2a1ec7",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -725,18 +764,19 @@
             ]
           },
           {
+            "id": "c6accedc-6c7c-429e-85c8-f8fc252fdca0",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -761,7 +801,7 @@
       }
     },
     {
-      "id": "7d6b2521-f112-4e47-ab26-514a97663117",
+      "id": "5a40b178-76dd-4951-9fa5-063ac82fbc80",
       "name": "Prislista 63A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -769,31 +809,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2622194+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7702095+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "04bd43b5-6e21-4d8f-a69d-86f8ccc84377",
+        "id": "9e7c37f3-02aa-4047-a6f8-03c7862eb02c",
         "name": "Abonnemangsavgift 63A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 600,
-          "priceIncVat": 750,
+          "priceExVat": 600.0,
+          "priceIncVat": 750.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "36c9d388-e9f2-41b2-bbd4-24c7ab5a9edb",
+        "id": "7d596318-f50e-4bf4-8fb2-8fb602b12bd5",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "8285a65f-1927-452a-b04e-6104a817c2bb",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -805,8 +846,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -821,6 +863,7 @@
             ]
           },
           {
+            "id": "80b4e1eb-c5c0-40ac-aa12-6c1b493b2f06",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -832,30 +875,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d3cd5154-ba68-48a1-b31a-3fd7f77da154",
+        "id": "81ca09de-c4c2-4c12-8315-60cecdf928c4",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "baaa905c-fb2f-496b-9cbd-80894f2a1ec7",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -877,18 +924,19 @@
             ]
           },
           {
+            "id": "c6accedc-6c7c-429e-85c8-f8fc252fdca0",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -913,7 +961,7 @@
       }
     },
     {
-      "id": "32bd6a69-ea5b-4d17-a8f3-09694e734534",
+      "id": "e67f5b07-ee94-4477-9c93-ca206d166a8b",
       "name": "Prislista 16A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -921,31 +969,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2622387+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7702562+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "9c064a25-5f60-465e-9e7c-67e6c26050ed",
+        "id": "05c36345-645d-43ea-ac62-4244d1b90986",
         "name": "Abonnemangsavgift 16A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 124,
-          "priceIncVat": 155,
+          "priceExVat": 124.0,
+          "priceIncVat": 155.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "19ed16be-34f5-4dd9-8923-1633fbf59f77",
+        "id": "53fa9bc5-f710-4e0b-be92-962509804abc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "09041f82-e3a4-4323-9c0c-79dcb25c278f",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -957,8 +1006,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -977,6 +1027,7 @@
             ]
           },
           {
+            "id": "1bc7b4c8-04b1-4e16-9d8e-969603d13cbc",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -988,8 +1039,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -1004,6 +1056,7 @@
             ]
           },
           {
+            "id": "5a19df80-b999-4045-ab78-9ffe44f090b7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -1015,30 +1068,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "f8458e5d-fa69-43c4-b26b-6fe82172f409",
+        "id": "8938ddbe-7c63-43d5-94d4-170d58bfe392",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "d53814d8-fb46-47ab-9f3e-44141e135c6e",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
               "priceExVat": 5.6,
-              "priceIncVat": 7,
+              "priceIncVat": 7.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1064,18 +1121,19 @@
             ]
           },
           {
+            "id": "13ce665e-09e9-4335-9adb-d0435d4c95d7",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1097,18 +1155,19 @@
             ]
           },
           {
+            "id": "d7a7f4d6-a06e-4fe3-abf1-287896343e70",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
               "priceExVat": 8.8,
-              "priceIncVat": 11,
+              "priceIncVat": 11.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1134,18 +1193,19 @@
             ]
           },
           {
+            "id": "b8fd9c33-0f7b-4e67-a2b7-19e8ba6ca4a5",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1170,7 +1230,7 @@
       }
     },
     {
-      "id": "bd70b079-e993-4fe5-9986-a0881c795e64",
+      "id": "7fd7b269-c988-4c2c-b16c-9f68d7d497f6",
       "name": "Prislista 20A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -1178,31 +1238,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636474+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7718639+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "2a248798-1858-4ce3-b240-8dededdc60db",
+        "id": "e0bfd18a-17d6-4dda-9de9-717bea93b50e",
         "name": "Abonnemangsavgift 20A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 168,
-          "priceIncVat": 210,
+          "priceExVat": 168.0,
+          "priceIncVat": 210.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "19ed16be-34f5-4dd9-8923-1633fbf59f77",
+        "id": "53fa9bc5-f710-4e0b-be92-962509804abc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "09041f82-e3a4-4323-9c0c-79dcb25c278f",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -1214,8 +1275,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -1234,6 +1296,7 @@
             ]
           },
           {
+            "id": "1bc7b4c8-04b1-4e16-9d8e-969603d13cbc",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -1245,8 +1308,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -1261,6 +1325,7 @@
             ]
           },
           {
+            "id": "5a19df80-b999-4045-ab78-9ffe44f090b7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -1272,30 +1337,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "f8458e5d-fa69-43c4-b26b-6fe82172f409",
+        "id": "8938ddbe-7c63-43d5-94d4-170d58bfe392",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "d53814d8-fb46-47ab-9f3e-44141e135c6e",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
               "priceExVat": 5.6,
-              "priceIncVat": 7,
+              "priceIncVat": 7.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1321,18 +1390,19 @@
             ]
           },
           {
+            "id": "13ce665e-09e9-4335-9adb-d0435d4c95d7",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1354,18 +1424,19 @@
             ]
           },
           {
+            "id": "d7a7f4d6-a06e-4fe3-abf1-287896343e70",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
               "priceExVat": 8.8,
-              "priceIncVat": 11,
+              "priceIncVat": 11.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1391,18 +1462,19 @@
             ]
           },
           {
+            "id": "b8fd9c33-0f7b-4e67-a2b7-19e8ba6ca4a5",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1427,7 +1499,7 @@
       }
     },
     {
-      "id": "4d0a99f6-8bf3-4431-b796-61212ddb0aec",
+      "id": "b2bd3c7f-8575-419a-b22d-4fba769cb1d5",
       "name": "Prislista 25A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -1435,31 +1507,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636501+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7718681+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "04b7066d-5e29-4e7f-b915-c594b5ff7170",
+        "id": "a1a346c4-bb6c-420d-88cd-9e363330beb8",
         "name": "Abonnemangsavgift 25A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 228,
-          "priceIncVat": 285,
+          "priceExVat": 228.0,
+          "priceIncVat": 285.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "19ed16be-34f5-4dd9-8923-1633fbf59f77",
+        "id": "53fa9bc5-f710-4e0b-be92-962509804abc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "09041f82-e3a4-4323-9c0c-79dcb25c278f",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -1471,8 +1544,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -1491,6 +1565,7 @@
             ]
           },
           {
+            "id": "1bc7b4c8-04b1-4e16-9d8e-969603d13cbc",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -1502,8 +1577,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -1518,6 +1594,7 @@
             ]
           },
           {
+            "id": "5a19df80-b999-4045-ab78-9ffe44f090b7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -1529,30 +1606,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "f8458e5d-fa69-43c4-b26b-6fe82172f409",
+        "id": "8938ddbe-7c63-43d5-94d4-170d58bfe392",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "d53814d8-fb46-47ab-9f3e-44141e135c6e",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
               "priceExVat": 5.6,
-              "priceIncVat": 7,
+              "priceIncVat": 7.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1578,18 +1659,19 @@
             ]
           },
           {
+            "id": "13ce665e-09e9-4335-9adb-d0435d4c95d7",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1611,18 +1693,19 @@
             ]
           },
           {
+            "id": "d7a7f4d6-a06e-4fe3-abf1-287896343e70",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
               "priceExVat": 8.8,
-              "priceIncVat": 11,
+              "priceIncVat": 11.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1648,18 +1731,19 @@
             ]
           },
           {
+            "id": "b8fd9c33-0f7b-4e67-a2b7-19e8ba6ca4a5",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1684,7 +1768,7 @@
       }
     },
     {
-      "id": "0db58752-ebef-4065-ba5a-4a0128fee0d6",
+      "id": "658fd27b-9ee0-428b-ade0-958442650598",
       "name": "Prislista 35A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -1692,31 +1776,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636526+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7718742+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "47574972-404c-4ac6-97af-13aa3cd18cec",
+        "id": "c83d370c-6a61-4dfe-aec8-fc2fd1a57450",
         "name": "Abonnemangsavgift 35A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 360,
-          "priceIncVat": 450,
+          "priceExVat": 360.0,
+          "priceIncVat": 450.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "19ed16be-34f5-4dd9-8923-1633fbf59f77",
+        "id": "53fa9bc5-f710-4e0b-be92-962509804abc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "09041f82-e3a4-4323-9c0c-79dcb25c278f",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -1728,8 +1813,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -1748,6 +1834,7 @@
             ]
           },
           {
+            "id": "1bc7b4c8-04b1-4e16-9d8e-969603d13cbc",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -1759,8 +1846,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -1775,6 +1863,7 @@
             ]
           },
           {
+            "id": "5a19df80-b999-4045-ab78-9ffe44f090b7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -1786,30 +1875,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "f8458e5d-fa69-43c4-b26b-6fe82172f409",
+        "id": "8938ddbe-7c63-43d5-94d4-170d58bfe392",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "d53814d8-fb46-47ab-9f3e-44141e135c6e",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
               "priceExVat": 5.6,
-              "priceIncVat": 7,
+              "priceIncVat": 7.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1835,18 +1928,19 @@
             ]
           },
           {
+            "id": "13ce665e-09e9-4335-9adb-d0435d4c95d7",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1868,18 +1962,19 @@
             ]
           },
           {
+            "id": "d7a7f4d6-a06e-4fe3-abf1-287896343e70",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
               "priceExVat": 8.8,
-              "priceIncVat": 11,
+              "priceIncVat": 11.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1905,18 +2000,19 @@
             ]
           },
           {
+            "id": "b8fd9c33-0f7b-4e67-a2b7-19e8ba6ca4a5",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -1941,7 +2037,7 @@
       }
     },
     {
-      "id": "17d6b951-f188-4c52-9d3b-9658d7f3ad34",
+      "id": "dff4121f-78d7-48ae-8b05-f1e73d79b8cc",
       "name": "Prislista 50A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -1949,31 +2045,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636575+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7718767+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "495794a6-8d29-44b6-8fd1-b81b0177ea9a",
+        "id": "24cacb6b-f33b-4d9b-abe2-d527de07ab8d",
         "name": "Abonnemangsavgift 50A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 488,
-          "priceIncVat": 610,
+          "priceExVat": 488.0,
+          "priceIncVat": 610.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "19ed16be-34f5-4dd9-8923-1633fbf59f77",
+        "id": "53fa9bc5-f710-4e0b-be92-962509804abc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "09041f82-e3a4-4323-9c0c-79dcb25c278f",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -1985,8 +2082,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -2005,6 +2103,7 @@
             ]
           },
           {
+            "id": "1bc7b4c8-04b1-4e16-9d8e-969603d13cbc",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -2016,8 +2115,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -2032,6 +2132,7 @@
             ]
           },
           {
+            "id": "5a19df80-b999-4045-ab78-9ffe44f090b7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -2043,30 +2144,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "f8458e5d-fa69-43c4-b26b-6fe82172f409",
+        "id": "8938ddbe-7c63-43d5-94d4-170d58bfe392",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "d53814d8-fb46-47ab-9f3e-44141e135c6e",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
               "priceExVat": 5.6,
-              "priceIncVat": 7,
+              "priceIncVat": 7.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2092,18 +2197,19 @@
             ]
           },
           {
+            "id": "13ce665e-09e9-4335-9adb-d0435d4c95d7",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2125,18 +2231,19 @@
             ]
           },
           {
+            "id": "d7a7f4d6-a06e-4fe3-abf1-287896343e70",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
               "priceExVat": 8.8,
-              "priceIncVat": 11,
+              "priceIncVat": 11.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2162,18 +2269,19 @@
             ]
           },
           {
+            "id": "b8fd9c33-0f7b-4e67-a2b7-19e8ba6ca4a5",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2198,7 +2306,7 @@
       }
     },
     {
-      "id": "40db9394-bc74-420c-a2e5-e936d33772aa",
+      "id": "4098cc2b-9d5c-47cd-b2c3-113f75ea73fd",
       "name": "Prislista 63A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -2206,31 +2314,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636601+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7718794+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "8277cda6-8908-4491-bc8a-806876c2a041",
+        "id": "4dc5597c-4b4d-40e6-959d-5c4642eb45dc",
         "name": "Abonnemangsavgift 63A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 600,
-          "priceIncVat": 750,
+          "priceExVat": 600.0,
+          "priceIncVat": 750.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "19ed16be-34f5-4dd9-8923-1633fbf59f77",
+        "id": "53fa9bc5-f710-4e0b-be92-962509804abc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "09041f82-e3a4-4323-9c0c-79dcb25c278f",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -2242,8 +2351,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -2262,6 +2372,7 @@
             ]
           },
           {
+            "id": "1bc7b4c8-04b1-4e16-9d8e-969603d13cbc",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -2273,8 +2384,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -2289,6 +2401,7 @@
             ]
           },
           {
+            "id": "5a19df80-b999-4045-ab78-9ffe44f090b7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -2300,30 +2413,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "f8458e5d-fa69-43c4-b26b-6fe82172f409",
+        "id": "8938ddbe-7c63-43d5-94d4-170d58bfe392",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "d53814d8-fb46-47ab-9f3e-44141e135c6e",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
               "priceExVat": 5.6,
-              "priceIncVat": 7,
+              "priceIncVat": 7.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2349,18 +2466,19 @@
             ]
           },
           {
+            "id": "13ce665e-09e9-4335-9adb-d0435d4c95d7",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
-              "priceExVat": 16,
-              "priceIncVat": 20,
+              "priceExVat": 16.0,
+              "priceIncVat": 20.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2382,18 +2500,19 @@
             ]
           },
           {
+            "id": "d7a7f4d6-a06e-4fe3-abf1-287896343e70",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
               "priceExVat": 8.8,
-              "priceIncVat": 11,
+              "priceIncVat": 11.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2419,18 +2538,19 @@
             ]
           },
           {
+            "id": "b8fd9c33-0f7b-4e67-a2b7-19e8ba6ca4a5",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
-              "priceExVat": 32,
-              "priceIncVat": 40,
+              "priceExVat": 32.0,
+              "priceIncVat": 40.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2455,7 +2575,7 @@
       }
     },
     {
-      "id": "d712a9d4-7de2-48db-a7a3-faac5508fb3a",
+      "id": "8ee22499-a528-41d8-95de-79d62ee8f201",
       "name": "Prislista 80-125A effektabonnemang lågspänning",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista effektabonnemang lågspänning",
@@ -2463,31 +2583,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636665+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7718901+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "b56f4dce-cffd-425d-b6f2-0aa495ea349a",
+        "id": "203b2a0e-040e-41b4-b5c2-24eb3fb3ab88",
         "name": "Abonnemangsavgift 80-125A effektabonnemang lågspänning",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 9750,
+          "priceExVat": 9750.0,
           "priceIncVat": 12187.5,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "74292726-7540-405d-a0e6-dd2ee3f8920f",
+        "id": "ed6f7deb-9c2f-4e8b-a2a5-14e7dc3832ae",
         "name": "Överföringsavgift effektabonnemang lågspänning",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "880b1768-7b90-468f-a6e8-922a51b7d5d2",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -2499,8 +2620,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -2515,6 +2637,7 @@
             ]
           },
           {
+            "id": "762849f4-8914-420f-9f85-154f3ba32083",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -2526,30 +2649,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "46d1f2a9-258c-4440-adb0-ccfd0a355183",
+        "id": "f1efaae7-926c-479c-b23b-6c87735eb675",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "ce3af2bd-5f22-4f8b-bf7e-80449376c74b",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 38,
+              "priceExVat": 38.0,
               "priceIncVat": 47.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2571,18 +2698,19 @@
             ]
           },
           {
+            "id": "cfc9b9e7-4d0c-4d8b-87f9-1bf5d4bec4fb",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 58,
+              "priceExVat": 58.0,
               "priceIncVat": 72.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2607,7 +2735,7 @@
       }
     },
     {
-      "id": "657e6b19-4ed7-4f9d-b706-08b4880ce4a0",
+      "id": "e909409f-cb6b-466a-b348-fbd6f4f60d2f",
       "name": "Prislista 126-250A effektabonnemang lågspänning",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista effektabonnemang lågspänning",
@@ -2615,31 +2743,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636709+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "83ae6971-22fa-41ca-8c42-2a4c34e3da77",
+        "id": "f618a612-06fd-446a-9766-a947de76d95b",
         "name": "Abonnemangsavgift 126-250A effektabonnemang lågspänning",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 14950,
+          "priceExVat": 14950.0,
           "priceIncVat": 18687.5,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "74292726-7540-405d-a0e6-dd2ee3f8920f",
+        "id": "ed6f7deb-9c2f-4e8b-a2a5-14e7dc3832ae",
         "name": "Överföringsavgift effektabonnemang lågspänning",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "880b1768-7b90-468f-a6e8-922a51b7d5d2",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -2651,8 +2780,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -2667,6 +2797,7 @@
             ]
           },
           {
+            "id": "762849f4-8914-420f-9f85-154f3ba32083",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -2678,30 +2809,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "46d1f2a9-258c-4440-adb0-ccfd0a355183",
+        "id": "f1efaae7-926c-479c-b23b-6c87735eb675",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "ce3af2bd-5f22-4f8b-bf7e-80449376c74b",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 38,
+              "priceExVat": 38.0,
               "priceIncVat": 47.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2723,18 +2858,19 @@
             ]
           },
           {
+            "id": "cfc9b9e7-4d0c-4d8b-87f9-1bf5d4bec4fb",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 58,
+              "priceExVat": 58.0,
               "priceIncVat": 72.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2759,7 +2895,7 @@
       }
     },
     {
-      "id": "9b4efa4e-f27e-49a7-94c0-b69d7cc3790f",
+      "id": "377ef718-d6fc-4b61-b4f6-b6e2aceb05f7",
       "name": "Prislista 251-500A effektabonnemang lågspänning",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista effektabonnemang lågspänning",
@@ -2767,31 +2903,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636752+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719023+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "362b3de7-0126-4205-ba5d-c35a7dcb1e91",
+        "id": "4736b9d7-8ad2-4137-a1f2-4b87e2773e51",
         "name": "Abonnemangsavgift 251-500A effektabonnemang lågspänning",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 31050,
+          "priceExVat": 31050.0,
           "priceIncVat": 38812.5,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "74292726-7540-405d-a0e6-dd2ee3f8920f",
+        "id": "ed6f7deb-9c2f-4e8b-a2a5-14e7dc3832ae",
         "name": "Överföringsavgift effektabonnemang lågspänning",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "880b1768-7b90-468f-a6e8-922a51b7d5d2",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -2803,8 +2940,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -2819,6 +2957,7 @@
             ]
           },
           {
+            "id": "762849f4-8914-420f-9f85-154f3ba32083",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -2830,30 +2969,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "46d1f2a9-258c-4440-adb0-ccfd0a355183",
+        "id": "f1efaae7-926c-479c-b23b-6c87735eb675",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "ce3af2bd-5f22-4f8b-bf7e-80449376c74b",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 38,
+              "priceExVat": 38.0,
               "priceIncVat": 47.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2875,18 +3018,19 @@
             ]
           },
           {
+            "id": "cfc9b9e7-4d0c-4d8b-87f9-1bf5d4bec4fb",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 58,
+              "priceExVat": 58.0,
               "priceIncVat": 72.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -2911,7 +3055,7 @@
       }
     },
     {
-      "id": "a938bc90-199e-4c91-a2a9-a476176eb726",
+      "id": "7d2b77c4-b3f8-4e93-8ae8-759a96a3e80a",
       "name": "Prislista 501-1000A effektabonnemang lågspänning",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista effektabonnemang lågspänning",
@@ -2919,31 +3063,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636773+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719047+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "f42c4b75-2d65-4dec-8030-df6cf6945f75",
+        "id": "ac63ce19-72f8-47ac-895e-d3792f7e72fb",
         "name": "Abonnemangsavgift 501-1000A effektabonnemang lågspänning",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 62100,
-          "priceIncVat": 77625,
+          "priceExVat": 62100.0,
+          "priceIncVat": 77625.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "74292726-7540-405d-a0e6-dd2ee3f8920f",
+        "id": "ed6f7deb-9c2f-4e8b-a2a5-14e7dc3832ae",
         "name": "Överföringsavgift effektabonnemang lågspänning",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "880b1768-7b90-468f-a6e8-922a51b7d5d2",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -2955,8 +3100,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -2971,6 +3117,7 @@
             ]
           },
           {
+            "id": "762849f4-8914-420f-9f85-154f3ba32083",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -2982,30 +3129,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "46d1f2a9-258c-4440-adb0-ccfd0a355183",
+        "id": "f1efaae7-926c-479c-b23b-6c87735eb675",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "ce3af2bd-5f22-4f8b-bf7e-80449376c74b",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 38,
+              "priceExVat": 38.0,
               "priceIncVat": 47.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3027,18 +3178,19 @@
             ]
           },
           {
+            "id": "cfc9b9e7-4d0c-4d8b-87f9-1bf5d4bec4fb",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 58,
+              "priceExVat": 58.0,
               "priceIncVat": 72.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3063,7 +3215,7 @@
       }
     },
     {
-      "id": "274a13f0-09a8-474f-871a-50b15fd6cbcd",
+      "id": "edddbb98-6069-4413-a5a2-ceae1c394ec1",
       "name": "Prislista min1000A effektabonnemang lågspänning",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista effektabonnemang lågspänning",
@@ -3071,31 +3223,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636795+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719069+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "0d242c50-931d-425d-b199-683cf1026010",
+        "id": "a28e9b57-bf07-4128-a0ea-7bc0ec310afe",
         "name": "Abonnemangsavgift min1000A effektabonnemang lågspänning",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 99500,
-          "priceIncVat": 124375,
+          "priceExVat": 99500.0,
+          "priceIncVat": 124375.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "74292726-7540-405d-a0e6-dd2ee3f8920f",
+        "id": "ed6f7deb-9c2f-4e8b-a2a5-14e7dc3832ae",
         "name": "Överföringsavgift effektabonnemang lågspänning",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "880b1768-7b90-468f-a6e8-922a51b7d5d2",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -3107,8 +3260,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -3123,6 +3277,7 @@
             ]
           },
           {
+            "id": "762849f4-8914-420f-9f85-154f3ba32083",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -3134,30 +3289,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "46d1f2a9-258c-4440-adb0-ccfd0a355183",
+        "id": "f1efaae7-926c-479c-b23b-6c87735eb675",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "ce3af2bd-5f22-4f8b-bf7e-80449376c74b",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 38,
+              "priceExVat": 38.0,
               "priceIncVat": 47.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3179,18 +3338,19 @@
             ]
           },
           {
+            "id": "cfc9b9e7-4d0c-4d8b-87f9-1bf5d4bec4fb",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 58,
+              "priceExVat": 58.0,
               "priceIncVat": 72.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3215,7 +3375,7 @@
       }
     },
     {
-      "id": "50b525d5-ae06-42bc-8af8-851634c2dddc",
+      "id": "cf622f5f-eed4-459f-a74a-cf04a2b879c3",
       "name": "Prislista max2000kW effektabonnemang högspänning",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista effektabonnemang högspänning",
@@ -3223,31 +3383,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636821+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719132+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "bc66725d-3326-4c90-81dd-7da52b48b710",
+        "id": "862c715c-cebe-4bc1-90f0-8421dc2a3e5b",
         "name": "Abonnemangsavgift max2000kW effektabonnemang högspänning",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 126500,
-          "priceIncVat": 158125,
+          "priceExVat": 126500.0,
+          "priceIncVat": 158125.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "2253ec2e-31db-4663-8527-5958be6af7e6",
+        "id": "9e058c45-6341-41c8-bf36-7eb7c043d5b4",
         "name": "Överföringsavgift effektabonnemang högspänning",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "dd906c3d-e673-43dd-82ea-203aed1c2c6e",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -3259,8 +3420,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -3275,6 +3437,7 @@
             ]
           },
           {
+            "id": "914a7611-14e9-4e37-af74-5fd98f50c8d9",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -3286,30 +3449,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7ae18fce-c0de-4143-a9d0-c9fee40bd89f",
+        "id": "d8c7a5b8-eeb6-41ff-88f4-d09f1b98bc28",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "3e81e61c-f0f8-4c3f-aa88-c73e9621154d",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 22,
+              "priceExVat": 22.0,
               "priceIncVat": 27.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3331,18 +3498,19 @@
             ]
           },
           {
+            "id": "e502c756-36e6-4f57-8615-c518fe2cbd7a",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 33,
+              "priceExVat": 33.0,
               "priceIncVat": 41.25,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3367,7 +3535,7 @@
       }
     },
     {
-      "id": "e2d8c6e6-4863-4f33-b0cf-31fcc2a4bbbd",
+      "id": "82235f1f-8adc-4a33-b161-d1571ce7632d",
       "name": "Prislista 2000-10000kW effektabonnemang högspänning",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista effektabonnemang högspänning",
@@ -3375,31 +3543,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636895+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719187+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "eb600a80-88ea-4b32-9f16-a1fd3e665bb1",
+        "id": "59bce998-dc3e-4a49-9c4c-69599bcc02f1",
         "name": "Abonnemangsavgift 2000-10000kW effektabonnemang högspänning",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 557750,
+          "priceExVat": 557750.0,
           "priceIncVat": 697187.5,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "2253ec2e-31db-4663-8527-5958be6af7e6",
+        "id": "9e058c45-6341-41c8-bf36-7eb7c043d5b4",
         "name": "Överföringsavgift effektabonnemang högspänning",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "dd906c3d-e673-43dd-82ea-203aed1c2c6e",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -3411,8 +3580,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -3427,6 +3597,7 @@
             ]
           },
           {
+            "id": "914a7611-14e9-4e37-af74-5fd98f50c8d9",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -3438,30 +3609,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7ae18fce-c0de-4143-a9d0-c9fee40bd89f",
+        "id": "d8c7a5b8-eeb6-41ff-88f4-d09f1b98bc28",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "3e81e61c-f0f8-4c3f-aa88-c73e9621154d",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 22,
+              "priceExVat": 22.0,
               "priceIncVat": 27.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3483,18 +3658,19 @@
             ]
           },
           {
+            "id": "e502c756-36e6-4f57-8615-c518fe2cbd7a",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 33,
+              "priceExVat": 33.0,
               "priceIncVat": 41.25,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3519,7 +3695,7 @@
       }
     },
     {
-      "id": "36aeda62-f4b9-4b68-a9fd-c2f78e6a75a9",
+      "id": "c9e96d6c-4198-4a3d-ac20-e820c0dc0927",
       "name": "Prislista min10000kW effektabonnemang högspänning",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista effektabonnemang högspänning",
@@ -3527,31 +3703,32 @@
       "companyOrgNo": "556483-4926",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636918+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719212+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "34405662-5d16-4dfa-a6c7-31d1fa7f8393",
+        "id": "34b71eba-fc66-4c0a-b1a1-54e0b8f66816",
         "name": "Abonnemangsavgift min10000kW effektabonnemang högspänning",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 995000,
-          "priceIncVat": 1243750,
+          "priceExVat": 995000.0,
+          "priceIncVat": 1243750.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "2253ec2e-31db-4663-8527-5958be6af7e6",
+        "id": "9e058c45-6341-41c8-bf36-7eb7c043d5b4",
         "name": "Överföringsavgift effektabonnemang högspänning",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "dd906c3d-e673-43dd-82ea-203aed1c2c6e",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -3563,8 +3740,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -3579,6 +3757,7 @@
             ]
           },
           {
+            "id": "914a7611-14e9-4e37-af74-5fd98f50c8d9",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -3590,30 +3769,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7ae18fce-c0de-4143-a9d0-c9fee40bd89f",
+        "id": "d8c7a5b8-eeb6-41ff-88f4-d09f1b98bc28",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "3e81e61c-f0f8-4c3f-aa88-c73e9621154d",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
-              "priceExVat": 22,
+              "priceExVat": 22.0,
               "priceIncVat": 27.5,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3635,18 +3818,19 @@
             ]
           },
           {
+            "id": "e502c756-36e6-4f57-8615-c518fe2cbd7a",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
-              "priceExVat": 33,
+              "priceExVat": 33.0,
               "priceIncVat": 41.25,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3671,7 +3855,7 @@
       }
     },
     {
-      "id": "605622e5-92c5-4e1f-a45a-26de0013e6fb",
+      "id": "23f0b95f-33ce-47b2-8f5e-3582cee679dc",
       "name": "Prislista 16A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -3679,31 +3863,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636946+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719266+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "1b5cea85-fb9a-457e-9caa-a1f33c288673",
+        "id": "bdee72e8-53f3-420c-9613-e21db6713e61",
         "name": "Abonnemangsavgift 16A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 244,
-          "priceIncVat": 305,
+          "priceExVat": 244.0,
+          "priceIncVat": 305.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "328244aa-5099-4185-adb6-ea6e33a53bee",
+        "id": "574001ca-dd08-4e24-831d-704231e8bc72",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "fbc6077d-366d-493e-8b80-68ce3b2afab8",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -3715,8 +3900,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -3731,6 +3917,7 @@
             ]
           },
           {
+            "id": "c5c4a568-093f-43f4-9fcb-bc7a17add245",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -3742,30 +3929,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d609f721-cd1e-4b3b-b41e-7e964857ba14",
+        "id": "f763554d-3fbe-4d80-a46f-2fb9ad99ed8b",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "266a2dcc-4a0c-4bc4-a2b7-9c261d10f8aa",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3787,18 +3978,19 @@
             ]
           },
           {
+            "id": "3f8f823f-cbf6-4759-a2fc-9bcaab82d343",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3823,7 +4015,7 @@
       }
     },
     {
-      "id": "bd7fd6e5-d1d6-4c0a-8ea5-29311ff75090",
+      "id": "ccd027f0-eb10-4849-9491-de1bcfb971c3",
       "name": "Prislista 20A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -3831,31 +4023,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2636997+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719322+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "2a51cfc1-dad0-4f10-8584-7a69c68b3ece",
+        "id": "f376b81c-1b43-4a17-85aa-2ff91f9d7ca6",
         "name": "Abonnemangsavgift 20A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 312,
-          "priceIncVat": 390,
+          "priceExVat": 312.0,
+          "priceIncVat": 390.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "328244aa-5099-4185-adb6-ea6e33a53bee",
+        "id": "574001ca-dd08-4e24-831d-704231e8bc72",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "fbc6077d-366d-493e-8b80-68ce3b2afab8",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -3867,8 +4060,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -3883,6 +4077,7 @@
             ]
           },
           {
+            "id": "c5c4a568-093f-43f4-9fcb-bc7a17add245",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -3894,30 +4089,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d609f721-cd1e-4b3b-b41e-7e964857ba14",
+        "id": "f763554d-3fbe-4d80-a46f-2fb9ad99ed8b",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "266a2dcc-4a0c-4bc4-a2b7-9c261d10f8aa",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3939,18 +4138,19 @@
             ]
           },
           {
+            "id": "3f8f823f-cbf6-4759-a2fc-9bcaab82d343",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -3975,7 +4175,7 @@
       }
     },
     {
-      "id": "c85d5f1b-2af1-4f14-b0bb-59d0626e7141",
+      "id": "27879d8c-af0b-4e8b-b782-fc5e9729c0ba",
       "name": "Prislista 25A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -3983,31 +4183,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637018+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719347+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "cafad57e-de01-4366-b626-57af7d29b856",
+        "id": "18188ae1-1e87-4e6f-b460-9aa32f96044f",
         "name": "Abonnemangsavgift 25A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 420,
-          "priceIncVat": 525,
+          "priceExVat": 420.0,
+          "priceIncVat": 525.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "328244aa-5099-4185-adb6-ea6e33a53bee",
+        "id": "574001ca-dd08-4e24-831d-704231e8bc72",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "fbc6077d-366d-493e-8b80-68ce3b2afab8",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -4019,8 +4220,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -4035,6 +4237,7 @@
             ]
           },
           {
+            "id": "c5c4a568-093f-43f4-9fcb-bc7a17add245",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -4046,30 +4249,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d609f721-cd1e-4b3b-b41e-7e964857ba14",
+        "id": "f763554d-3fbe-4d80-a46f-2fb9ad99ed8b",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "266a2dcc-4a0c-4bc4-a2b7-9c261d10f8aa",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4091,18 +4298,19 @@
             ]
           },
           {
+            "id": "3f8f823f-cbf6-4759-a2fc-9bcaab82d343",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4127,7 +4335,7 @@
       }
     },
     {
-      "id": "2c06ae5a-0656-47cb-b375-e3c65b385ac0",
+      "id": "ad2e22b4-106d-451e-a000-7e7a20943b55",
       "name": "Prislista 35A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -4135,31 +4343,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637041+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719454+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "43dcbb12-17ac-4776-a451-7b507f3ef760",
+        "id": "17325b75-b535-4ce7-beba-b070697a4e9b",
         "name": "Abonnemangsavgift 35A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 560,
-          "priceIncVat": 700,
+          "priceExVat": 560.0,
+          "priceIncVat": 700.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "328244aa-5099-4185-adb6-ea6e33a53bee",
+        "id": "574001ca-dd08-4e24-831d-704231e8bc72",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "fbc6077d-366d-493e-8b80-68ce3b2afab8",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -4171,8 +4380,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -4187,6 +4397,7 @@
             ]
           },
           {
+            "id": "c5c4a568-093f-43f4-9fcb-bc7a17add245",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -4198,30 +4409,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d609f721-cd1e-4b3b-b41e-7e964857ba14",
+        "id": "f763554d-3fbe-4d80-a46f-2fb9ad99ed8b",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "266a2dcc-4a0c-4bc4-a2b7-9c261d10f8aa",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4243,18 +4458,19 @@
             ]
           },
           {
+            "id": "3f8f823f-cbf6-4759-a2fc-9bcaab82d343",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4279,7 +4495,7 @@
       }
     },
     {
-      "id": "582a3e05-99a5-4183-a49b-0a05afe40e01",
+      "id": "45dddb2c-7fd0-4f8c-817c-87ab43d4ac2b",
       "name": "Prislista 50A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -4287,31 +4503,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637062+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719478+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "06ffa4a7-4961-4fb5-a9cd-c8d810fd9a95",
+        "id": "c6453c21-7c4f-4a62-b105-e967f6c3a8f0",
         "name": "Abonnemangsavgift 50A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 740,
-          "priceIncVat": 925,
+          "priceExVat": 740.0,
+          "priceIncVat": 925.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "328244aa-5099-4185-adb6-ea6e33a53bee",
+        "id": "574001ca-dd08-4e24-831d-704231e8bc72",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "fbc6077d-366d-493e-8b80-68ce3b2afab8",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -4323,8 +4540,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -4339,6 +4557,7 @@
             ]
           },
           {
+            "id": "c5c4a568-093f-43f4-9fcb-bc7a17add245",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -4350,30 +4569,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d609f721-cd1e-4b3b-b41e-7e964857ba14",
+        "id": "f763554d-3fbe-4d80-a46f-2fb9ad99ed8b",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "266a2dcc-4a0c-4bc4-a2b7-9c261d10f8aa",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4395,18 +4618,19 @@
             ]
           },
           {
+            "id": "3f8f823f-cbf6-4759-a2fc-9bcaab82d343",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4431,7 +4655,7 @@
       }
     },
     {
-      "id": "535a7f7c-9cb4-4294-94fa-2c11fd977f92",
+      "id": "83af24da-e71b-4519-b4ca-ad374a4d031e",
       "name": "Prislista 63A standard",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista standard",
@@ -4439,31 +4663,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637086+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719502+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "88984b92-0979-41c6-b46a-706d3d17eeed",
+        "id": "9c4af4f7-d058-48c4-9c23-7f5a06efa62a",
         "name": "Abonnemangsavgift 63A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 948,
-          "priceIncVat": 1185,
+          "priceExVat": 948.0,
+          "priceIncVat": 1185.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "328244aa-5099-4185-adb6-ea6e33a53bee",
+        "id": "574001ca-dd08-4e24-831d-704231e8bc72",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "fbc6077d-366d-493e-8b80-68ce3b2afab8",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -4475,8 +4700,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -4491,6 +4717,7 @@
             ]
           },
           {
+            "id": "c5c4a568-093f-43f4-9fcb-bc7a17add245",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -4502,30 +4729,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "d609f721-cd1e-4b3b-b41e-7e964857ba14",
+        "id": "f763554d-3fbe-4d80-a46f-2fb9ad99ed8b",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "266a2dcc-4a0c-4bc4-a2b7-9c261d10f8aa",
             "name": "Sommar (heldag)",
             "description": "",
             "type": "peak",
             "reference": "summer_fullday",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4547,18 +4778,19 @@
             ]
           },
           {
+            "id": "3f8f823f-cbf6-4759-a2fc-9bcaab82d343",
             "name": "Vinter (heldag)",
             "description": "",
             "type": "peak",
             "reference": "winter_fullday",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4583,7 +4815,7 @@
       }
     },
     {
-      "id": "e0ae670e-d529-4061-b5cf-f5bf594c25e5",
+      "id": "55b3ad1c-4e0f-4853-a2ce-fd73ffec6255",
       "name": "Prislista 16A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -4591,31 +4823,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637154+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719536+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "6edb7c1d-019d-4259-8fd4-6eaf5fef9215",
+        "id": "8bd7367c-56b9-40ae-8f9c-3d533563d43a",
         "name": "Abonnemangsavgift 16A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 244,
-          "priceIncVat": 305,
+          "priceExVat": 244.0,
+          "priceIncVat": 305.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "64101e90-6105-46c1-933e-0771cd360b09",
+        "id": "45faf88d-31e6-4a07-a532-bd68f32a48dc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "02d45978-92c6-4360-bc22-a727664c630a",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -4627,8 +4860,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -4647,6 +4881,7 @@
             ]
           },
           {
+            "id": "4293e522-28b8-434a-be19-97bd209b8295",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -4658,8 +4893,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -4674,6 +4910,7 @@
             ]
           },
           {
+            "id": "5f70fe31-e31b-45c4-b77b-34765361c50f",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -4685,30 +4922,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7c30a076-dbfe-4d47-bc8a-0a1fe914027d",
+        "id": "7d81289e-eae9-415b-afaa-8f611beab1d3",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "2c22aa88-7c68-4b62-ace0-082f3f6720c3",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
-              "priceExVat": 8,
-              "priceIncVat": 10,
+              "priceExVat": 8.0,
+              "priceIncVat": 10.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4734,18 +4975,19 @@
             ]
           },
           {
+            "id": "ad8413be-86c2-4a83-a88e-7dcbb046a8c6",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4767,18 +5009,19 @@
             ]
           },
           {
+            "id": "f41b677d-360d-4e9c-a619-ed9577b23711",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
-              "priceExVat": 12,
-              "priceIncVat": 15,
+              "priceExVat": 12.0,
+              "priceIncVat": 15.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4804,18 +5047,19 @@
             ]
           },
           {
+            "id": "d629c9b3-3d53-4373-9663-b70213069e24",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4840,7 +5084,7 @@
       }
     },
     {
-      "id": "462ee222-9cb9-4760-a9c5-dd8a6752bbbd",
+      "id": "81cd2ff3-a2c6-4592-9593-faafcda4414d",
       "name": "Prislista 20A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -4848,31 +5092,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637274+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.771975+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "f3d8a689-a793-47e1-9629-427570012725",
+        "id": "643113fa-bb00-46f4-933f-6eea756ee349",
         "name": "Abonnemangsavgift 20A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 312,
-          "priceIncVat": 390,
+          "priceExVat": 312.0,
+          "priceIncVat": 390.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "64101e90-6105-46c1-933e-0771cd360b09",
+        "id": "45faf88d-31e6-4a07-a532-bd68f32a48dc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "02d45978-92c6-4360-bc22-a727664c630a",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -4884,8 +5129,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -4904,6 +5150,7 @@
             ]
           },
           {
+            "id": "4293e522-28b8-434a-be19-97bd209b8295",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -4915,8 +5162,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -4931,6 +5179,7 @@
             ]
           },
           {
+            "id": "5f70fe31-e31b-45c4-b77b-34765361c50f",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -4942,30 +5191,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7c30a076-dbfe-4d47-bc8a-0a1fe914027d",
+        "id": "7d81289e-eae9-415b-afaa-8f611beab1d3",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "2c22aa88-7c68-4b62-ace0-082f3f6720c3",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
-              "priceExVat": 8,
-              "priceIncVat": 10,
+              "priceExVat": 8.0,
+              "priceIncVat": 10.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -4991,18 +5244,19 @@
             ]
           },
           {
+            "id": "ad8413be-86c2-4a83-a88e-7dcbb046a8c6",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5024,18 +5278,19 @@
             ]
           },
           {
+            "id": "f41b677d-360d-4e9c-a619-ed9577b23711",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
-              "priceExVat": 12,
-              "priceIncVat": 15,
+              "priceExVat": 12.0,
+              "priceIncVat": 15.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5061,18 +5316,19 @@
             ]
           },
           {
+            "id": "d629c9b3-3d53-4373-9663-b70213069e24",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5097,7 +5353,7 @@
       }
     },
     {
-      "id": "17f184b2-6c46-4e8c-98f4-92909d76d687",
+      "id": "7e4af0e6-9065-43bc-9b1e-6bd4bfea98ab",
       "name": "Prislista 25A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -5105,31 +5361,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637372+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719776+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "48661f61-0c33-4b5e-9eb2-828ff65804f5",
+        "id": "2b4a17a9-18db-4cbc-8864-32b350720119",
         "name": "Abonnemangsavgift 25A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 420,
-          "priceIncVat": 525,
+          "priceExVat": 420.0,
+          "priceIncVat": 525.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "64101e90-6105-46c1-933e-0771cd360b09",
+        "id": "45faf88d-31e6-4a07-a532-bd68f32a48dc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "02d45978-92c6-4360-bc22-a727664c630a",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -5141,8 +5398,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -5161,6 +5419,7 @@
             ]
           },
           {
+            "id": "4293e522-28b8-434a-be19-97bd209b8295",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -5172,8 +5431,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -5188,6 +5448,7 @@
             ]
           },
           {
+            "id": "5f70fe31-e31b-45c4-b77b-34765361c50f",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -5199,30 +5460,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7c30a076-dbfe-4d47-bc8a-0a1fe914027d",
+        "id": "7d81289e-eae9-415b-afaa-8f611beab1d3",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "2c22aa88-7c68-4b62-ace0-082f3f6720c3",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
-              "priceExVat": 8,
-              "priceIncVat": 10,
+              "priceExVat": 8.0,
+              "priceIncVat": 10.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5248,18 +5513,19 @@
             ]
           },
           {
+            "id": "ad8413be-86c2-4a83-a88e-7dcbb046a8c6",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5281,18 +5547,19 @@
             ]
           },
           {
+            "id": "f41b677d-360d-4e9c-a619-ed9577b23711",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
-              "priceExVat": 12,
-              "priceIncVat": 15,
+              "priceExVat": 12.0,
+              "priceIncVat": 15.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5318,18 +5585,19 @@
             ]
           },
           {
+            "id": "d629c9b3-3d53-4373-9663-b70213069e24",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5354,7 +5622,7 @@
       }
     },
     {
-      "id": "4fab9fd4-dd8d-4d5f-82ea-984648975237",
+      "id": "ba99eae8-0b51-4d0a-a3ee-3505a5ac21a4",
       "name": "Prislista 35A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -5362,31 +5630,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637398+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719801+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "3055187a-465b-453f-b8bc-70c4cee4a01f",
+        "id": "cb670d22-484f-4fa5-afcf-35f4cc98f3f6",
         "name": "Abonnemangsavgift 35A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 560,
-          "priceIncVat": 700,
+          "priceExVat": 560.0,
+          "priceIncVat": 700.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "64101e90-6105-46c1-933e-0771cd360b09",
+        "id": "45faf88d-31e6-4a07-a532-bd68f32a48dc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "02d45978-92c6-4360-bc22-a727664c630a",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -5398,8 +5667,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -5418,6 +5688,7 @@
             ]
           },
           {
+            "id": "4293e522-28b8-434a-be19-97bd209b8295",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -5429,8 +5700,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -5445,6 +5717,7 @@
             ]
           },
           {
+            "id": "5f70fe31-e31b-45c4-b77b-34765361c50f",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -5456,30 +5729,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7c30a076-dbfe-4d47-bc8a-0a1fe914027d",
+        "id": "7d81289e-eae9-415b-afaa-8f611beab1d3",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "2c22aa88-7c68-4b62-ace0-082f3f6720c3",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
-              "priceExVat": 8,
-              "priceIncVat": 10,
+              "priceExVat": 8.0,
+              "priceIncVat": 10.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5505,18 +5782,19 @@
             ]
           },
           {
+            "id": "ad8413be-86c2-4a83-a88e-7dcbb046a8c6",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5538,18 +5816,19 @@
             ]
           },
           {
+            "id": "f41b677d-360d-4e9c-a619-ed9577b23711",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
-              "priceExVat": 12,
-              "priceIncVat": 15,
+              "priceExVat": 12.0,
+              "priceIncVat": 15.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5575,18 +5854,19 @@
             ]
           },
           {
+            "id": "d629c9b3-3d53-4373-9663-b70213069e24",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5611,7 +5891,7 @@
       }
     },
     {
-      "id": "d20fd634-64d8-4c87-81c3-03b4bc8c611b",
+      "id": "39ad047f-f358-4b67-802e-ec0c7c491cb9",
       "name": "Prislista 50A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -5619,31 +5899,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.263742+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.771986+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "218ba908-0d76-4440-9a91-d42aa6b2732d",
+        "id": "abc28a17-4fb7-4f03-978f-5088490dd410",
         "name": "Abonnemangsavgift 50A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 740,
-          "priceIncVat": 925,
+          "priceExVat": 740.0,
+          "priceIncVat": 925.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "64101e90-6105-46c1-933e-0771cd360b09",
+        "id": "45faf88d-31e6-4a07-a532-bd68f32a48dc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "02d45978-92c6-4360-bc22-a727664c630a",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -5655,8 +5936,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -5675,6 +5957,7 @@
             ]
           },
           {
+            "id": "4293e522-28b8-434a-be19-97bd209b8295",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -5686,8 +5969,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -5702,6 +5986,7 @@
             ]
           },
           {
+            "id": "5f70fe31-e31b-45c4-b77b-34765361c50f",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -5713,30 +5998,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7c30a076-dbfe-4d47-bc8a-0a1fe914027d",
+        "id": "7d81289e-eae9-415b-afaa-8f611beab1d3",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "2c22aa88-7c68-4b62-ace0-082f3f6720c3",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
-              "priceExVat": 8,
-              "priceIncVat": 10,
+              "priceExVat": 8.0,
+              "priceIncVat": 10.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5762,18 +6051,19 @@
             ]
           },
           {
+            "id": "ad8413be-86c2-4a83-a88e-7dcbb046a8c6",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5795,18 +6085,19 @@
             ]
           },
           {
+            "id": "f41b677d-360d-4e9c-a619-ed9577b23711",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
-              "priceExVat": 12,
-              "priceIncVat": 15,
+              "priceExVat": 12.0,
+              "priceIncVat": 15.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5832,18 +6123,19 @@
             ]
           },
           {
+            "id": "d629c9b3-3d53-4373-9663-b70213069e24",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -5868,7 +6160,7 @@
       }
     },
     {
-      "id": "f3cd8448-4f03-46ff-b41b-0a04c15ab2b5",
+      "id": "511bd425-a2cc-4cb3-8958-46c6f397d978",
       "name": "Prislista 63A alternativ",
       "description": "https://www.tekniskaverken.se/kundservice/priser-avtal/priser-elnat-2024/",
       "product": "Prislista alternativ",
@@ -5876,31 +6168,32 @@
       "companyOrgNo": "556426-8588",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637446+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719889+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "e1b5bb26-931a-4901-b036-1d21dd01c8ea",
+        "id": "5fd26711-381e-4d74-ace5-9555329682ca",
         "name": "Abonnemangsavgift 63A alternativ",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 948,
-          "priceIncVat": 1185,
+          "priceExVat": 948.0,
+          "priceIncVat": 1185.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1M"
       },
       "energyPrice": {
-        "id": "64101e90-6105-46c1-933e-0771cd360b09",
+        "id": "45faf88d-31e6-4a07-a532-bd68f32a48dc",
         "name": "Överföringsavgift alternativ",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "02d45978-92c6-4360-bc22-a727664c630a",
             "name": "Överföringsavgift (natt)",
             "description": "",
             "type": "fixed",
@@ -5912,8 +6205,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -5932,6 +6226,7 @@
             ]
           },
           {
+            "id": "4293e522-28b8-434a-be19-97bd209b8295",
             "name": "Överföringsavgift (dag)",
             "description": "",
             "type": "fixed",
@@ -5943,8 +6238,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -5959,6 +6255,7 @@
             ]
           },
           {
+            "id": "5f70fe31-e31b-45c4-b77b-34765361c50f",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -5970,30 +6267,34 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "7c30a076-dbfe-4d47-bc8a-0a1fe914027d",
+        "id": "7d81289e-eae9-415b-afaa-8f611beab1d3",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": [
           {
+            "id": "2c22aa88-7c68-4b62-ace0-082f3f6720c3",
             "name": "Sommar (natt)",
             "description": "",
             "type": "peak",
             "reference": "summer_night",
             "price": {
-              "priceExVat": 8,
-              "priceIncVat": 10,
+              "priceExVat": 8.0,
+              "priceIncVat": 10.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -6019,18 +6320,19 @@
             ]
           },
           {
+            "id": "ad8413be-86c2-4a83-a88e-7dcbb046a8c6",
             "name": "Sommar (dag)",
             "description": "",
             "type": "peak",
             "reference": "summer_day",
             "price": {
               "priceExVat": 24.8,
-              "priceIncVat": 31,
+              "priceIncVat": 31.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-04-01",
-              "toIncluding": "2024-10-31"
+              "toExcluding": "2024-11-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -6052,18 +6354,19 @@
             ]
           },
           {
+            "id": "f41b677d-360d-4e9c-a619-ed9577b23711",
             "name": "Vinter (natt)",
             "description": "",
             "type": "peak",
             "reference": "winter_night",
             "price": {
-              "priceExVat": 12,
-              "priceIncVat": 15,
+              "priceExVat": 12.0,
+              "priceIncVat": 15.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -6089,18 +6392,19 @@
             ]
           },
           {
+            "id": "d629c9b3-3d53-4373-9663-b70213069e24",
             "name": "Vinter (dag)",
             "description": "",
             "type": "peak",
             "reference": "winter_day",
             "price": {
               "priceExVat": 49.6,
-              "priceIncVat": 62,
+              "priceIncVat": 62.0,
               "currency": "SEK"
             },
             "validPeriod": {
               "fromIncluding": "2024-11-01",
-              "toIncluding": "2025-03-31"
+              "toExcluding": "2025-04-01"
             },
             "peakIdentificationSettings": {
               "peakFunction": "peak(base)",
@@ -6125,7 +6429,7 @@
       }
     },
     {
-      "id": "9b45c74b-c5b5-4def-b620-d0d328382b9b",
+      "id": "41da1d77-9cc6-4605-8b59-ce13975d8f64",
       "name": "Prislista 16A standard (lägenhet)",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard (lägenhet)",
@@ -6133,31 +6437,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637474+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.771992+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "e6b0fe1a-7547-4cd9-820a-37e0658c213e",
+        "id": "24641559-645b-40b0-ae95-87d2125fa950",
         "name": "Abonnemangsavgift 16A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 1168,
-          "priceIncVat": 1460,
+          "priceExVat": 1168.0,
+          "priceIncVat": 1460.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6169,8 +6474,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6185,6 +6491,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6196,21 +6503,24 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
       }
     },
     {
-      "id": "1df0900e-96cc-46d2-923b-63ca4cafd2c9",
+      "id": "3f9f5b7e-0731-4516-9519-9c1bfd7054bc",
       "name": "Prislista 16A standard",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard",
@@ -6218,31 +6528,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637545+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719964+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "f6d4ede0-d15b-48ee-881d-09220c7c023c",
+        "id": "f7a780b0-48ba-424c-805a-46bccac2321e",
         "name": "Abonnemangsavgift 16A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 2224,
-          "priceIncVat": 2780,
+          "priceExVat": 2224.0,
+          "priceIncVat": 2780.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6254,8 +6565,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6270,6 +6582,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6281,21 +6594,24 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
       }
     },
     {
-      "id": "cfa30ca2-f203-4224-88e5-65e870e0b550",
+      "id": "ae63c07d-e0de-48fc-88b2-89f46e2e330c",
       "name": "Prislista 20A standard",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard",
@@ -6303,31 +6619,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637567+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7719987+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "a6223fb0-25f0-49f6-b775-3614fcde19f2",
+        "id": "554a3b44-0711-43b1-9b13-ce2549290aac",
         "name": "Abonnemangsavgift 20A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 3144,
-          "priceIncVat": 3930,
+          "priceExVat": 3144.0,
+          "priceIncVat": 3930.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6339,8 +6656,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6355,6 +6673,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6366,21 +6685,24 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
       }
     },
     {
-      "id": "cf4ee4b5-38df-43eb-975c-903580ceff35",
+      "id": "469270f5-4e71-48f8-baf3-afae68bf4870",
       "name": "Prislista 25A standard",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard",
@@ -6388,31 +6710,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637586+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7720039+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "ec38975e-56e9-48cc-8250-d60f9b0f4e2a",
+        "id": "ca4d6025-9192-4516-8210-1d124e35effd",
         "name": "Abonnemangsavgift 25A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 3904,
-          "priceIncVat": 4880,
+          "priceExVat": 3904.0,
+          "priceIncVat": 4880.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6424,8 +6747,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6440,6 +6764,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6451,21 +6776,24 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
       }
     },
     {
-      "id": "d72f599a-12ec-45fa-b823-aa1ddb5dfec7",
+      "id": "f3d7a402-d598-47d4-9741-737671b156d1",
       "name": "Prislista 35A standard",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard",
@@ -6473,31 +6801,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637607+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7720063+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "a139d304-2c44-423b-916f-d15f8d113014",
+        "id": "4d5d9d43-dedd-459c-a699-714dab5e9ae4",
         "name": "Abonnemangsavgift 35A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 5608,
-          "priceIncVat": 7010,
+          "priceExVat": 5608.0,
+          "priceIncVat": 7010.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6509,8 +6838,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6525,6 +6855,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6536,21 +6867,24 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
       }
     },
     {
-      "id": "1a6c95f6-cd48-4078-a609-35960fc01f3c",
+      "id": "a1742f7c-fc08-4669-89b2-52c518f28ccf",
       "name": "Prislista 50A standard",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard",
@@ -6558,31 +6892,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637627+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7720085+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "cd3fefd0-3cc9-4ff5-b235-3cbe5eebe0ad",
+        "id": "16515bde-3d63-452e-aa22-17442fc93e01",
         "name": "Abonnemangsavgift 50A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 7872,
-          "priceIncVat": 9840,
+          "priceExVat": 7872.0,
+          "priceIncVat": 9840.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6594,8 +6929,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6610,6 +6946,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6621,21 +6958,24 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
       }
     },
     {
-      "id": "d1036f91-15ec-42c7-a7ef-b73ca945aacf",
+      "id": "3797b815-8369-46b4-90eb-1b3ae46f6934",
       "name": "Prislista 63A standard",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard",
@@ -6643,31 +6983,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637669+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7720108+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "59b5399d-e124-426f-a2fa-0c1d654f4499",
+        "id": "da76f557-2800-4bc9-b183-43eb69d01112",
         "name": "Abonnemangsavgift 63A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 9864,
-          "priceIncVat": 12330,
+          "priceExVat": 9864.0,
+          "priceIncVat": 12330.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6679,8 +7020,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6695,6 +7037,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6706,21 +7049,24 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
       }
     },
     {
-      "id": "15627783-c7c5-4e14-bfb2-2a9ed82838b3",
+      "id": "4295911b-2dc9-4a7b-87c2-9da22773f6e0",
       "name": "Prislista 80A standard",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard",
@@ -6728,31 +7074,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637689+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7720129+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "a189d8e9-eb1d-487c-9d3e-740c245a92c8",
+        "id": "ebf00182-1fea-4ef0-a869-7c4d4085326b",
         "name": "Abonnemangsavgift 80A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 12600,
-          "priceIncVat": 15750,
+          "priceExVat": 12600.0,
+          "priceIncVat": 15750.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6764,8 +7111,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6780,6 +7128,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6791,21 +7140,24 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
       }
     },
     {
-      "id": "81537155-c75c-4486-a49c-0f40a48c9078",
+      "id": "1e024a82-5c51-4a54-b9d7-5047a155ec8f",
       "name": "Prislista 100A standard",
       "description": "https://www.mse.se/tjanster/elnat/priser-och-avtalsvillkor-elnat/elnatspris-2024/",
       "product": "Prislista standard",
@@ -6813,31 +7165,32 @@
       "companyOrgNo": "556127-9265",
       "direction": "consumption",
       "timeZone": "Europe/Stockholm",
-      "lastUpdated": "2024-10-23T09:54:26.2637711+02:00",
-      "billingFrequency": "P1M",
+      "lastUpdated": "2024-10-25T11:35:10.7720153+00:00",
+      "billingPeriod": "P1M",
       "fixedPrice": {
-        "id": "4e9c653f-c7d7-44d7-93cf-c9586ceac732",
+        "id": "c82b1b18-d4f5-4741-a43c-472bfd39b473",
         "name": "Abonnemangsavgift 100A standard",
         "description": "",
         "validPeriod": {
           "fromIncluding": "2024-10-01",
-          "toIncluding": "2025-09-30"
+          "toExcluding": "2025-10-01"
         },
         "price": {
-          "priceExVat": 16352,
-          "priceIncVat": 20440,
+          "priceExVat": 16352.0,
+          "priceIncVat": 20440.0,
           "currency": "SEK"
         },
         "pricedPeriod": "P1Y"
       },
       "energyPrice": {
-        "id": "29866362-3a18-4878-acdc-4d7a1fdbc312",
+        "id": "f8a504df-e6df-44ad-ba71-5a4157e6fee6",
         "name": "Överföringsavgift standard",
         "description": "Överföringsavgift per kWh.",
         "costFunction": "sum(energy(c)*price(c))",
         "unit": "kWh",
         "components": [
           {
+            "id": "1582b814-8150-43b1-8821-677116dafb28",
             "name": "Överföringsavgift (heldag)",
             "description": "",
             "type": "fixed",
@@ -6849,8 +7202,9 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-10-01",
-              "toIncluding": "2025-09-30"
+              "toExcluding": "2025-10-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": [
               {
                 "reference": "base",
@@ -6865,6 +7219,7 @@
             ]
           },
           {
+            "id": "b7de17d5-8b94-46e3-ad8c-9cf04dc399c7",
             "name": "Energiskatt",
             "description": "Energiskatt per kWh",
             "type": "fixed",
@@ -6876,14 +7231,17 @@
             },
             "validPeriod": {
               "fromIncluding": "2024-01-01",
-              "toIncluding": "2024-12-31"
+              "toExcluding": "2025-01-01"
             },
+            "peakIdentificationSettings": null,
             "recurringPeriods": []
           }
         ]
       },
       "powerPrice": {
-        "id": "1bb0157c-0a09-45df-8db0-c65480d04105",
+        "id": "552306ef-1a2a-46fb-b531-ca2a08b3e746",
+        "name": "",
+        "description": "",
         "costFunction": "sum(peak(c)*price(c))",
         "unit": "kW",
         "components": []
