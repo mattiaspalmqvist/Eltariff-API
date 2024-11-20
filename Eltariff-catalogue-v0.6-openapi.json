@@ -125,7 +125,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK. Map of MPID: SupplierEntry",
+            "description": "OK. SupplierEntries and mapping of MPID to SupplierEntry:id",
             "content": {
               "application/json": {
                 "schema": {
