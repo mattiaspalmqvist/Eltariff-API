@@ -1,0 +1,253 @@
+{
+    "tariffs": [
+        {
+            "id": "???",
+            "name": "Prislista 16A standard",
+            "description": "https://www.hem.se/elnat/avtal-och-priser",
+            "product": "Prislista standard",
+            "companyName": "Halmstad Energi och Miljö Nät AB",
+            "companyOrgNo": "556330-3980",
+            "direction": "consumption",
+            "timeZone": "Europe/Stockholm",
+            "lastUpdated": "2024-12-06T11:35:10.7576919+00:00",
+            "billingPeriod": "P1M",
+            "fixedPrice": {
+                "id": "???",
+                "name": "Abonnemangsavgift 16A standard",
+                "description": "",
+                "validPeriod": {
+                    "fromIncluding": "2025-01-01",
+                    "toExcluding": "2026-01-01"
+                },
+                "price": {
+                    "priceExVat": 286,
+                    "priceIncVat": 357.5,
+                    "currency": "SEK"
+                },
+                "pricedPeriod": "P1M"
+            },
+            "energyPrice": {
+                "id": "???",
+                "name": "Överföringsavgift standard",
+                "description": "Överföringsavgift per kWh.",
+                "costFunction": "sum(energy(c)*price(c))",
+                "unit": "kWh",
+                "components": [
+                    {
+                        "id": "???",
+                        "name": "Överföringsavgift (heldag)",
+                        "description": "",
+                        "type": "fixed",
+                        "reference": "fullday",
+                        "price": {
+                            "priceExVat": 0.072,
+                            "priceIncVat": 0.09,
+                            "currency": "SEK"
+                        },
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "peakIdentificationSettings": null,
+                        "recurringPeriods": [
+                            {
+                                "reference": "base",
+                                "frequency": "P1D",
+                                "activePeriods": [
+                                    {
+                                        "fromIncluding": "00:00:00",
+                                        "toExcluding": "00:00:00"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "???",
+                        "name": "Energiskatt",
+                        "description": "Energiskatt per kWh",
+                        "type": "fixed",
+                        "reference": "tax",
+                        "price": {
+                            "priceExVat": 0.4392,
+                            "priceIncVat": 0.549,
+                            "currency": "SEK"
+                        },
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "peakIdentificationSettings": null,
+                        "recurringPeriods": []
+                    }
+                ]
+            }
+        },
+        {
+            "id": "???",
+            "name": "Prislista 20A standard",
+            "description": "https://www.hem.se/elnat/avtal-och-priser",
+            "product": "Prislista standard",
+            "companyName": "Halmstad Energi och Miljö Nät AB",
+            "companyOrgNo": "556330-3980",
+            "direction": "consumption",
+            "timeZone": "Europe/Stockholm",
+            "lastUpdated": "2024-12-06T11:35:10.7576919+00:00",
+            "billingPeriod": "P1M",
+            "fixedPrice": {
+                "id": "???",
+                "name": "Abonnemangsavgift 20A standard",
+                "description": "",
+                "validPeriod": {
+                    "fromIncluding": "2025-01-01",
+                    "toExcluding": "2026-01-01"
+                },
+                "price": {
+                    "priceExVat": 372.73,
+                    "priceIncVat": 465.92,
+                    "currency": "SEK"
+                },
+                "pricedPeriod": "P1M"
+            },
+            "energyPrice": {
+                "id": "???",
+                "name": "Överföringsavgift standard",
+                "description": "Överföringsavgift per kWh.",
+                "costFunction": "sum(energy(c)*price(c))",
+                "unit": "kWh",
+                "components": [
+                    {
+                        "id": "???",
+                        "name": "Överföringsavgift (heldag)",
+                        "description": "",
+                        "type": "fixed",
+                        "reference": "fullday",
+                        "price": {
+                            "priceExVat": 0.072,
+                            "priceIncVat": 0.09,
+                            "currency": "SEK"
+                        },
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "peakIdentificationSettings": null,
+                        "recurringPeriods": [
+                            {
+                                "reference": "base",
+                                "frequency": "P1D",
+                                "activePeriods": [
+                                    {
+                                        "fromIncluding": "00:00:00",
+                                        "toExcluding": "00:00:00"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "???",
+                        "name": "Energiskatt",
+                        "description": "Energiskatt per kWh",
+                        "type": "fixed",
+                        "reference": "tax",
+                        "price": {
+                            "priceExVat": 0.4392,
+                            "priceIncVat": 0.549,
+                            "currency": "SEK"
+                        },
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "peakIdentificationSettings": null,
+                        "recurringPeriods": []
+                    }
+                ]
+            }
+        },
+        {
+            "id": "???",
+            "name": "Prislista 25A standard",
+            "description": "https://www.hem.se/elnat/avtal-och-priser",
+            "product": "Prislista standard",
+            "companyName": "Halmstad Energi och Miljö Nät AB",
+            "companyOrgNo": "556330-3980",
+            "direction": "consumption",
+            "timeZone": "Europe/Stockholm",
+            "lastUpdated": "2024-12-06T11:35:10.7576919+00:00",
+            "billingPeriod": "P1M",
+            "fixedPrice": {
+                "id": "???",
+                "name": "Abonnemangsavgift 25A standard",
+                "description": "",
+                "validPeriod": {
+                    "fromIncluding": "2025-01-01",
+                    "toExcluding": "2026-01-01"
+                },
+                "price": {
+                    "priceExVat": 496.93,
+                    "priceIncVat": 621.17,
+                    "currency": "SEK"
+                },
+                "pricedPeriod": "P1M"
+            },
+            "energyPrice": {
+                "id": "???",
+                "name": "Överföringsavgift standard",
+                "description": "Överföringsavgift per kWh.",
+                "costFunction": "sum(energy(c)*price(c))",
+                "unit": "kWh",
+                "components": [
+                    {
+                        "id": "???",
+                        "name": "Överföringsavgift (heldag)",
+                        "description": "",
+                        "type": "fixed",
+                        "reference": "fullday",
+                        "price": {
+                            "priceExVat": 0.072,
+                            "priceIncVat": 0.09,
+                            "currency": "SEK"
+                        },
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "peakIdentificationSettings": null,
+                        "recurringPeriods": [
+                            {
+                                "reference": "base",
+                                "frequency": "P1D",
+                                "activePeriods": [
+                                    {
+                                        "fromIncluding": "00:00:00",
+                                        "toExcluding": "00:00:00"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "???",
+                        "name": "Energiskatt",
+                        "description": "Energiskatt per kWh",
+                        "type": "fixed",
+                        "reference": "tax",
+                        "price": {
+                            "priceExVat": 0.4392,
+                            "priceIncVat": 0.549,
+                            "currency": "SEK"
+                        },
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "peakIdentificationSettings": null,
+                        "recurringPeriods": []
+                    }
+                ]
+            }
+        }
+    ]
+}
