@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "ElTariffKatalog",
-    "version": "v0.6"
+    "version": "v0.6.1"
   },
   "servers": [
     {
@@ -18,7 +18,7 @@
     "/tariffcatalogue/register": {
       "description": "Update API info for a range of MPIDs. The format of the intro is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json with the addition of an ID field",
       "post": {
-        "description": "Register API info for a range of MPIDs. The format of the intro is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json with the addition of an ID field",
+        "description": "Register API info for a range of MPIDs. The format of the entry is based on https://github.com/3lbits/API-nettleie-for-styring/blob/main/doc/DiginGridTariffAPI.gridcompany-mapping.json with the addition of an ID field",
         "tags": [
           "register-service"
         ],
@@ -27,7 +27,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SupplierEntry"
+                "$ref": "catalogue.schema.json#/SupplierEntry"
               }
             }
           },
@@ -54,7 +54,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/SupplierEntry"
+                "$ref": "catalogue.schema.json#/SupplierEntry"
               }
             }
           },
@@ -89,7 +89,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "common.schema.json#/definitions/Uuid"
             }
           }
         ],
@@ -116,7 +116,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "type": "string"
+                  "$ref": "catalogue.schema.json#/definitions/MeteringPointID"
                 }
               }
             }
@@ -134,13 +134,13 @@
                     "supplierEntries": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/SupplierEntry"
+                        "$ref": "catalogue.schema.json#/SupplierEntry"
                       }
                     },
                     "entryMapping": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/EntryMapping"
+                        "$ref": "catalogue.schema.json#/EntryMapping"
                       }
                     }
                   }
@@ -167,7 +167,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "$ref": "catalogue.schema.json#/definitions/MeteringPointID"
             }
           }
         ],
@@ -179,7 +179,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/SupplierEntry"
+                    "$ref": "catalogue.schema.json#/SupplierEntry"
                   }
                 }
               }
@@ -189,55 +189,6 @@
             "description": "NOT FOUND"
           }
         }
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "SupplierEntry": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "meteringPointIdFrom": {
-            "description": "Inclusive start of the range of mpids covered by this supplier entry",
-            "$ref": "#/components/schemas/MeteringPointID"
-          },
-          "meteringPointIdTo": {
-            "description": "Inclusive end of the range of mpids covered by this supplier entry",
-            "$ref": "#/components/schemas/MeteringPointID"
-          },
-          "companyName": {
-            "type": "string"
-          },
-          "companyOrgNo": {
-            "type": "string"
-          },
-          "apiUrl": {
-            "type": "string"
-          },
-          "userDocUrlOrEmail": {
-            "type": "string"
-          }
-        }
-      },
-      "EntryMapping": {
-        "type": "object",
-        "properties": {
-          "meteringPointId": {
-            "$ref": "#/components/schemas/MeteringPointID"
-          },
-          "entryId": {
-            "type": "string",
-            "format": "uuid"
-          }
-        }
-      },
-      "MeteringPointID": {
-        "type": "string",
-        "pattern": "^[0-9]{18}$"
       }
     }
   }

@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "MeteringPointID": {
+      "type": "string",
+      "pattern": "^[0-9]{18}$"
+    }
+  },
+  "SupplierEntry": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "$ref": "common.schema.json#/definitions/Uuid"
+      },
+      "meteringPointIdFrom": {
+        "description": "Inclusive start of the range of mpids covered by this supplier entry",
+        "$ref": "#/definitions/MeteringPointID"
+      },
+      "meteringPointIdTo": {
+        "description": "Inclusive end of the range of mpids covered by this supplier entry",
+        "$ref": "#/definitions/MeteringPointID"
+      },
+      "companyName": {
+        "type": "string"
+      },
+      "companyOrgNo": {
+        "type": "string"
+      },
+      "apiUrl": {
+        "type": "string"
+      },
+      "userDocUrlOrEmail": {
+        "type": "string"
+      }
+    }
+  },
+  "EntryMapping": {
+    "type": "object",
+    "properties": {
+      "description": "Metering Point Identifier",
+      "meteringPointId": {
+        "$ref": "#/definitions/MeteringPointID"
+      },
+      "entryId": {
+        "description": "SupplierEntry identifier",
+        "$ref": "common.schema.json#/definitions/Uuid"
+      }
+    }
+  }
+}
