@@ -5,7 +5,7 @@ __Notera att tillhandahållandet av data i API:t är i ett utvecklingsskede. Det
 # Dokumentation
 Eltariff-API bygger på att elnätsoperatörer publicerar sina tariffer enligt en gemensam [API-specifikation](specification/gridtariffapi.json)
 och registrerar sin lösning hos en gemensam katalogtjänst, vars API-specifikation finns [här](specification/catalogueapi.json)
-Den som vill hämta tariff-information börjar med att anropa katalog-tjänsten med ett eller flera anläggnings-id för at få information om var tariff-information kan hämtas för respektive anläggnings-id.
+Den som vill hämta tariff-information börjar med att anropa katalog-tjänsten med ett eller flera anläggnings-id för att få information om var tariff-information kan hämtas för respektive anläggnings-id.
 
 ![Basic onboarding sequence](doc/Eltariff_sequence_diagram.svg)
 
