@@ -1,4 +1,4 @@
-Detta API för elnätsavgifter (ibland även kallade elnätstariffer) har tagits fram inom ramen för ett projekt lett av RISE
+Detta API för elnätsavgifter (ibland även kallade elnätstariffer) tas fram inom ramen för ett projekt lett av RISE
 finansierat av Energimyndigheten/FFI. Göteborg Energis och Tekniska verkens nätbolag (Tekniska verken-koncernen med elnät 
 i Linköping, Katrineholm och i Mjölby under varumärket MSE) kommer den 1 mars 2025 vara först ut med att publicera sina 
 elnätsavgifter i detta maskinläsbara format. Då arbetet med att förbättra och utveckla API:t alltjämt pågår tas synpunkter 
