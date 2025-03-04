@@ -1,0 +1,38 @@
+name: OpenAPI Bundle
+
+on:
+  push:
+    paths:
+      - 'specification/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'specification/**'
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+
+    env:
+      BUNDLE_FILE: gridtariffapi.json
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install OpenAPI CLI
+        run: |
+          npm install -g @redocly/openapi-cli
+
+      - name: Generate OpenAPI Bundle
+        run: |
+          openapi bundle specification/openapi.json -o $BUNDLE_FILE
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add $BUNDLE_FILE
+          git commit -m "Auto-generate $BUNDLE_FILE from GitHub Actions" || echo "No changes to commit"
+          git push
