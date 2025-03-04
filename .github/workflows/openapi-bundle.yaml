@@ -43,8 +43,9 @@ jobs:
           openapi bundle $INDEX_FILE -o $NEW_BUNDLE_FILE
           echo "BUNDLE_FILE=$NEW_BUNDLE_FILE" >> $GITHUB_ENV
 
-      - name: Upload Bundle as an Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ env.ARTIFACT_PREFIX }}-${{ env.OPENAPI_VERSION }}
-          path: ${{ env.BUNDLE_FILE }}
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git add $BUNDLE_FILE
+          git commit -m "Auto-generate $BUNDLE_FILE from GitHub Actions" || echo "No changes to commit"
+          git push
