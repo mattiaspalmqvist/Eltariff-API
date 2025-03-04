@@ -16,24 +16,35 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BUNDLE_FILE: gridtariffapi.json
+      INDEX_FILE: specification/gridtariffapi.json
+      ARTIFACT_PREFIX: gridtariffapi
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install OpenAPI CLI
+      - name: Install OpenAPI CLI and jq
         run: |
           npm install -g @redocly/openapi-cli
+          sudo apt-get install -y jq
+
+      - name: Extract OpenAPI Version
+        id: get_version
+        run: |
+          VERSION=$(jq -r '.info.version' $INDEX_FILE)
+          echo "Extracted OpenAPI version: $VERSION"
+          echo "OPENAPI_VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Generate OpenAPI Bundle
         run: |
-          openapi bundle specification/index.json -o $BUNDLE_FILE
+          mkdir -p specification/versions
+          NEW_BUNDLE_FILE="specification/versions/gridtariffapi-v$OPENAPI_VERSION.json"
+          echo "Bundling OpenAPI specification to $NEW_BUNDLE_FILE"
+          openapi bundle $INDEX_FILE -o $NEW_BUNDLE_FILE
+          echo "BUNDLE_FILE=$NEW_BUNDLE_FILE" >> $GITHUB_ENV
 
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add $BUNDLE_FILE
-          git commit -m "Auto-generate $BUNDLE_FILE from GitHub Actions" || echo "No changes to commit"
-          git push
+      - name: Upload Bundle as an Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_PREFIX }}-${{ env.OPENAPI_VERSION }}
+          path: ${{ env.BUNDLE_FILE }}
