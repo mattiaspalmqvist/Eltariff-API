@@ -9,6 +9,7 @@ on:
   pull_request:
     paths:
       - 'specification/**'
+  workflow_dispatch:
 
 jobs:
   bundle:
