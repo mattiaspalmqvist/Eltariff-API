@@ -1,0 +1,23 @@
+title Eltariff full sequence
+rparticipant Customer
+Customer->TariffConsumer:Register for tariff optimisation
+activate TariffConsumer
+TariffConsumer->Catalogue:Get API endpoint for MPID
+activate Catalogue
+Catalogue-->TariffConsumer:API Connection info
+deactivate Catalogue
+TariffConsumer->GridOperator:Get tariffID for MPID
+activate GridOperator
+GridOperator-->TariffConsumer:TariffId
+deactivate GridOperator
+TariffConsumer->GridOperator:Get tariff model for tariffID
+activate GridOperator
+GridOperator-->TariffConsumer: Tariff
+deactivate GridOperator
+TariffConsumer-->Customer:Registration confirmed
+deactivate TariffConsumer
+Customer->TariffConsumer:Get optimisation
+activate TariffConsumer
+TariffConsumer->TariffConsumer:Calculate optimisation
+TariffConsumer-->Customer:Optimisation
+deactivate TariffConsumer
