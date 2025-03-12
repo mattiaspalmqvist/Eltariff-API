@@ -280,7 +280,7 @@
           },
           "implementationVersion": {
             "type": "string",
-            "description": "Version of the implementation. The format is set by the operator and can differ. In this example-rN is the revision number of the implementation and the first three numbers are the API version.",
+            "description": "Version of the implementation. The format is set by the operator and can differ. In this example -r4 is the revision number of the implementation and the first three numbers the API version.",
             "example": "1.2.3-r4"
           },
           "operator": {
