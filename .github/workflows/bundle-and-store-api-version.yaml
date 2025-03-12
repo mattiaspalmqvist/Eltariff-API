@@ -35,6 +35,15 @@ jobs:
           openapi bundle $INDEX_FILE -o $NEW_BUNDLE_FILE
           echo "BUNDLE_FILE=$NEW_BUNDLE_FILE" >> $GITHUB_ENV
 
+      - name: Check for Approval
+        run: |
+          echo "Do you want to store the current API version into file $BUNDLE_FILE?"
+          if [ "${{ github.event.inputs.approve }}" != "APPROVE" ]; then
+            echo "Approval not given. Exiting..."
+            exit 1
+          fi
+          echo "Approval received. Proceeding with Git commit and push of file $BUNDLE_FILE."
+
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
