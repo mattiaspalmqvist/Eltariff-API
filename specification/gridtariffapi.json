@@ -3,7 +3,7 @@
   "info": {
     "title": "Grid Tariff API",
     "description": "Provides grid tariffs from Swedish DSOs.",
-    "version": "0.1.0",
+    "version": "0.2.0-alpha1",
     "contact": {
       "name": "Grid Tariff API",
       "url": "https://github.com/RI-SE/Eltariff-API"
@@ -24,6 +24,35 @@
     }
   ],
   "paths": {
+    "/{v}/info": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/VersionInPath"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Information"
+        ],
+        "operationId": "GetInfo",
+        "summary": "Get information about the API implementation.",
+        "responses": {
+          "200": {
+            "description": "Information about the API implementation.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InfoResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          }
+        }
+      }
+    },
     "/{v}/tariffs": {
       "parameters": [
         {
@@ -35,7 +64,7 @@
           "Tariff"
         ],
         "operationId": "GetTariffs",
-        "summary": "Returns a collection of publicly available tariffs for the DSO without any customer data.",
+        "summary": "Get a collection of publicly available tariffs for the DSO without any customer data.",
         "responses": {
           "200": {
             "description": "All publicly available tariffs without any customer data.",
@@ -47,11 +76,11 @@
               }
             }
           },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
           },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
+          "501": {
+            "$ref": "#/components/responses/NotImplemented"
           }
         }
       }
@@ -70,10 +99,10 @@
           "Tariff"
         ],
         "operationId": "GetTariffById",
-        "summary": "Returns the tariff for the provided id.",
+        "summary": "Get grid tariff for the provided id.",
         "responses": {
           "200": {
-            "description": "Response with one tariff.",
+            "description": "Single grid tariff object.",
             "content": {
               "application/json": {
                 "schema": {
@@ -85,14 +114,11 @@
           "400": {
             "$ref": "#/components/responses/BadRequest"
           },
-          "401": {
-            "$ref": "#/components/responses/Unauthorized"
-          },
-          "403": {
-            "$ref": "#/components/responses/Forbidden"
-          },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/NotImplemented"
           }
         }
       }
@@ -108,9 +134,9 @@
           "Tariff"
         ],
         "operationId": "SearchTariffs",
-        "summary": "Returns a collection of tariffs based on the search criteria and a mapping between the tariffs and search parameters.",
+        "summary": "Search for grid tariffs matching provided search parameters.",
         "requestBody": {
-          "description": "Tariffs search parameters.",
+          "description": "Search parameters.",
           "required": true,
           "content": {
             "application/json": {
@@ -122,7 +148,7 @@
         },
         "responses": {
           "200": {
-            "description": "Tariffs and mapping between tariff and search parameters.",
+            "description": "Tariffs matching the search criteria and mapping between tariff and search parameters.",
             "content": {
               "application/json": {
                 "schema": {
@@ -142,6 +168,9 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/NotImplemented"
           }
         }
       }
@@ -198,6 +227,9 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFound"
+          },
+          "501": {
+            "$ref": "#/components/responses/NotImplemented"
           }
         }
       }
@@ -233,6 +265,37 @@
       }
     },
     "schemas": {
+      "InfoResponse": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the implemented API.",
+            "default": "Grid Tariff API"
+          },
+          "apiVersion": {
+            "type": "string",
+            "description": "Version of the implemented API specification.",
+            "example": "1.2.3"
+          },
+          "implementationVersion": {
+            "type": "string",
+            "description": "Version of the implementation. The format is set by the operator and can differ. In this example-rN is the revision number of the implementation and the first three numbers are the API version.",
+            "example": "1.2.3-r4"
+          },
+          "operator": {
+            "type": "string",
+            "description": "Name of the company or organization operating this server.",
+            "example": "Grid Company AB"
+          },
+          "lastUpdated": {
+            "description": "Timestamp for deployment of the last release.",
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": true
+      },
       "TariffsResponse": {
         "type": "object",
         "properties": {
@@ -393,6 +456,22 @@
               "status": 404,
               "title": "Not Found",
               "detail": "The requested resource could not be found.",
+              "instance": "/v0/endpoint"
+            }
+          }
+        }
+      },
+      "NotImplemented": {
+        "description": "Not Implemented",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ProblemDetails"
+            },
+            "example": {
+              "status": 501,
+              "title": "Not Implemented",
+              "detail": "The request method is not yet implemented on this server.",
               "instance": "/v0/endpoint"
             }
           }
