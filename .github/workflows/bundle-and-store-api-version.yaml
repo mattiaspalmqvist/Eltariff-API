@@ -27,6 +27,11 @@ jobs:
           echo "Extracted OpenAPI version: $VERSION"
           echo "OPENAPI_VERSION=$VERSION" >> $GITHUB_ENV
 
+      # - name: Create new Git branch
+      #   run: |
+      #     git config --global user.name "github-actions[bot]"
+      #     git switch -c gh-action/bundle-and-store-api-version
+
       - name: Generate OpenAPI Bundle
         run: |
           mkdir -p specification/versions
@@ -35,9 +40,12 @@ jobs:
           openapi bundle $INDEX_FILE -o $NEW_BUNDLE_FILE
           echo "BUNDLE_FILE=$NEW_BUNDLE_FILE" >> $GITHUB_ENV
 
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git add $BUNDLE_FILE
-          git commit -m "Auto-generate $BUNDLE_FILE from GitHub Actions" || echo "No changes to commit"
-          git push
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+
+      # - name: Commit and Create Pull Request
+      #   run: |
+      #     git sw -c action/bundle-and-store-api-version
+      #     git add $BUNDLE_FILE
+      #     git commit -m "Auto-generate $BUNDLE_FILE from GitHub Actions" || echo "No changes to commit"
+      #     git push
