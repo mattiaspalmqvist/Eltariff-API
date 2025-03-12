@@ -9,3 +9,9 @@ Den som vill hämta tariff-information börjar med att anropa katalog-tjänsten 
 
 ![Basic onboarding sequence](doc/Eltariff_sequence_diagram.svg)
 
+# Contribute
+Install git hooks by running
+
+    bash scripts/install-hooks.sh
+
+The pre-commit hook makes sure that any generated files within `specification/versions/` are not changed manually. The versioned bundle files are created in GitHub Actions by manually running the "Bundle and store current API version" action.
