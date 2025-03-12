@@ -39,7 +39,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: Create new bundle file for API version ${{ env.OPENAPI_VERSION }}
-          commiter: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           branch: gh-action/bundle-and-store-api-version
           delete-branch: true
           title: Add bundle file for API version ${{ env.OPENAPI_VERSION }}
