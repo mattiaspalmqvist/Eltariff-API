@@ -2,6 +2,11 @@ name: Bundle and store current API version
 
 on:
   workflow_dispatch:
+    inputs:
+      approve:
+        description: 'Type YES to proceed'
+        required: true
+        default: 'NO'
 
 jobs:
   bundle:
@@ -38,7 +43,7 @@ jobs:
       - name: Check for Approval
         run: |
           echo "Do you want to store the current API version into file $BUNDLE_FILE?"
-          if [ "${{ github.event.inputs.approve }}" != "APPROVE" ]; then
+          if [ "${{ github.event.inputs.approve }}" != "YES" ]; then
             echo "Approval not given. Exiting..."
             exit 1
           fi
