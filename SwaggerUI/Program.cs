@@ -1,55 +1,44 @@
-using System.Text.Json.Nodes;
-using Microsoft.OpenApi.Models;
+using SwaggerUI;
 
-const string SWAGGER_UI_ROOT = "swagger";
-const string API_SPECIFICATION = "gridtariffapi-latest.json";
+string wwwrootSpecificationDir = Path.Combine("wwwroot", "swagger", "specification");
+Dictionary<string, string> swaggerUISpecifications = [];
 
-string apiVersion = GetVersion();
+string uiSpecificationDir = Path.Combine("wwwroot", "swagger", "specification", "ui");
+foreach (var filePath in Directory.GetFiles(uiSpecificationDir))
+{
+    string version = OpenApiTools.GetVersion(filePath);
+    swaggerUISpecifications[version] = Path.GetFileName(filePath);
+}
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc(apiVersion, new OpenApiInfo
-    {
-        Title = "Grid Tariff API Documentation",
-        Version = apiVersion
-    });
-});
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseStaticFiles();
 app.UseSwagger();
-app.UseSwaggerUI(c =>
+app.UseSwaggerUI(o =>
 {
-    c.SwaggerEndpoint(API_SPECIFICATION, $"v{apiVersion}");
-    c.RoutePrefix = SWAGGER_UI_ROOT;
+    bool isLatest = true;
+    foreach (var (version, uiSpecificationFileName) in swaggerUISpecifications.OrderBy(x => x.Key).Reverse())
+    {
+        if (isLatest)
+        {
+            o.SwaggerEndpoint($"specification/ui/{uiSpecificationFileName}", $"{version} (latest)");
+            isLatest = false;
+        }
+        else
+        {
+            o.SwaggerEndpoint($"specification/ui/{uiSpecificationFileName}", version);
+        }
+    }
+
+    o.RoutePrefix = "swagger";
+    o.DocumentTitle = "Grid Tariff API";
+    o.InjectStylesheet("ui/custom.css");
+    o.InjectJavascript("ui/custom.js");
 });
 
-app.MapGet("/", () => Results.Redirect(SWAGGER_UI_ROOT));
-
-app.UseStaticFiles();
-
 app.Run();
-
-static string GetVersion()
-{
-    var openApiFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", SWAGGER_UI_ROOT, API_SPECIFICATION);
-
-    try
-    {
-        var openApiStream = File.ReadAllText(openApiFilePath);
-        var document = JsonNode.Parse(openApiStream);
-        string? apiVersion = document?["info"]?["version"]?.ToString();
-
-        ArgumentException.ThrowIfNullOrEmpty(apiVersion, "info.version");
-
-        return apiVersion;
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"ERROR: Failed to read OpenAPI version from file {openApiFilePath}: {ex.Message}");
-        throw;
-    }
-}
