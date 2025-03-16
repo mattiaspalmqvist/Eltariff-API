@@ -11,9 +11,22 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.3.1" />
   </ItemGroup>
 
-  <Target Name="BundleOpenApiFiles" BeforeTargets="Build">
-    <RemoveDir Directories="wwwroot\swagger" />
-    <Exec Command="openapi bundle ..\specification\gridtariffapi.json -o wwwroot\swagger\gridtariffapi-latest.json" />
+  <ItemGroup>
+    <None Include="..\specification\versions\*.json" />
+  </ItemGroup>
+
+  <Target Name="PrepareOpenApiFiles" BeforeTargets="Build">
+    <ItemGroup>
+      <ApiSpecifications Include="..\specification\versions\*.json" />
+    </ItemGroup>
+    <RemoveDir Directories="wwwroot\swagger\specification" />
+    <MakeDir Directories="wwwroot\swagger\specification" />
+    <MakeDir Directories="wwwroot\swagger\specification\ui" />
+    <Exec
+      Command="openapi bundle ..\specification\gridtariffapi.json -o wwwroot\swagger\specification\gridtariffapi-latest.json" />
+    <Copy SourceFiles="@(ApiSpecifications)"
+      DestinationFolder="$(ProjectDir)wwwroot\swagger\specification" />
+    <Exec Command="dotnet script $(ProjectDir)PrepareApiSpecifications.csx wwwroot\swagger\specification" />
   </Target>
 
 </Project>
