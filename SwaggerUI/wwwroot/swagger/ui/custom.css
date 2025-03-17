@@ -7,3 +7,17 @@
     font-family: sans-serif;
     font-weight: 100;
 }
+
+.swagger-ui {
+
+    .information-container .info .main .link,
+    .information-container .info .info__description,
+    .information-container .info .info__license,
+    .scheme-container,
+    .scheme-container .auth-wrapper,
+    .scheme-container .schemes-server-container,
+    .wrapper .authorization__btn,
+    .wrapper .try-out {
+        display: none !important;
+    }
+}

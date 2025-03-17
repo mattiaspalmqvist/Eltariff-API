@@ -1,62 +1,56 @@
-var addTopInfoElement = function () {
+var addTopInfoElement = function (rootElement) {
     var element = document.createElement("div");
-    var topInfoText = "Documentation and API endpoints for electricity grid prices and tariffs for connected Distribution System Operators";
+    var topInfoText = "Documentation and API endpoints for electricity grid prices and tariffs for Distribution System Operators";
     element.className = "swagger-ui topinfo";
     element.innerText = topInfoText;
-    document.body.insertBefore(element, document.body.firstChild);
+    rootElement.insertAdjacentElement("afterBegin", element);
 };
 
-function throttle(func, limit) { // Throttle function to prevent infinite loop execution
-    let lastFunc;
-    let lastRan;
-    return function () {
-        const context = this, args = arguments;
-        if (!lastRan) {
-            func.apply(context, args);
-            lastRan = Date.now();
-        } else {
-            clearTimeout(lastFunc);
-            lastFunc = setTimeout(function () {
-                if ((Date.now() - lastRan) >= limit) {
-                    func.apply(context, args);
-                    lastRan = Date.now();
-                }
-            }, limit - (Date.now() - lastRan));
-        }
-    };
-}
-
-function updateSwaggerUI() {
-    var link = document.querySelector(".swagger-ui .main .link");
+function editSwaggerUI() {
+    var link = document.querySelector(".swagger-ui .info .info__contact .link");
     if (link) {
-        link.href = link.href.replace("/ui", "");
-        link.innerText = link.innerText.replace("/ui", "");
+        link.innerText = link.innerText.replace("Website", "GitHub");
     }
 }
 
 if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
-    observeDocumentLoaded();
+    onDocumentLoaded();
 } else {
-    document.addEventListener("DOMContentLoaded", observeDocumentLoaded);
+    document.addEventListener("DOMContentLoaded", onDocumentLoaded);
 }
 
-function observeDocumentLoaded() {
-    addTopInfoElement();
-
-    var throttledUpdate = throttle(updateSwaggerUI, 10);
-
-    var documentLoadedObserver = new MutationObserver(function (mutations, observer) {
-        var mainContent = document.querySelector(".swagger-ui .main .link");
-        if (mainContent) {
-            console.log("link updated");
-            throttledUpdate();
+function onDocumentLoaded() {
+    var uiUpdatedObserver = new MutationObserver(function (mutations, observer) {
+        var infoContent = document.querySelector(".swagger-ui .info .main");
+        if (infoContent) {
+            observer.disconnect();
+            editSwaggerUI();
+            setTimeout(() => {
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                })
+            }, 100);
         }
     });
 
-    documentLoadedObserver.observe(document.body, {
+    var uiLoadedObserver = new MutationObserver(function (mutations, observer) {
+        var swaggerUI = document.getElementById("swagger-ui");
+        if (swaggerUI) {
+            observer.disconnect();
+            addTopInfoElement(swaggerUI);
+        }
+    });
+
+    uiLoadedObserver.observe(document.body, {
         childList: true,
         subtree: true
     });
 
-    updateSwaggerUI();
+    uiUpdatedObserver.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    editSwaggerUI();
 }
