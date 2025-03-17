@@ -21,7 +21,6 @@
     </ItemGroup>
     <RemoveDir Directories="wwwroot\swagger\specification" />
     <MakeDir Directories="wwwroot\swagger\specification" />
-    <MakeDir Directories="wwwroot\swagger\specification\ui" />
     <Exec
       Command="openapi bundle ..\specification\gridtariffapi.json -o wwwroot\swagger\specification\gridtariffapi-latest.json" />
     <Copy SourceFiles="@(ApiSpecifications)"
