@@ -13,11 +13,8 @@
     .information-container .info .main .link,
     .information-container .info .info__description,
     .information-container .info .info__license,
-    .scheme-container,
     .scheme-container .auth-wrapper,
-    .scheme-container .schemes-server-container,
-    .wrapper .authorization__btn,
-    .wrapper .try-out {
+    .wrapper .authorization__btn {
         display: none !important;
     }
 }

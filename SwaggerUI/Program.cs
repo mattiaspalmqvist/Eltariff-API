@@ -10,6 +10,8 @@ foreach (var filePath in Directory.GetFiles(wwwrootSpecificationDir))
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers();
+builder.Services.AddHttpClient();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -38,5 +40,7 @@ app.UseSwaggerUI(o =>
     o.InjectStylesheet("ui/custom.css");
     o.InjectJavascript("ui/custom.js");
 });
+
+app.MapControllers();
 
 app.Run();

@@ -53,7 +53,7 @@ public class OpenApiTools()
 
     public static JsonObject EditJson(JsonObject root)
     {
-        // AddServers(root);
+        AddServers(root);
 
         return root;
     }
