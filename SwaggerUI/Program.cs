@@ -24,7 +24,11 @@ app.UseSwaggerUI(o =>
     bool isLatest = true;
     foreach (var (version, uiSpecificationFileName) in swaggerUISpecifications.OrderBy(x => x.Key).Reverse())
     {
-        if (isLatest)
+        if (uiSpecificationFileName.Contains("-wip"))
+        {
+            o.SwaggerEndpoint($"specification/{uiSpecificationFileName}", $"{version} (wip)");
+        }
+        else if (isLatest)
         {
             o.SwaggerEndpoint($"specification/{uiSpecificationFileName}", $"{version} (latest)");
             isLatest = false;

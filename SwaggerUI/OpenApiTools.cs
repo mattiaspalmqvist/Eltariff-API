@@ -39,10 +39,10 @@ public class OpenApiTools()
             File.Delete(filePath);
             File.WriteAllText(filePath, EditJson(root).ToJsonString(jsonOptions));
 
-            if (filePath.EndsWith("-latest.json") && root.TryGetPropertyValue("info", out var info) && info is JsonObject infoObj)
+            if (filePath.EndsWith("-wip.json") && root.TryGetPropertyValue("info", out var info) && info is JsonObject infoObj)
             {
                 infoObj.TryGetPropertyValue("version", out var version);
-                File.Move(filePath, filePath.Replace("-latest", $"-v{version}"));
+                File.Move(filePath, filePath.Replace("-wip", $"-v{version}-wip"));
             }
         }
         else

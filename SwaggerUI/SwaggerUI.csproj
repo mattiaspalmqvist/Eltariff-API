@@ -22,7 +22,7 @@
     <RemoveDir Directories="wwwroot\swagger\specification" />
     <MakeDir Directories="wwwroot\swagger\specification" />
     <Exec
-      Command="openapi bundle ..\specification\gridtariffapi.json -o wwwroot\swagger\specification\gridtariffapi-latest.json" />
+      Command="openapi bundle ..\specification\gridtariffapi.json -o wwwroot\swagger\specification\gridtariffapi-wip.json" />
     <Copy SourceFiles="@(ApiSpecifications)"
       DestinationFolder="$(ProjectDir)wwwroot\swagger\specification" />
     <Exec Command="dotnet script $(ProjectDir)PrepareApiSpecifications.csx wwwroot\swagger\specification" />
