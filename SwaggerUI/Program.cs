@@ -21,12 +21,13 @@ app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI(o =>
 {
+    KeyValuePair<string, string>? wipSpecification = null;
     bool isLatest = true;
     foreach (var (version, uiSpecificationFileName) in swaggerUISpecifications.OrderBy(x => x.Key).Reverse())
     {
         if (uiSpecificationFileName.Contains("-wip"))
         {
-            o.SwaggerEndpoint($"specification/{uiSpecificationFileName}", $"{version} (wip)");
+            wipSpecification = new KeyValuePair<string, string>(version, uiSpecificationFileName);
         }
         else if (isLatest)
         {
@@ -37,6 +38,12 @@ app.UseSwaggerUI(o =>
         {
             o.SwaggerEndpoint($"specification/{uiSpecificationFileName}", version);
         }
+    }
+
+    if (wipSpecification != null) {
+        string wipVersion = wipSpecification.Value.Key;
+        string wipSpecificationFileName = wipSpecification.Value.Value;
+        o.SwaggerEndpoint($"specification/{wipSpecificationFileName}", $"{wipVersion} (wip)");
     }
 
     o.RoutePrefix = "swagger";
