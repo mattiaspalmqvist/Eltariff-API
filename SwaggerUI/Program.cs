@@ -54,4 +54,10 @@ app.UseSwaggerUI(o =>
 
 app.MapControllers();
 
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHsts();
+    app.UseHttpsRedirection();
+}
+
 app.Run();
