@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwaggerUI", "SwaggerUI\SwaggerUI.csproj", "{0CF09822-3924-4B09-8C84-CA521309C65E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleController", "ExampleController\ExampleController.csproj", "{BE4524F3-2823-4A66-B5D3-CACBA6F62C0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerGenerator", "ControllerGenerator\ControllerGenerator.csproj", "{8A205413-DD3F-47E5-AED8-A11D06CB7719}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CF09822-3924-4B09-8C84-CA521309C65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF09822-3924-4B09-8C84-CA521309C65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF09822-3924-4B09-8C84-CA521309C65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF09822-3924-4B09-8C84-CA521309C65E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4524F3-2823-4A66-B5D3-CACBA6F62C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4524F3-2823-4A66-B5D3-CACBA6F62C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4524F3-2823-4A66-B5D3-CACBA6F62C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4524F3-2823-4A66-B5D3-CACBA6F62C0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A205413-DD3F-47E5-AED8-A11D06CB7719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A205413-DD3F-47E5-AED8-A11D06CB7719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A205413-DD3F-47E5-AED8-A11D06CB7719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A205413-DD3F-47E5-AED8-A11D06CB7719}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

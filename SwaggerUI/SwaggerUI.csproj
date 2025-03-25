@@ -12,6 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../ControllerGenerator/ControllerGenerator.csproj" />
+    <ProjectReference Include="../ExampleController/ExampleController.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="../specification/versions/*.json" />
   </ItemGroup>
 
@@ -22,9 +27,11 @@
     <RemoveDir Directories="wwwroot/swagger/specification" />
     <MakeDir Directories="wwwroot/swagger/specification" />
     <Exec
-      Command="openapi bundle --short ../specification/gridtariffapi.json -o wwwroot/swagger/specification/gridtariffapi-wip.json" />
+      Command="openapi bundle --short ../specification/gridtariffapi.json -o build/gridtariffapi-wip.json" />
+    <Copy SourceFiles="build/gridtariffapi-wip.json"
+      DestinationFolder="wwwroot/swagger/specification" />
     <Copy SourceFiles="@(ApiSpecifications)"
-      DestinationFolder="$(ProjectDir)wwwroot/swagger/specification" />
+      DestinationFolder="wwwroot/swagger/specification" />
     <Exec
       Command="dotnet script $(ProjectDir)PrepareApiSpecifications.csx wwwroot/swagger/specification" />
   </Target>

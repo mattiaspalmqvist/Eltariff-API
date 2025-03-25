@@ -1,27 +1,3 @@
-function redirectExternalRequestsToProxy(originalRequestUrl) {
-    var redirictedUrl = originalRequestUrl;
-    if (window.ui.getState().toJS().spec.json) {
-        var servers = window.ui.getState().toJS().spec.json.servers;
-        for (var s of servers) {
-            var server = s.url;
-            if (originalRequestUrl.includes(server)) {
-                var version = originalRequestUrl.replace(server + "/", "").split("/")[0];
-                var endpoint = originalRequestUrl.replace(server + "/" + version + "/", "");
-                redirictedUrl = `/api/proxy?server=${encodeURIComponent(server)}&version=${encodeURIComponent(version)}&endpoint=${encodeURIComponent(endpoint)}`;
-            }
-        }
-    }
-    return redirictedUrl;
-}
-
-function addRequestInterceptor() {
-    const originalFetch = window.fetch;
-    window.fetch = async function (url, options) {
-        redirectedUrl = redirectExternalRequestsToProxy(url);
-        return originalFetch(redirectedUrl, options);
-    };
-};
-
 function addTopInfoElement(rootElement) {
     var element = document.createElement("div");
     var topInfoText = "Documentation and API endpoints for electricity grid prices and tariffs for Distribution System Operators";
@@ -44,7 +20,6 @@ function onDocumentLoaded() {
         var swaggerUI = document.getElementById("swagger-ui");
         if (window.ui && swaggerUI) {
             observer.disconnect();
-            addRequestInterceptor();
             addTopInfoElement(swaggerUI);
         }
     });
