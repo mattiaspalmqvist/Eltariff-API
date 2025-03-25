@@ -4,8 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # Project specific files
-**/SwaggerUI/wwwroot/swagger/specification/
-**/build
+**/src/SwaggerUI/wwwroot/swagger/specification/
+**/src/**/build
 
 # Ignore IDEA files
 .idea/
