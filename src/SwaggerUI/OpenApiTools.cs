@@ -36,12 +36,9 @@ public class OpenApiTools()
         string jsonText = File.ReadAllText(filePath);
         if (JsonNode.Parse(jsonText) is JsonObject root)
         {
-            File.Delete(filePath);
-            File.WriteAllText(filePath, EditJson(root).ToJsonString(jsonOptions));
-
+            string version = GetVersion(filePath);
             if (filePath.EndsWith("-wip.json") && root.TryGetPropertyValue("info", out var info) && info is JsonObject infoObj)
             {
-                infoObj.TryGetPropertyValue("version", out var version);
                 File.Move(filePath, filePath.Replace("-wip", $"-v{version}-wip"));
             }
         }
@@ -49,29 +46,5 @@ public class OpenApiTools()
         {
             Console.WriteLine($"Skipping {filePath} - Not a valid JSON object.");
         }
-    }
-
-    public static JsonObject EditJson(JsonObject root)
-    {
-        // AddServers(root);
-
-        return root;
-    }
-
-    public static void AddServers(JsonObject root)
-    {
-        var servers = GetServers();
-        if (servers != null)
-        {
-            root["servers"] = servers.DeepClone();
-        }
-    }
-
-    public static JsonNode? GetServers()
-    {
-        string filePath = "servers.json";
-        string jsonText = File.ReadAllText(filePath);
-        var root = JsonNode.Parse(jsonText);
-        return root?["servers"];
     }
 }
