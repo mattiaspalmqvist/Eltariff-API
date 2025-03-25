@@ -5,7 +5,7 @@ Run the following command to create all resources, including the resource group:
 
 Example:
 
-`az deployment sub create --template-file main.bicep --location swedencentral --parameters env='dev' os='linux' appName=gridtariff-swaggerui subscription='<subscription-id>' --confirm-with-what-if`
+`az deployment sub create --template-file main.bicep --location swedencentral --parameters env='dev' os='linux' appName='gridtariff-swaggerui' subscription='<subscription-id>' --confirm-with-what-if`
 
 If the resource group exists, run this command instead:
 
@@ -19,6 +19,10 @@ the resources within the resource group. It's better to just overwrite the setti
 changed which is done when running the bicep code again.
 
 # Deploy Web App
-Navigate to the SwaggerUI project folder and run:
+Navigate to the SwaggerUI project folder and run (on Windows):
 
-`.\infrastructure\azure\publish.ps1 -resourceGroup <rg-name> -webAppName <app-service-name>`
+`.\infrastructure\azure\publish.ps1 -resourceGroup <rg-name> -webAppName <app-service-name> -os windows`
+
+or on Linux for publishing to a Linux Web App:
+
+`pwsh infrastructure/azure/publish.ps1 -resourceGroup <rg-name> -webAppName <app-service-name> -os linux`
