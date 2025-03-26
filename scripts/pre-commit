@@ -1,0 +1,27 @@
+#!/bin/sh
+
+BUNDLE_FILE_PATTERN="specification/versions/gridtariffapi-v"
+API_INDEX_FILE="specification/gridtariffapi.json"
+
+if git diff --cached --name-only | grep -q "$BUNDLE_FILE_PATTERN"; then
+  echo "❌ ERROR: Generated bundle files ($BUNDLE_FILE_PATTERN*) should only be modified by GitHub Actions!"
+  echo "➡️  Revert any changes to the following files before commit:"
+  git diff --cached --name-only | grep "$BUNDLE_FILE_PATTERN"
+  exit 1
+fi
+
+if git diff --cached --name-only | grep -q "specification/"; then
+  version=$(jq -r '.info.version' $API_INDEX_FILE)
+  for file in $(git ls-files $BUNDLE_FILE_PATTERN*); do
+    if [[ -f $file ]]; then
+      filename=$(basename $file)
+      if [[ "$filename" == *"$version"* ]]; then
+        echo "❌ ERROR: The API version $version has already been stored in file $filename."
+        echo "➡️  You need to increase the API version (.info.version) in $API_INDEX_FILE before changing the API specification."
+        exit 1
+      fi
+    fi
+  done
+fi
+
+exit 0

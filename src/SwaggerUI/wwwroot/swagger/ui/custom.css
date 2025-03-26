@@ -1,0 +1,20 @@
+.topinfo {
+    background-color: #1b1b1b;
+    font-size: 18px;
+    padding: 10px 10px 0px 10px;
+    text-align: center;
+    color: #a0a0a0;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.swagger-ui {
+
+    .information-container .info .main .link,
+    .information-container .info .info__description,
+    .information-container .info .info__license,
+    .scheme-container .auth-wrapper,
+    .wrapper .authorization__btn {
+        display: none !important;
+    }
+}

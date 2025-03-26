@@ -1,0 +1,314 @@
+{
+    "tariffs": [
+        {
+            "id": "411973e6-337f-4b42-acea-bf3216111596",
+            "name": "House 63A",
+            "description": "Grid tariff for houses with max 63 Amps fuse.",
+            "product": "ProductCode1",
+            "companyName": "The Grid Company AB",
+            "companyOrgNo": "123456-7890",
+            "direction": "consumption",
+            "timeZone": "Europe/Stockholm",
+            "lastUpdated": "2025-01-01T00:00:00+01:00",
+            "validPeriod": {
+                "fromIncluding": "2025-01-01",
+                "toExcluding": "2026-01-01"
+            },
+            "billingPeriod": "P1M",
+            "fixedPrice": {
+                "id": "68b397da-6721-48a8-b03c-9cda74f68fd8",
+                "name": "Fixed prices",
+                "description": "Fixed price components.",
+                "costFunction": "sum(price(c))",
+                "components": [
+                    {
+                        "id": "3fe8b51d-f4bc-4057-a0b8-2239a39604ff",
+                        "name": "Subscription fee",
+                        "description": "Fee for the subscription for one full year.",
+                        "type": "fixed",
+                        "reference": "main",
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "price": {
+                            "priceExVat": 1000,
+                            "priceIncVat": 1250,
+                            "currency": "SEK"
+                        },
+                        "pricedPeriod": "P1Y"
+                    }
+                ]
+            },
+            "energyPrice": {
+                "id": "d97c5b80-7abd-4ec4-bd9c-8f5db7e93eb7",
+                "name": "Energy prices",
+                "description": "Energy price components.",
+                "costFunction": "sum(energy(c)*price(c))",
+                "unit": "kWh",
+                "components": [
+                    {
+                        "id": "95e18bbb-0a7b-475b-a3fc-b141240fa42b",
+                        "name": "Energy transfer fee",
+                        "description": "Fee per kWh to transfer electric energy.",
+                        "type": "kwh",
+                        "reference": "main",
+                        "price": {
+                            "priceExVat": 0.2,
+                            "priceIncVat": 0.25,
+                            "currency": "SEK"
+                        },
+                        "spotPriceSettings": null,
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "recurringPeriods": []
+                    },
+                    {
+                        "id": "2da4e077-a17e-4c9e-98f2-55e6ce7a4a64",
+                        "name": "Energy tax",
+                        "description": "Energy tax for every consumed kWh.",
+                        "type": "kwh",
+                        "reference": "tax",
+                        "price": {
+                            "priceExVat": 0.439,
+                            "priceIncVat": 0.54875,
+                            "currency": "SEK"
+                        },
+                        "spotPriceSettings": null,
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "recurringPeriods": []
+                    }
+                ]
+            },
+            "powerPrice": {
+                "id": "e1c1b1f2-4025-4c31-b052-d1760455cdc5",
+                "name": "Power prices",
+                "description": "Power price components.",
+                "costFunction": "sum(peak(c)*price(c))",
+                "unit": "kW",
+                "components": [
+                    {
+                        "id": "1776252a-7857-496d-ae7b-f7487349e3a4",
+                        "name": "Power peak fee",
+                        "description": "Power fee for the monthly maximum power usage.",
+                        "type": "peak",
+                        "reference": "main",
+                        "price": {
+                            "priceExVat": 36,
+                            "priceIncVat": 45,
+                            "currency": "SEK"
+                        },
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "peakIdentificationSettings": {
+                            "peakFunction": "peak(main)",
+                            "peakIdentificationPeriod": "P1D",
+                            "peakDuration": "PT1H",
+                            "numberOfPeaksForAverageCalculation": 3
+                        },
+                        "recurringPeriods": [
+                            {
+                                "reference": "main",
+                                "frequency": "P1D",
+                                "activePeriods": [
+                                    {
+                                        "fromIncluding": "00:00:00",
+                                        "toExcluding": "00:00:00",
+                                        "calendarPatternReferences": {
+                                            "include": [
+                                                "weekdays",
+                                                "weekends"
+                                            ],
+                                            "exclude": []
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": "f9cfb2ec-ef80-46a3-8868-e2e8b7185418",
+            "name": "House 14kW",
+            "description": "Grid tariff for houses with a maximum power output of 14 kW.",
+            "product": "ProductCode2",
+            "companyName": "The Grid Company AB",
+            "companyOrgNo": "123456-7890",
+            "direction": "consumption",
+            "timeZone": "Europe/Stockholm",
+            "lastUpdated": "2025-01-01T00:00:00+01:00",
+            "validPeriod": {
+                "fromIncluding": "2025-01-01",
+                "toExcluding": "2026-01-01"
+            },
+            "billingPeriod": "P1M",
+            "fixedPrice": {
+                "id": "68b397da-6721-48a8-b03c-9cda74f68fd8",
+                "name": "Fixed prices",
+                "description": "Fixed price components.",
+                "costFunction": "sum(price(c))",
+                "components": [
+                    {
+                        "id": "3fe8b51d-f4bc-4057-a0b8-2239a39604ff",
+                        "name": "Subscription fee",
+                        "description": "Fee for the subscription for one full year.",
+                        "type": "fixed",
+                        "reference": "main",
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "price": {
+                            "priceExVat": 1000,
+                            "priceIncVat": 1250,
+                            "currency": "SEK"
+                        },
+                        "pricedPeriod": "P1Y"
+                    }
+                ]
+            },
+            "energyPrice": {
+                "id": "d97c5b80-7abd-4ec4-bd9c-8f5db7e93eb7",
+                "name": "Energy prices",
+                "description": "Energy price components.",
+                "costFunction": "sum(energy(c)*price(c))",
+                "unit": "kWh",
+                "components": [
+                    {
+                        "id": "95e18bbb-0a7b-475b-a3fc-b141240fa42b",
+                        "name": "Energy transfer fee",
+                        "description": "Fee per kWh to transfer electric energy.",
+                        "type": "kwh",
+                        "reference": "main",
+                        "price": {
+                            "priceExVat": 0.2,
+                            "priceIncVat": 0.25,
+                            "currency": "SEK"
+                        },
+                        "spotPriceSettings": null,
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "recurringPeriods": []
+                    },
+                    {
+                        "id": "2da4e077-a17e-4c9e-98f2-55e6ce7a4a64",
+                        "name": "Energy tax",
+                        "description": "Energy tax for every consumed kWh.",
+                        "type": "kwh",
+                        "reference": "tax",
+                        "price": {
+                            "priceExVat": 0.439,
+                            "priceIncVat": 0.54875,
+                            "currency": "SEK"
+                        },
+                        "spotPriceSettings": null,
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "recurringPeriods": []
+                    }
+                ]
+            },
+            "powerPrice": {
+                "id": "9826e74e-34bd-4c06-8c35-b0f6655609b7",
+                "name": "Power prices 14kW",
+                "description": "Power price components.",
+                "costFunction": "sum(peak(c)*price(c))",
+                "unit": "kW",
+                "components": [
+                    {
+                        "id": "e33307b6-77b2-4d7d-b33f-908d2cc9ebbb",
+                        "name": "Power peak fee",
+                        "description": "Power fee for the monthly maximum power usage.",
+                        "type": "peak",
+                        "reference": "main",
+                        "price": {
+                            "priceExVat": 20,
+                            "priceIncVat": 25,
+                            "currency": "SEK"
+                        },
+                        "validPeriod": {
+                            "fromIncluding": "2025-01-01",
+                            "toExcluding": "2026-01-01"
+                        },
+                        "peakIdentificationSettings": {
+                            "peakFunction": "peak(main)",
+                            "peakIdentificationPeriod": "P1D",
+                            "peakDuration": "PT1H",
+                            "numberOfPeaksForAverageCalculation": 5
+                        },
+                        "recurringPeriods": [
+                            {
+                                "reference": "main",
+                                "frequency": "P1D",
+                                "activePeriods": [
+                                    {
+                                        "fromIncluding": "08:00:00",
+                                        "toExcluding": "20:00:00",
+                                        "calendarPatternReferences": {
+                                            "include": [
+                                                "weekdays",
+                                                "weekends"
+                                            ],
+                                            "exclude": [
+                                                "holidays"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "calendarPatterns": [
+        {
+            "name": "weekdays",
+            "frequency": "P1W",
+            "days": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "dates": []
+        },
+        {
+            "name": "weekends",
+            "frequency": "P1W",
+            "days": [
+                6,
+                7
+            ],
+            "dates": []
+        },
+        {
+            "name": "holidays",
+            "frequency": "P1Y",
+            "days": [],
+            "dates": [
+                "2024-12-24",
+                "2024-12-25",
+                "2024-12-26",
+                "2024-12-31",
+                "2025-01-01",
+                "2025-01-06"
+            ]
+        }
+    ]
+}
